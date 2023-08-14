@@ -1,9 +1,10 @@
 import Typography from "@/components/core/typography";
+import MainPage from "@/modules/home/main";
 
 export default function Home() {
   return (
     <main>
-      <Typography variant="h4">My website</Typography>
+      <MainPage />
     </main>
   );
 }

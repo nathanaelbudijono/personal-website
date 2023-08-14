@@ -4,10 +4,13 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;1,400&display=swap");
 
-main {
-  height: 100vh;
-  max-width: 80rem;
-  margin: 0 auto;
+html {
+  background: rgb(47, 48, 63);
+  background: linear-gradient(
+    0deg,
+    rgba(47, 48, 63, 1) 0%,
+    rgba(28, 29, 43, 1) 35%
+  );
 }
 
 .link-underline {
@@ -31,12 +34,6 @@ main {
 .link-underline:hover {
   background-size: 100% 2px;
   background-position: 0 100%;
-}
-
-.flex-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
 }
 
 .ReactCollapse--collapse {

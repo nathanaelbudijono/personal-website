@@ -4,13 +4,7 @@ import { IconType } from "react-icons";
 import { ImSpinner2 } from "react-icons/im";
 import UnstyledLink, { UnstyledLinkProps } from "./unstyled-link";
 
-const ButtonVariant = [
-  "primary",
-  "secondary",
-  "outline",
-  "ghost",
-  "warning",
-] as const;
+const ButtonVariant = ["primary", "outline", "ghost"] as const;
 const ButtonSize = ["sm", "base", "lg"] as const;
 
 type ButtonProps = {
@@ -47,7 +41,8 @@ const ButtonLink = React.forwardRef<HTMLButtonElement, ButtonProps>(
           "inline-flex items-center justify-center rounded-lg ",
           "focus:outline-none focus-visible:ring",
           "shadow-sm",
-          "transition-colors duration-100",
+          "transition-colors duration-200",
+          "rounded-md cursor-e-resize",
           //#region  //*=========== Size ===========
           [
             size === "lg" && ["px-3 py-2.5"],
@@ -58,24 +53,12 @@ const ButtonLink = React.forwardRef<HTMLButtonElement, ButtonProps>(
           //#region  //*=========== Variants ===========
           [
             variant === "primary" && [
-              "bg-d-500 text-color-100",
-              "border border-d-600",
-              "dark:bg-n-200 border-n-300",
-              "hover:bg-d-600 hover:border-d-500",
-              "dark:hover:bg-n-200",
+              "bg-gradient-to-r from-primary-400  to-primary-100",
             ],
 
-            variant === "warning" && [
-              "bg-amber-500 text-white",
-              "border border-amber-500",
-              "hover:bg-amber-600 hover:text-color-100",
-              "active:bg-amber-700",
-              "disabled:bg-amber-600",
-            ],
             variant === "outline" && [
-              "bg-clip-padding backdrop-filter backdrop-blur-sm border border-d-400 text-color-100",
-              "hover:bg-d-400 hover:text-typography-800 active:bg-typo-divider disabled:bg-typo-divider",
-              "dark:hover:bg-n-400 dark:border-n-500",
+              "border border-primary-400",
+              "hover:bg-primary-100 hover:text-typography-800",
             ],
             variant === "ghost" && [
               "shadow-none text-color-100",
@@ -96,12 +79,7 @@ const ButtonLink = React.forwardRef<HTMLButtonElement, ButtonProps>(
             className={cn(
               "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
               {
-                "text-white": [
-                  "primary",
-                  "secondary",
-                  "danger",
-                  "warning",
-                ].includes(variant),
+                "text-white": ["primary"].includes(variant),
                 "text-primary-500": ["outline", "ghost"].includes(variant),
               }
             )}

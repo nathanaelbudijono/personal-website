@@ -19,14 +19,18 @@ const UnstyledLink = React.forwardRef<HTMLAnchorElement, UnstyledLinkProps>(
     const isNewTab =
       openNewTab !== undefined
         ? openNewTab
-        : href && !href.startsWith("/") && !href.startsWith("#");
+        : href &&
+          !(
+            typeof href === "string" &&
+            (href.startsWith("/") || href.startsWith("#"))
+          );
 
     if (!isNewTab) {
       return (
         <Link
           href={href}
           ref={ref}
-          className={className}
+          className={cn("text-typography-100", className)}
           {...rest}
           {...nextLinkProps}
         >
@@ -42,7 +46,7 @@ const UnstyledLink = React.forwardRef<HTMLAnchorElement, UnstyledLinkProps>(
         rel="noopener noreferrer"
         href={href}
         {...rest}
-        className={cn("cursor-newtab", className)}
+        className={cn("cursor-newtab text-typography-100", className)}
       >
         {children}
       </a>

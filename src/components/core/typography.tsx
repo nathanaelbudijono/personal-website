@@ -20,7 +20,7 @@ const TypographyColor = [
   "muted",
   "danger",
   "ready",
-  "black",
+  "gradient",
 ] as const;
 
 type TypographyProps<T extends React.ElementType> = {
@@ -55,7 +55,7 @@ const Typography: TypographyComponent = React.forwardRef(
         className={cn(
           [
             variant === "h1" && [
-              "scroll-m-20 text-4xl font-bold tracking-tight",
+              "scroll-m-20 text-4xl font-[600] tracking-tight",
             ],
             variant === "h2" && [
               "scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 ",
@@ -64,21 +64,23 @@ const Typography: TypographyComponent = React.forwardRef(
               "scroll-m-20 text-2xl font-semibold tracking-tight",
             ],
             variant === "h4" && [
-              "scroll-m-20 pb-2 text-xl font-semibold tracking-tight",
+              "scroll-m-20 pb-2 text-lg font-[500] tracking-tight",
             ],
-            variant === "p" && ["leading-7"],
+            variant === "p" && ["leading-none text-base font-[400]"],
             variant === "blockquote" && ["mt-6 border-l-2 pl-6 italic"],
             variant === "code" && [
               "relative w-fit rounded bg-brand-200 px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold",
             ],
             variant === "large" && ["text-lg font-semibold"],
             variant === "lead" && ["text-xl"],
-            variant === "small" && ["text-sm font-medium leading-none"],
+            variant === "small" && ["text-sm font-[400] leading-none"],
             variant === "muted" && ["text-sm text-typography-500"],
           ],
           [
-            color === "default" && ["text-color-100"],
-            color === "black" && ["text-typography-800"],
+            color === "default" && ["text-typography-100"],
+            color === "gradient" && [
+              "bg-gradient-to-r from-primary-400 to-primary-100 bg-clip-text text-transparent",
+            ],
             color === "muted" && ["text-typography-200"],
             color === "danger" && ["text-d-200"],
             color === "ready" && ["text-ready-500"],
