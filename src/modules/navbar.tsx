@@ -6,9 +6,9 @@ export default function Navbar() {
   return (
     <main className="px-16 max-md:px-6 sticky top-0 bg-secondary-600 bg-opacity-40 backdrop-blur-[2px] z-10 ">
       <section className="max-w-4xl mx-auto">
-        <div className="flex justify-between items-center py-5">
+        <div className="flex justify-between items-center py-4">
           <UnstyledLink href="/">
-            <Image src="/logo.png" width={40} height={40} alt="" />
+            <Image src="/logo.png" width={35} height={35} alt="" />
           </UnstyledLink>
 
           <div className="flex gap-3">

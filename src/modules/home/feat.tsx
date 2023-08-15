@@ -2,10 +2,11 @@ import ProjectCard from "@/components/card/project-card";
 import { Framer } from "@/components/core/framer";
 import Layout from "@/components/core/layout";
 import Typography from "@/components/core/typography";
+import Footer from "../footer";
 
 export default function Feat() {
   return (
-    <Layout className="pt-[120px] -z-10">
+    <Layout className="pt-[110px] -z-10">
       <Framer>
         <Typography variant="h1">Featured</Typography>
         <Typography variant="small" className="mt-3">
@@ -14,7 +15,7 @@ export default function Feat() {
       </Framer>
       <section className="w-full mt-5 grid grid-cols-2 gap-5">
         {project.map((item, index) => (
-          <Framer delay={index * 0.65} key={index}>
+          <Framer delay={index * 0.8} key={index}>
             <ProjectCard
               title={item.title}
               desc={item.desc}
@@ -28,6 +29,7 @@ export default function Feat() {
           </Framer>
         ))}
       </section>
+      <Footer />
     </Layout>
   );
 }
