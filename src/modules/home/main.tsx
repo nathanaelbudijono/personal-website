@@ -1,6 +1,5 @@
 import { Framer } from "@/components/core/framer";
 import Layout from "@/components/core/layout";
-import Seo from "@/components/core/seo";
 import Typography from "@/components/core/typography";
 import Box from "@/components/graphic/box";
 import ButtonLink from "@/components/links/button-links";
@@ -10,10 +9,6 @@ import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 export default function MainPage() {
   return (
     <Layout className="overflow-hidden  xs:relative">
-      <Seo
-        title="Home"
-        description="A Math enthusiast who dreams to build Computer Science with Mathematics. Currently learning Software Development as a full-stack developer. I also enjoy writing blogs and documentation regarding certain past projects ."
-      />
       <Framer>
         <section className="w-2/3 max-xs:w-full">
           <div className="flex gap-2 mb-5 max-sm:flex-col">
