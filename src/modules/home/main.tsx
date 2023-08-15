@@ -7,7 +7,7 @@ import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
 export default function MainPage() {
   return (
-    <Layout className="overflow-hidden relative">
+    <Layout className="overflow-hidden relative justify-center">
       <Framer>
         <section className="w-2/3 max-xs:w-full">
           <div className="flex gap-2 mb-5 max-sm:flex-col">
