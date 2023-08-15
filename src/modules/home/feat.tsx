@@ -2,7 +2,7 @@ import ProjectCard from "@/components/card/project-card";
 import { Framer } from "@/components/core/framer";
 import Layout from "@/components/core/layout";
 import Typography from "@/components/core/typography";
-import Footer from "../footer";
+import ArrowLink from "@/components/links/arrow-link";
 
 export default function Feat() {
   return (
@@ -13,7 +13,7 @@ export default function Feat() {
           Collection of my past projects.
         </Typography>
       </Framer>
-      <section className="w-full mt-5 grid grid-cols-2 gap-5">
+      <section className="w-full mt-5 grid grid-cols-2 max-sm:grid-cols-1 gap-5">
         {project.map((item, index) => (
           <Framer delay={index * 0.8} key={index}>
             <ProjectCard
@@ -29,7 +29,9 @@ export default function Feat() {
           </Framer>
         ))}
       </section>
-      <Footer />
+      <div className="mt-5 w-fit">
+        <ArrowLink href="/projects">Read More.</ArrowLink>
+      </div>
     </Layout>
   );
 }

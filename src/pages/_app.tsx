@@ -1,3 +1,4 @@
+import Footer from "@/modules/footer";
 import Navbar from "@/modules/navbar";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
@@ -18,6 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </div>
       </section>
+      <Footer />
     </main>
   );
 }
