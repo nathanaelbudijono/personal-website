@@ -9,7 +9,7 @@ import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
 export default function MainPage() {
   return (
-    <Layout className="overflow-hidden justify-center xs:relative">
+    <Layout className="overflow-hidden -z-10 xs:relative">
       <Seo
         title="Home"
         description="A Math enthusiast who dreams to build Computer Science with Mathematics. Currently learning Software Development as a full-stack developer. I also enjoy writing blogs and documentation regarding certain past projects ."

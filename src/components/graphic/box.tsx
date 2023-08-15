@@ -26,8 +26,8 @@ export default function Box({
         ],
         [
           size === "base" && [
-            "w-[380px] sm:w-[600px] md:w-[650px] ",
-            "h-[200px] sm:h-[230px] md:h-[260px]",
+            "w-[450px] sm:w-[600px] md:w-[650px] ",
+            "h-[300px] sm:h-[230px] md:h-[260px]",
           ],
         ],
         className

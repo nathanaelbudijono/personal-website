@@ -7,14 +7,14 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <main>
       <Navbar />
-      <section className="mx-auto px-16 py-10 max-md:px-6 max-md:py-3 relative">
+      <section className="mx-auto px-16 max-md:px-6 relative">
         <NextNProgress
           color="#29D"
           startPosition={0.3}
           height={2}
           showOnShallow={true}
         />
-        <div className="-translate-y-[130px]">
+        <div>
           <Component {...pageProps} />
         </div>
       </section>

@@ -9,7 +9,7 @@ export default function Layout({ className, children, ...rest }: LayoutProps) {
   return (
     <div
       className={cn(
-        "h-screen max-w-4xl mx-auto flex flex-col py-24",
+        "h-screen max-w-4xl mx-auto flex flex-col py-10",
         className
       )}
       {...rest}
