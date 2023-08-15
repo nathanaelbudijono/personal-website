@@ -3,13 +3,14 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 const defaultMeta = {
-  title: "Cloud Design System",
-  siteName: "Cloud Design System",
-  description: "Design system used on projects",
-  url: "https://cloud-design-system.vercel.app/",
+  title: "Nathanael",
+  siteName: "Nathanael",
+  description:
+    "A Math enthusiast who dreams to build Computer Science with mathematics.",
+  url: "https://nathanaelbudijono.vercel.app/",
   type: "website",
   robots: "follow, index",
-  image: "https://ibb.co/yFWZHfc",
+  image: "https://ibb.co/f8dnQVv",
 };
 
 type SeoProps = {
