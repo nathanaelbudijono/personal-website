@@ -6,9 +6,11 @@ import ArrowLink from "@/components/links/arrow-link";
 
 export default function Feat() {
   return (
-    <Layout className="pt-[110px] -z-10">
+    <Layout className="pt-[110px] -z-10 max-xs:h-full">
       <Framer>
-        <Typography variant="h1">Featured</Typography>
+        <Typography variant="h1" color="gradient">
+          Featured
+        </Typography>
         <Typography variant="small" className="mt-3">
           Collection of my past projects.
         </Typography>
@@ -30,7 +32,9 @@ export default function Feat() {
         ))}
       </section>
       <div className="mt-5 w-fit">
-        <ArrowLink href="/projects">Read More.</ArrowLink>
+        <ArrowLink href="/projects" className="text-typography-100">
+          Read More
+        </ArrowLink>
       </div>
     </Layout>
   );
