@@ -3,13 +3,7 @@ import * as React from "react";
 import { IconType } from "react-icons";
 import { ImSpinner2 } from "react-icons/im";
 
-const ButtonVariant = [
-  "primary",
-  "secondary",
-  "outline",
-  "ghost",
-  "warning",
-] as const;
+const ButtonVariant = ["primary", "outline", "ghost", "warning"] as const;
 const ButtonSize = ["sm", "base", "lg"] as const;
 
 type ButtonProps = {
@@ -46,7 +40,7 @@ const IconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
           "inline-flex items-center justify-center rounded-lg ",
           "focus:outline-none focus-visible:ring",
           "shadow-sm",
-          "transition-colors duration-100",
+          "transition-colors duration-200",
           "disabled:bg-d-200 disabled:border-0",
           //#region  //*=========== Size ===========
           [
@@ -79,7 +73,7 @@ const IconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
             ],
             variant === "ghost" && [
               "shadow-none text-color-100",
-              "hover:bg-d-400 hover:text-typography-800 active:bg-primary-100 disabled:bg-primary-100",
+              "hover:bg-primary-100 hover:text-typography-800 active:bg-primary-100",
               "dark:hover:bg-n-400",
             ],
           ],
