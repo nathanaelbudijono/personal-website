@@ -9,7 +9,7 @@ export default function Footer() {
           <Typography variant="small">
             © {new Date().getFullYear()} by Nathanael
           </Typography>
-          <div className="flex gap-1 items-center mt-1">
+          <div className="flex gap-[1.5px] items-center mt-1">
             <Typography variant="small">Hosted on</Typography>
             <UnderlineLink href="https://vercel.com">Vercel.</UnderlineLink>
             <Typography variant="small">Made by</Typography>
