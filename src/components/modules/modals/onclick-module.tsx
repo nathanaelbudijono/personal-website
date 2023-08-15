@@ -23,11 +23,11 @@ export default function ExampleModal({
       {children(modalReturn)}
       <Modal open={open} setOpen={setOpen} title="Modal Title">
         <Modal.Section>
-          <Typography variant="h4" className="text-start" color="black">
+          <Typography variant="h4" className="text-start">
             Modal Heading
           </Typography>
           <span className="h-[2px] bg-d-100 w-full"> </span>
-          <Typography variant="p" className="text-start" color="black">
+          <Typography variant="p" className="text-start">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio
             ex cumque assumenda! Nesciunt reiciendis dolores sit atque incidunt
             debitis repudiandae.
