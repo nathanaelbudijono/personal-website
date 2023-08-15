@@ -22,7 +22,7 @@ export default function Navbar() {
       className={clsx(
         "px-16 max-md:px-6 sticky top-0 z-10",
         " bg-secondary-600  bg-opacity-40 backdrop-blur-[2px] ",
-        "dark:bg-quaternary-200 dark:bg-opacity-40"
+        "dark:bg-quaternary-300 dark:bg-opacity-40"
       )}
     >
       <section className="max-w-4xl mx-auto">

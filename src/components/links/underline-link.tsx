@@ -9,13 +9,21 @@ const UnderlineLink = React.forwardRef<HTMLAnchorElement, UnstyledLinkProps>(
       <UnstyledLink
         ref={ref}
         {...rest}
-        className={cn(
-          "link-underline link-underline-black text-sm font-[400] leading-none max-sm:text-xs items-center text-primary-200 dark:text-tertiary-300",
-          "focus:outline-none focus-visible:rounded focus-visible:ring focus-visible:ring-primary-500 focus-visible:ring-offset-2",
-          className
-        )}
+        className={cn("group transition-all duration-300 ease-in-out")}
       >
-        {children}
+        <div
+          className={cn(
+            "flex items-center gap-2",
+            "bg-left-bottom bg-gradient-to-r from-primary-400 to-primary-100 bg-[length:0%_2px]",
+            "dark:from-quaternary-400 dark:to-quaternary-100",
+            "text-sm",
+            "bg-no-repeat group-hover:bg-[length:100%_2px]",
+            "transition-all duration-500 ease-out",
+            "text-typography-100 dark:text-tertiary-400"
+          )}
+        >
+          {children}
+        </div>
       </UnstyledLink>
     );
   }

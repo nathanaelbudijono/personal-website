@@ -75,9 +75,10 @@ module.exports = {
         "tertiary-100": "#FFBAD6",
 
         "quaternary-100": "#FAFAFA",
-        "quaternary-200": "#ACA7CB",
-        "quaternary-300": "#FF00EB",
-        "quaternary-400": "#D19F9C",
+        "quaternary-200": "#FD98F5",
+        "quaternary-300": "#F46AE9",
+        "quaternary-400": "#FF00EB",
+        "quaternary-500": "#D19F9C",
       },
       screens: {
         xs: "400px",

@@ -8,7 +8,7 @@ import NextNProgress from "nextjs-progressbar";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
-      <main className="bg-gradient-to-b from-secondary-600 to-secondary-500 dark:from-quaternary-200 dark:to-quaternary-200">
+      <main className="bg-gradient-to-b from-secondary-600 to-secondary-500 dark:from-quaternary-300 dark:to-quaternary-100">
         <Navbar />
         <section className="mx-auto px-16 max-md:px-6 relative">
           <NextNProgress
