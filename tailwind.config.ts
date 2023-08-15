@@ -67,6 +67,18 @@ module.exports = {
         "secondary-400": "#535465",
         "secondary-500": "#2F303F",
         "secondary-600": "#1C1D2B",
+
+        "tertiary-100": "#25FFCD",
+        "tertiary-200": "#00CB9C",
+        "tertiary-300": "#00986E",
+        "tertiary-400": "#006843",
+        "tertiary-500": "#004529",
+
+        "quaternary-100": "#E8F3F1",
+        "quaternary-200": "#B3BEBC",
+        "quaternary-300": "#818B89",
+        "quaternary-400": "#525B5A",
+        "quaternary-500": "#27302E",
       },
       screens: {
         xs: "400px",
