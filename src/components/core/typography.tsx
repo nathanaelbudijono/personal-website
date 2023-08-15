@@ -66,14 +66,18 @@ const Typography: TypographyComponent = React.forwardRef(
             variant === "h4" && [
               "scroll-m-20 pb-2 text-lg font-[500] tracking-tight",
             ],
-            variant === "p" && ["leading-none text-base font-[400] "],
+            variant === "p" && [
+              "leading-none text-base font-[400] max-xs:text-sm",
+            ],
             variant === "blockquote" && ["mt-6 border-l-2 pl-6 italic"],
             variant === "code" && [
               "relative w-fit rounded bg-brand-200 px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold",
             ],
             variant === "large" && ["text-lg font-semibold"],
             variant === "lead" && ["text-xl"],
-            variant === "small" && ["text-sm font-[400] leading-none"],
+            variant === "small" && [
+              "text-sm font-[400] leading-none max-sm:text-xs",
+            ],
             variant === "muted" && ["text-sm text-typography-500"],
           ],
           [

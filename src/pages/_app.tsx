@@ -14,8 +14,9 @@ export default function App({ Component, pageProps }: AppProps) {
           height={2}
           showOnShallow={true}
         />
-
-        <Component {...pageProps} />
+        <div className="-translate-y-[130px]">
+          <Component {...pageProps} />
+        </div>
       </section>
     </main>
   );
