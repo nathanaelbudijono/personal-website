@@ -22,6 +22,7 @@ export default function Box({
         [
           variant === "primary" && [
             "bg-gradient-to-r from-primary-400 to-primary-100",
+            "dark:from-tertiary-300 dark:to-tertiary-400",
           ],
         ],
         [

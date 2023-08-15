@@ -32,7 +32,10 @@ export default function Feat() {
         ))}
       </section>
       <div className="mt-5 w-fit">
-        <ArrowLink href="/projects" className="text-typography-100">
+        <ArrowLink
+          href="/projects"
+          className="text-typography-100 dark:text-typography-800"
+        >
           Read More
         </ArrowLink>
       </div>

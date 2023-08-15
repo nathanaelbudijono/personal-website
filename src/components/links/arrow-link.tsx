@@ -36,7 +36,7 @@ export default function ArrowLink<C extends React.ElementType>({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className={cn(
-          "relative text-color-100",
+          "relative text-color-100 dark:text-typography-800",
           "transition-transform duration-200",
           direction === "right" ? "motion-safe:-translate-x-1" : "rotate-180",
           "group-hover:translate-x-0"

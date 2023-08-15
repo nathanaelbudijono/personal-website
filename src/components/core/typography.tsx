@@ -81,11 +81,15 @@ const Typography: TypographyComponent = React.forwardRef(
             variant === "muted" && ["text-sm text-typography-500"],
           ],
           [
-            color === "default" && ["text-typography-100"],
-            color === "gradient" && [
-              "bg-gradient-to-r from-primary-400 to-primary-100 bg-clip-text text-transparent",
+            color === "default" && [
+              "text-typography-100 dark:text-typography-800",
             ],
-            color === "muted" && ["text-typography-300"],
+            color === "gradient" && [
+              "bg-gradient-to-r from-primary-400 to-primary-100 bg-clip-text text-transparent dark:from-tertiary-400 dark:to-tertiary-300",
+            ],
+            color === "muted" && [
+              "text-typography-300 dark:text-typography-600",
+            ],
             color === "danger" && ["text-d-200"],
             color === "ready" && ["text-ready-500"],
           ],

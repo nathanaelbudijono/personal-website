@@ -1,4 +1,4 @@
-import IconButton from "@/components/buttons/icon-button";
+import { clsx } from "clsx";
 import ActiveLink from "@/components/links/active-link";
 import UnstyledLink from "@/components/links/unstyled-link";
 import { useTheme } from "next-themes";
@@ -20,7 +20,13 @@ export default function Navbar() {
     return null;
   }
   return (
-    <main className="px-16 max-md:px-6 sticky top-0 bg-secondary-600 bg-opacity-40 backdrop-blur-[2px] z-10 ">
+    <main
+      className={clsx(
+        "px-16 max-md:px-6 sticky top-0 z-10",
+        " bg-secondary-600  bg-opacity-40 backdrop-blur-[2px] ",
+        "dark:bg-quaternary-200 dark:bg-opacity-40"
+      )}
+    >
       <section className="max-w-4xl mx-auto">
         <div className="flex justify-between items-center py-4">
           <UnstyledLink href="/">
@@ -35,7 +41,10 @@ export default function Navbar() {
             ))}
             <button
               onClick={toggleTheme}
-              className="px-2.5 py-2 rounded-md hover:bg-d-500 dark:hover:bg-n-300 transition-all duration-200 ease-in"
+              className={clsx(
+                "px-2.5 py-2 rounded-md hover:bg-primary-300 text-typography-100 transition-all duration-200 ease-in",
+                "dark:hover:bg-tertiary-300 text-typography-800"
+              )}
             >
               {theme === "dark" ? <CiDark /> : <CiSun />}
             </button>

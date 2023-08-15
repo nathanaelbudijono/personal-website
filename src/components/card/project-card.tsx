@@ -37,7 +37,8 @@ export default function ProjectCard({
         "overflow-hidden border border-primary-700 rounded-md text-typography-100 h-[414px]",
         "transition-all duration-300 ease-in-out",
         "border border-primary-400",
-        "hover:scale-[1.02]"
+        "hover:scale-[1.02]",
+        "dark:border-tertiary-300"
       )}
       {...rest}
     >
@@ -68,7 +69,7 @@ export default function ProjectCard({
         <div className="px-6 pt-4 pb-6">
           <div className="flex justify-between items-center">
             <Typography variant="h4">{title}</Typography>
-            <MdReadMore size={20} />
+            <MdReadMore size={20} className="dark:text-typography-800" />
           </div>
 
           <Typography variant="small" color="muted">
