@@ -55,7 +55,7 @@ const Typography: TypographyComponent = React.forwardRef(
         className={cn(
           [
             variant === "h1" && [
-              "scroll-m-20 text-4xl font-[600] tracking-tight",
+              "scroll-m-20 text-4xl font-[600] tracking-tight max-md:text-3xl",
             ],
             variant === "h2" && [
               "scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 ",
@@ -66,7 +66,7 @@ const Typography: TypographyComponent = React.forwardRef(
             variant === "h4" && [
               "scroll-m-20 pb-2 text-lg font-[500] tracking-tight",
             ],
-            variant === "p" && ["leading-none text-base font-[400]"],
+            variant === "p" && ["leading-none text-base font-[400] "],
             variant === "blockquote" && ["mt-6 border-l-2 pl-6 italic"],
             variant === "code" && [
               "relative w-fit rounded bg-brand-200 px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold",

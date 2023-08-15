@@ -18,7 +18,7 @@ export default function Box({
   return (
     <div
       className={cn(
-        "-z-[100] rounded-[30px] absolute bottom-5 -right-52 rotate-[40deg]",
+        "-z-[100] rounded-[30px] absolute bottom-10 -right-52 rotate-[40deg]",
         [
           variant === "primary" && [
             "bg-gradient-to-r from-primary-400 to-primary-100",

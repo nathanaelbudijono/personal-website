@@ -6,12 +6,13 @@ type FrammerProps = {
 };
 
 export const Framer: React.FC<FrammerProps> = ({ children, delay = 0.3 }) => {
-  const ref = useRef<HTMLElement | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
   return (
     <section ref={ref}>
       <AnimatePresence>
         <motion.div
+          ref={ref}
           initial={{ opacity: 0, y: 100, filter: "blur(1px)" }}
           animate={{
             opacity: isInView ? 1 : 0,

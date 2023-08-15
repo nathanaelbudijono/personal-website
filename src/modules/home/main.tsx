@@ -5,7 +5,7 @@ import Typography from "@/components/core/typography";
 import Box from "@/components/graphic/box";
 import ButtonLink from "@/components/links/button-links";
 
-import { AiFillGithub, AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
 export default function MainPage() {
   return (
@@ -15,8 +15,8 @@ export default function MainPage() {
         description="A Math enthusiast who dreams to build Computer Science with Mathematics. Currently learning Software Development as a full-stack developer. I also enjoy writing blogs and documentation regarding certain past projects ."
       />
       <Framer>
-        <section className="w-2/3">
-          <div className="flex gap-2 mb-5">
+        <section className="w-2/3 max-xs:w-full">
+          <div className="flex gap-2 mb-5 max-sm:flex-col">
             <Typography variant="h1">Hi!, you can call me</Typography>{" "}
             <Typography variant="h1" color="gradient">
               Nathan.
@@ -60,10 +60,5 @@ const Links = [
     link: "https://www.linkedin.com/in/nathanael-budijono/",
     title: "LinkedIn",
     icon: AiFillLinkedin,
-  },
-  {
-    link: "https://www.instagram.com/nathanaelbudijono/?igshid=YmMyMTA2M2Y%3D",
-    title: "Instagram",
-    icon: AiFillInstagram,
   },
 ];
