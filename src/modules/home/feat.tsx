@@ -6,7 +6,7 @@ import ArrowLink from "@/components/links/arrow-link";
 
 export default function Feat() {
   return (
-    <Layout className="pt-[110px] -z-10 max-xs:h-full">
+    <Layout className="pt-[110px] -z-10 max-sm:h-full">
       <Framer>
         <Typography variant="h1" color="gradient">
           Featured
