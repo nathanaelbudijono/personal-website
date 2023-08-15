@@ -16,7 +16,7 @@ const UnderlineLink = React.forwardRef<HTMLAnchorElement, UnstyledLinkProps>(
             "flex items-center gap-2",
             "bg-left-bottom bg-gradient-to-r from-primary-400 to-primary-100 bg-[length:0%_2px]",
             "dark:from-quaternary-400 dark:to-quaternary-100",
-            "text-sm",
+            "text-xs",
             "bg-no-repeat group-hover:bg-[length:100%_2px]",
             "transition-all duration-500 ease-out",
             "text-typography-100 dark:text-tertiary-400"
