@@ -6,7 +6,7 @@ type FrammerProps = {
 };
 
 export const Framer: React.FC<FrammerProps> = ({ children, delay = 0.3 }) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement | null>(null);
   const isInView = useInView(ref, { once: true });
   return (
     <section ref={ref}>
@@ -18,7 +18,7 @@ export const Framer: React.FC<FrammerProps> = ({ children, delay = 0.3 }) => {
             y: isInView ? 0 : 100,
             filter: "blur(0px)",
           }}
-          transition={{ delay: delay, duration: 0.23 }}
+          transition={{ delay: delay, duration: 0.3 }}
         >
           {children}
         </motion.div>

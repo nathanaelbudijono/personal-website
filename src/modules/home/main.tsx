@@ -1,16 +1,22 @@
 import { Framer } from "@/components/core/framer";
 import Layout from "@/components/core/layout";
+import Seo from "@/components/core/seo";
 import Typography from "@/components/core/typography";
+import Box from "@/components/graphic/box";
 import ButtonLink from "@/components/links/button-links";
 
 import { AiFillGithub, AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
 
 export default function MainPage() {
   return (
-    <Layout>
+    <Layout className="overflow-hidden mt-10">
+      <Seo
+        title="Home"
+        description="A Math enthusiast who dreams to build Computer Science with Mathematics. Currently learning Software Development as a full-stack developer. I also enjoy writing blogs and documentation regarding certain past projects ."
+      />
       <Framer>
-        <section>
-          <div className="flex gap-2 mb-3">
+        <section className="w-2/3">
+          <div className="flex gap-2 mb-5">
             <Typography variant="h1">Hi!, you can call me</Typography>{" "}
             <Typography variant="h1" color="gradient">
               Nathan.
@@ -39,8 +45,7 @@ export default function MainPage() {
           </Framer>
         </section>
       </Framer>
-
-      <section className="-z-[100] bg-gradient-to-r from-primary-400 to-primary-100 w-[380px] h-[200px] sm:w-[600px] sm:h-[230px] md:w-[650px] md:h-[260px] rounded-[30px] absolute bottom-5 -right-52 rotate-[40deg]"></section>
+      <Box variant="primary" />
     </Layout>
   );
 }

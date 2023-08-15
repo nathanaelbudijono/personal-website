@@ -8,8 +8,10 @@ export default function Navbar() {
         <UnstyledLink href="/">Logo</UnstyledLink>
       </div>
       <div className="flex gap-3">
-        {Links.map((item) => (
-          <ActiveLink href={item.link}>{item.title}</ActiveLink>
+        {Links.map((item, index) => (
+          <ActiveLink key={index} href={item.link}>
+            {item.title}
+          </ActiveLink>
         ))}
       </div>
     </section>

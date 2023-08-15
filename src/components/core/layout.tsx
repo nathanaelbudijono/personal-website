@@ -7,7 +7,13 @@ type LayoutProps = {
 
 export default function Layout({ className, children, ...rest }: LayoutProps) {
   return (
-    <div className={cn("h-screen max-w-4xl mx-auto flex flex-col")} {...rest}>
+    <div
+      className={cn(
+        "h-screen max-w-4xl mx-auto flex flex-col relative",
+        className
+      )}
+      {...rest}
+    >
       {children}
     </div>
   );
