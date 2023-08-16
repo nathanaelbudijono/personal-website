@@ -3,7 +3,6 @@ import { Framer } from "@/components/core/framer";
 import Layout from "@/components/core/layout";
 import Seo from "@/components/core/seo";
 import Typography from "@/components/core/typography";
-import ShortsCardContent from "@/constant/shorts-card-constant";
 import useShorts from "@/lib/short-search";
 import ShortSearchInput from "@/modules/shorts/short-search-input";
 
