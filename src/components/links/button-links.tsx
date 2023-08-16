@@ -54,6 +54,7 @@ const ButtonLink = React.forwardRef<HTMLButtonElement, ButtonProps>(
           [
             variant === "primary" && [
               "bg-gradient-to-r from-primary-400  to-primary-100",
+              "dark:from-quaternary-300 dark:to-quaternary-200",
             ],
 
             variant === "outline" && [
