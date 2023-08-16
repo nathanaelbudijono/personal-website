@@ -35,6 +35,7 @@ export default function ShortsPage() {
               nextjs={item?.nextjs}
               postgre={item?.postgre}
               tailwind={item?.tailwind}
+              typescript={item?.typescript}
               href={item.href}
             />
           </Framer>

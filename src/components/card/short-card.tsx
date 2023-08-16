@@ -5,7 +5,11 @@ import Tag from "../core/tags";
 import UnstyledLink from "../links/unstyled-link";
 
 import { TbBrandNextjs } from "react-icons/tb";
-import { BiLogoPostgresql, BiLogoTailwindCss } from "react-icons/bi";
+import {
+  BiLogoPostgresql,
+  BiLogoTailwindCss,
+  BiLogoTypescript,
+} from "react-icons/bi";
 import { MdReadMore } from "react-icons/md";
 
 type ProjectCardProps = {
@@ -17,6 +21,7 @@ type ProjectCardProps = {
   nextjs?: boolean;
   postgre?: boolean;
   tailwind?: boolean;
+  typescript?: boolean;
 } & React.ComponentPropsWithoutRef<"div">;
 
 export default function ShortCard({
@@ -28,13 +33,14 @@ export default function ShortCard({
   nextjs,
   postgre,
   tailwind,
+  typescript,
   className,
   ...rest
 }: ProjectCardProps) {
   return (
     <div
       className={cn(
-        "overflow-hidden border border-primary-700 rounded-md text-typography-100 h-50",
+        "overflow-hidden border border-primary-700 rounded-md text-typography-100 h-[146px]",
         "transition-all duration-300 ease-in-out",
         "border border-primary-400",
         "hover:scale-[1.02]",
@@ -46,6 +52,11 @@ export default function ShortCard({
         <div className="px-6 pt-4 flex justify-between items-center">
           <div className="flex gap-1">
             {nextjs && <Tag leftIcon={TbBrandNextjs}>NextJs</Tag>}
+            {typescript && (
+              <Tag leftIcon={BiLogoTypescript} color="typescript">
+                typescript
+              </Tag>
+            )}
             {postgre && (
               <Tag leftIcon={BiLogoPostgresql} color="postgre">
                 postgre
@@ -66,7 +77,7 @@ export default function ShortCard({
             <Typography variant="h4">{title}</Typography>
             <MdReadMore size={20} className="dark:text-typography-800" />
           </div>
-          <Typography variant="small" color="muted">
+          <Typography variant="small" color="muted" className="leading-[16px]">
             {desc}
           </Typography>
         </div>
