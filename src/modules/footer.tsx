@@ -1,19 +1,13 @@
-import Button from "@/components/buttons/button";
 import IconButton from "@/components/buttons/icon-button";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/core/tooltip";
 import Typography from "@/components/core/typography";
 import UnderlineLink from "@/components/links/underline-link";
+import UnstyledLink from "@/components/links/unstyled-link";
 
-import { AiOutlineMail, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import { AiFillMail, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 
 export default function Footer() {
   return (
-    <footer className="px-16 max-md:px-6 h-[15vh] text-center py-5 mt-5">
+    <footer className="px-16 max-md:px-6 h-[20vh] text-center py-5 mt-5">
       <section className="max-w-4xl mx-auto flex justify-center flex-col items-center gap-1">
         <div>
           <Typography variant="small">
@@ -21,11 +15,17 @@ export default function Footer() {
           </Typography>
           <div className="flex gap-[1.5px] items-center mt-1">
             <Typography variant="small" className="text-xs">
-              Hosted on
+              Hosted
+            </Typography>
+            <Typography variant="small" className="text-xs">
+              on
             </Typography>
             <UnderlineLink href="https://vercel.com">Vercel.</UnderlineLink>
             <Typography variant="small" className="text-xs">
-              Made by
+              Made
+            </Typography>
+            <Typography variant="small" className="text-xs">
+              by
             </Typography>
             <UnderlineLink href="https://nextjs.org">NextJs</UnderlineLink>
             <Typography variant="small" className="text-xs">
@@ -41,42 +41,32 @@ export default function Footer() {
           </div>
         </div>
         <div>
-          <TooltipProvider delayDuration={300}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <IconButton variant="ghost" icon={AiOutlineMail} size="sm" />
-              </TooltipTrigger>
-              <TooltipContent side="top">
-                <Typography variant="small">
-                  nathanaelbudijono@gmail.com
-                </Typography>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-          <TooltipProvider delayDuration={300}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <IconButton variant="ghost" icon={AiFillLinkedin} size="sm" />
-              </TooltipTrigger>
-              <TooltipContent side="top">
-                <Typography variant="small">nathanael budijono</Typography>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-          <TooltipProvider delayDuration={300}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <IconButton variant="ghost" icon={AiOutlineMail} size="sm" />
-              </TooltipTrigger>
-              <TooltipContent side="top">
-                <Typography variant="small">
-                  nathanaelbudijono@gmail.com
-                </Typography>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+          <UnstyledLink href="mailto:nathanaelbudijono@gmail.com">
+            <IconButton variant="ghost" icon={AiFillMail} />
+          </UnstyledLink>
+          <UnstyledLink href="https://github.com/nathanaelbudijono">
+            <IconButton variant="ghost" icon={AiFillGithub} />
+          </UnstyledLink>
+          <UnstyledLink href="https://www.linkedin.com/in/nathanael-budijono/">
+            <IconButton variant="ghost" icon={AiFillLinkedin} />
+          </UnstyledLink>
         </div>
       </section>
     </footer>
   );
 }
+
+const icons = [
+  {
+    icon: "AiFillMail",
+    link: "mailto:nathanaelbudijono@gmail.com",
+  },
+  {
+    icon: "AiFillGithub",
+    link: "https://github.com/nathanaelbudijono",
+  },
+  {
+    icon: "AiFillLinkedin",
+    link: "https://www.linkedin.com/in/nathanael-budijono/",
+  },
+];
