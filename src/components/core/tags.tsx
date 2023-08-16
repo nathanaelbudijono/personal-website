@@ -5,7 +5,7 @@ import { IconType } from "react-icons";
 const TAG_SIZE = ["sm", "base"] as const;
 type TagSize = (typeof TAG_SIZE)[number];
 
-const TAG_COLOR = ["nextjs", "postgre", "tailwind"] as const;
+const TAG_COLOR = ["nextjs", "postgre", "tailwind", "typescript"] as const;
 type TagColor = (typeof TAG_COLOR)[number];
 
 type TagProps = {
@@ -38,7 +38,8 @@ const Tag = React.forwardRef<HTMLDivElement, TagProps>(
           color === "nextjs" && "bg-secondary-600  text-typography-100",
           color === "postgre" && "bg-[#e2e9ef] text-[#2596be]",
           color === "tailwind" && "bg-primary-400 text-primary-100",
-          "inline-flex items-center gap-1 px-1 rounded-md",
+          color === "typescript" && "bg-primary-200 text-typogrpahy-100",
+          "inline-flex justify-center items-center gap-1 px-1 rounded-md",
           className
         )}
         ref={ref}

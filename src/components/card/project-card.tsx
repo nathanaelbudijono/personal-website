@@ -5,7 +5,11 @@ import Tag from "../core/tags";
 import UnstyledLink from "../links/unstyled-link";
 
 import { TbBrandNextjs } from "react-icons/tb";
-import { BiLogoPostgresql, BiLogoTailwindCss } from "react-icons/bi";
+import {
+  BiLogoPostgresql,
+  BiLogoTailwindCss,
+  BiLogoTypescript,
+} from "react-icons/bi";
 import { MdReadMore } from "react-icons/md";
 
 type ProjectCardProps = {
@@ -17,6 +21,7 @@ type ProjectCardProps = {
   nextjs?: boolean;
   postgre?: boolean;
   tailwind?: boolean;
+  typescript?: boolean;
 } & React.ComponentPropsWithoutRef<"div">;
 
 export default function ProjectCard({
@@ -28,6 +33,7 @@ export default function ProjectCard({
   nextjs,
   postgre,
   tailwind,
+  typescript,
   className,
   ...rest
 }: ProjectCardProps) {
@@ -54,6 +60,11 @@ export default function ProjectCard({
             {tailwind && (
               <Tag leftIcon={BiLogoTailwindCss} color="tailwind">
                 tailwind
+              </Tag>
+            )}
+            {typescript && (
+              <Tag leftIcon={BiLogoTypescript} color="typescript">
+                typescript
               </Tag>
             )}
           </div>
