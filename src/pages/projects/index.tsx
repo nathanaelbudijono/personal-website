@@ -1,6 +1,7 @@
 import ProjectCard from "@/components/card/project-card";
 import { Framer } from "@/components/core/framer";
 import Layout from "@/components/core/layout";
+import Seo from "@/components/core/seo";
 import Typography from "@/components/core/typography";
 import ProjectCardConstant from "@/constant/project-card-constant";
 
@@ -8,6 +9,10 @@ export default function ProjectPage() {
   const { cards } = ProjectCardConstant;
   return (
     <Layout className="max-sm:h-full">
+      <Seo
+        templateTitle="Projects"
+        description="Showcase of my experiences throughout my learning process."
+      />
       <Framer>
         <Typography variant="h1" color="gradient">
           Projects
