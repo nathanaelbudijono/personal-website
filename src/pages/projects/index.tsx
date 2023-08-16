@@ -12,9 +12,6 @@ export default function ProjectPage() {
         <Typography variant="h1" color="gradient">
           Projects
         </Typography>
-        <Typography variant="small" className="mt-3">
-          Collection of my past projects.
-        </Typography>
       </Framer>
       <section className="w-full mt-5 grid grid-cols-2 max-sm:grid-cols-1 gap-5">
         {cards.map((item, index) => (
