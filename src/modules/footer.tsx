@@ -44,10 +44,34 @@ export default function Footer() {
           <TooltipProvider delayDuration={300}>
             <Tooltip>
               <TooltipTrigger asChild>
-                <IconButton variant="ghost" icon={AiOutlineMail} />
+                <IconButton variant="ghost" icon={AiOutlineMail} size="sm" />
               </TooltipTrigger>
-              <TooltipContent side="right">
-                <Typography variant="p">This is NextJs</Typography>
+              <TooltipContent side="top">
+                <Typography variant="small">
+                  nathanaelbudijono@gmail.com
+                </Typography>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+          <TooltipProvider delayDuration={300}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <IconButton variant="ghost" icon={AiFillLinkedin} size="sm" />
+              </TooltipTrigger>
+              <TooltipContent side="top">
+                <Typography variant="small">nathanael budijono</Typography>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+          <TooltipProvider delayDuration={300}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <IconButton variant="ghost" icon={AiOutlineMail} size="sm" />
+              </TooltipTrigger>
+              <TooltipContent side="top">
+                <Typography variant="small">
+                  nathanaelbudijono@gmail.com
+                </Typography>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
