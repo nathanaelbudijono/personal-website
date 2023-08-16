@@ -64,7 +64,7 @@ export default function ProjectCard({
         <img
           src="https://images.unsplash.com/photo-1691145697326-aa4fa5da7174?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80"
           alt=""
-          className="object-cover h-56 w-full"
+          className="object-cover h-56 max-sm:h-52 w-full"
         />
         <div className="px-6 pt-4 pb-6">
           <div className="flex justify-between">
