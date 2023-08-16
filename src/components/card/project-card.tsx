@@ -55,6 +55,11 @@ export default function ProjectCard({
         <div className="px-6 py-4 flex justify-between items-center">
           <div className="flex gap-1">
             {nextjs && <Tag leftIcon={TbBrandNextjs}>NextJs</Tag>}
+            {typescript && (
+              <Tag leftIcon={BiLogoTypescript} color="typescript">
+                typescript
+              </Tag>
+            )}
             {postgre && (
               <Tag leftIcon={BiLogoPostgresql} color="postgre">
                 postgre
@@ -63,11 +68,6 @@ export default function ProjectCard({
             {tailwind && (
               <Tag leftIcon={BiLogoTailwindCss} color="tailwind">
                 tailwind
-              </Tag>
-            )}
-            {typescript && (
-              <Tag leftIcon={BiLogoTypescript} color="typescript">
-                typescript
               </Tag>
             )}
             {prisma && (
