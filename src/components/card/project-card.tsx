@@ -90,8 +90,7 @@ export default function ProjectCard({
             <Typography variant="h4">{title}</Typography>
             <MdReadMore size={20} className="dark:text-typography-800" />
           </div>
-
-          <Typography variant="small" color="muted">
+          <Typography variant="small" color="muted" className="leading-[16px]">
             {desc}
           </Typography>
         </div>
