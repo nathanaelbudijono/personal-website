@@ -35,8 +35,8 @@ const Tag = React.forwardRef<HTMLDivElement, TagProps>(
             size === "sm" && ["p-0.5 text-xs font-[400]"],
             size === "base" && ["p-1 text-sm"],
           ],
-          color === "nextjs" && "bg-secondary-500 text-typography-300",
-          color === "postgre" && "bg-teal-300 text-blue-800",
+          color === "nextjs" && "bg-secondary-600  text-typography-100",
+          color === "postgre" && "bg-[#e2e9ef] text-[#2596be]",
           color === "tailwind" && "bg-primary-400 text-primary-100",
           "inline-flex items-center gap-1 px-1 rounded-md",
           className
