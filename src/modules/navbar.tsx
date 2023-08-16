@@ -37,7 +37,7 @@ export default function Navbar() {
           <button
             onClick={toggleTheme}
             className={clsx(
-              "px-2.5 py-2 rounded-md hover:bg-primary-300 text-typography-100 ",
+              "px-2.5 py-2 text-lg rounded-md hover:bg-primary-300 text-typography-100 ",
               "dark:hover:bg-tertiary-300 dark:text-typography-800",
               "transition-all duration-200 ease-in"
             )}
