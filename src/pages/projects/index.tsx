@@ -32,6 +32,8 @@ export default function ProjectPage() {
               nextjs={item?.nextjs}
               postgre={item?.postgre}
               tailwind={item?.tailwind}
+              typescript={item?.typescript}
+              prisma={item?.prisma}
               href={item.href}
             />
           </Framer>
