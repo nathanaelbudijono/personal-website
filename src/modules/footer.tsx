@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="px-16 max-md:px-6 h-[20vh] text-center py-5 mt-5">
       <section className="max-w-4xl mx-auto flex justify-center flex-col items-center gap-1">
         <div>
-          <Typography variant="small">
+          <Typography variant="small" className="text-xs">
             © {new Date().getFullYear()} by Nathanael
           </Typography>
           <div className="flex gap-[1.5px] items-center mt-1">
