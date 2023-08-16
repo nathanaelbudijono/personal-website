@@ -12,7 +12,7 @@ export default function Feat() {
           Featured
         </Typography>
         <Typography variant="small" className="mt-3">
-          Collection of my past projects.
+          Some of my past projects.
         </Typography>
       </Framer>
       <section className="w-full mt-5 grid grid-cols-2 max-sm:grid-cols-1 gap-5">
