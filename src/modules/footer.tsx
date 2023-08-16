@@ -40,7 +40,7 @@ export default function Footer() {
             <UnderlineLink href="https://mdxjs.com">MDX</UnderlineLink>
           </div>
         </div>
-        <div>
+        <div className="flex gap-2">
           <UnstyledLink href="mailto:nathanaelbudijono@gmail.com">
             <IconButton variant="ghost" icon={AiFillMail} />
           </UnstyledLink>
