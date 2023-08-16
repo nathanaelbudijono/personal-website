@@ -12,10 +12,10 @@ export const Framer: React.FC<FrammerProps> = ({ children, delay = 0.3 }) => {
     <section ref={sectionRef}>
       <AnimatePresence>
         <motion.div
-          initial={{ opacity: 0, y: 100, filter: "blur(1px)" }}
+          initial={{ opacity: 0, y: 60, filter: "blur(1.5px)" }}
           animate={{
             opacity: isInView ? 1 : 0,
-            y: isInView ? 0 : 100,
+            y: isInView ? 0 : 60,
             filter: "blur(0px)",
           }}
           transition={{ delay: delay, duration: 0.3 }}
