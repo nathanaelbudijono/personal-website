@@ -13,14 +13,12 @@ export default function ProjectPage() {
         templateTitle="Projects"
         description="Showcase of my experiences throughout my learning process."
       />
-      <Framer>
-        <Typography variant="h1" color="gradient">
-          Projects
-        </Typography>
-        <Typography variant="small" className="mt-3">
-          Showcase of my experiences throughout my learning process.
-        </Typography>
-      </Framer>
+      <Typography variant="h1" color="gradient">
+        Projects
+      </Typography>
+      <Typography variant="small" className="mt-3">
+        Showcase of my experiences throughout my learning process.
+      </Typography>
       <section className="w-full mt-5 grid grid-cols-2 max-sm:grid-cols-1 gap-5">
         {cards.map((item, index) => (
           <Framer delay={index * 0.8} key={index}>

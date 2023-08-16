@@ -7,14 +7,12 @@ import ArrowLink from "@/components/links/arrow-link";
 export default function Feat() {
   return (
     <Layout className=" max-sm:h-full">
-      <Framer>
-        <Typography variant="h1" color="gradient">
-          Featured
-        </Typography>
-        <Typography variant="small" className="mt-3">
-          Some of my past projects.
-        </Typography>
-      </Framer>
+      <Typography variant="h1" color="gradient">
+        Featured
+      </Typography>
+      <Typography variant="small" className="mt-3">
+        Some of my past projects.
+      </Typography>
       <section className="w-full mt-5 grid grid-cols-2 max-sm:grid-cols-1 gap-5">
         {project.map((item, index) => (
           <Framer delay={index * 0.8} key={index}>

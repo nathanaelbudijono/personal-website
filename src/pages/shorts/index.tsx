@@ -15,16 +15,14 @@ export default function ShortsPage() {
         templateTitle="Shorts"
         description="Shorts are a small documentations about a specific topic."
       />
-      <Framer>
-        <Typography variant="h1" color="gradient">
-          Shorts
-        </Typography>
-        <Typography variant="small" className="mt-3">
-          Shorts are a collection of small documentations about a specific topic
-          that I have learned.
-        </Typography>
-        <ShortSearchInput search={search} setSearch={setSearch} />
-      </Framer>
+      <Typography variant="h1" color="gradient">
+        Shorts
+      </Typography>
+      <Typography variant="small" className="mt-3">
+        Shorts are a collection of small documentations about a specific topic
+        that I have learned.
+      </Typography>
+      <ShortSearchInput search={search} setSearch={setSearch} />
       <section className="grid grid-cols-2 gap-5 mt-5 w-full max-sm:grid-cols-1">
         {shortsFilter.map((item, index) => (
           <Framer delay={index * 0.8} key={index}>
