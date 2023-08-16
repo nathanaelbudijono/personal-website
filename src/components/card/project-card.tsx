@@ -11,6 +11,7 @@ import {
   BiLogoTypescript,
 } from "react-icons/bi";
 import { MdReadMore } from "react-icons/md";
+import { SiPrisma } from "react-icons/si";
 
 type ProjectCardProps = {
   title: string;
@@ -22,6 +23,7 @@ type ProjectCardProps = {
   postgre?: boolean;
   tailwind?: boolean;
   typescript?: boolean;
+  prisma?: boolean;
 } & React.ComponentPropsWithoutRef<"div">;
 
 export default function ProjectCard({
@@ -34,6 +36,7 @@ export default function ProjectCard({
   postgre,
   tailwind,
   typescript,
+  prisma,
   className,
   ...rest
 }: ProjectCardProps) {
@@ -65,6 +68,11 @@ export default function ProjectCard({
             {typescript && (
               <Tag leftIcon={BiLogoTypescript} color="typescript">
                 typescript
+              </Tag>
+            )}
+            {prisma && (
+              <Tag leftIcon={SiPrisma} color="prisma">
+                prisma
               </Tag>
             )}
           </div>
