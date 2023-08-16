@@ -20,8 +20,8 @@ export default function ShortsPage() {
           Shorts
         </Typography>
         <Typography variant="small" className="mt-3">
-          Shorts are a small documentations about a specific topic that I have
-          learned.
+          Shorts are a collection of small documentations about a specific topic
+          that I have learned.
         </Typography>
         <ShortSearchInput search={search} setSearch={setSearch} />
       </Framer>
