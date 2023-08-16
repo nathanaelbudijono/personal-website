@@ -22,10 +22,10 @@ export default function Footer() {
             </Typography>
             <UnderlineLink href="https://vercel.com">Vercel.</UnderlineLink>
             <Typography variant="small" className="text-xs">
-              Made
+              Build
             </Typography>
             <Typography variant="small" className="text-xs">
-              by
+              with
             </Typography>
             <UnderlineLink href="https://nextjs.org">NextJs</UnderlineLink>
             <Typography variant="small" className="text-xs">
