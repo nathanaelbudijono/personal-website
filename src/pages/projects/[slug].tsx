@@ -9,7 +9,7 @@ import {
   ProjectPostMeta,
   getPostProjectFromSlug,
   getSlugsProject,
-} from "@/lib/api";
+} from "@/lib/api-project";
 import Seo from "@/components/core/seo";
 import Layout from "@/components/core/layout";
 
