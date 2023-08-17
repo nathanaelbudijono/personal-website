@@ -25,6 +25,7 @@ import Layout from "@/components/core/layout";
 import Typography from "@/components/core/typography";
 import UnderlineLink from "@/components/links/underline-link";
 import Tag from "@/components/core/tags";
+import Copy from "@/components/core/copy";
 
 interface MDXPost {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
@@ -36,10 +37,10 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
     <Layout className="h-full">
       <Seo templateTitle={post.meta.title} description={post.meta.excerpt} />
       <section className="overflow-hidden rounded-md shadow-sm">
-        <img src={post.meta.img} className="object-cover w-full h-full" />
+        <img src={post.meta.img} className="object-cover w-full h-[45vh]" />
       </section>
       <section className="mt-5">
-        <Typography variant="h3" color="gradient">
+        <Typography variant="h2" color="gradient">
           {post.meta.title}
         </Typography>
         <div className="mt-5">
@@ -108,7 +109,7 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
         <div className="h-[1px] w-full bg-primary-400 mt-5"></div>
       </section>
       <section className="mt-5">
-        <MDXRemote {...post.source} />
+        <MDXRemote {...post.source} components={{ Copy }} />
       </section>
     </Layout>
   );

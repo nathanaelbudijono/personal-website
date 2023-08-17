@@ -25,8 +25,10 @@ In addition to acquiring new skills, the primary objective of this project is to
 
 In this section, we'll zoom in on crafting a reusable button component that encapsulates both functionality and style. There are some required dependencies.
 
-- clsx
-- tailwind-merge
+- ◦ clsx
+- ◦ tailwind-merge
+
+<Copy />
 
 ```ts
 // /src/types/clsxm.tsx
@@ -41,6 +43,8 @@ export default function cn(...classes: ClassValue[]) {
 
 Next, on our button component we are going to define the button variant and button size.
 
+<Copy />
+
 ```ts
 // /src/components/button.tsx
 
@@ -50,15 +54,18 @@ const ButtonSize = ["sm", "base"] as const;
 
 Using typescript, we are going to define our types for safety.
 
+<Copy />
+
 ```ts
 type ButtonProps = {
-  isLoading?: boolean;
   variant?: (typeof ButtonVariant)[number];
   size?: (typeof ButtonSize)[number];
 } & React.ComponentPropsWithRef<"button">;
 ```
 
-then on our function
+Then on our function.
+
+<Copy />
 
 ```ts
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -106,6 +113,8 @@ export default Button;
 Note, you can edit the button to include icons. See repository.
 
 To use the button component on your page.
+
+<Copy />
 
 ```ts
 export default function index() {

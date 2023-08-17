@@ -12,3 +12,25 @@
   display: block;
   width: 100%;
 }
+
+@layer base {
+  h1 {
+    @apply mt-5 border-l-2 pl-5 border-primary-100 dark:border-quaternary-400 scroll-m-20 text-[22px] font-semibold tracking-tight text-typography-100 dark:text-typography-800;
+  }
+
+  p {
+    @apply mt-5 text-sm font-[400] leading-5 max-sm:text-xs text-typography-100 dark:text-typography-800;
+  }
+
+  li {
+    @apply mt-5 text-sm font-[400] leading-3 max-sm:text-xs text-typography-100 dark:text-typography-800;
+  }
+
+  code {
+    @apply mt-10 border border-primary-400 rounded-md dark:shadow-sm dark:border-tertiary-300 bg-secondary-200;
+  }
+
+  span {
+    @apply text-xs;
+  }
+}
