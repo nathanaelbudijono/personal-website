@@ -39,7 +39,11 @@ interface MDXPost {
 export default function ProjectContent({ post }: { post: MDXPost }) {
   return (
     <Layout className="h-full">
-      <Seo templateTitle={post.meta.title} description={post.meta.excerpt} />
+      <Seo
+        templateTitle={post.meta.title}
+        description={post.meta.excerpt}
+        siteName="Projects"
+      />
       <section className="overflow-hidden rounded-md shadow-sm">
         <img src={post.meta.img} className="object-cover w-full h-[45vh]" />
       </section>
