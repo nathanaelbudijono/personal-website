@@ -14,6 +14,9 @@ import Seo from "@/components/core/seo";
 import Layout from "@/components/core/layout";
 import Typography from "@/components/core/typography";
 
+import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
+import UnderlineLink from "@/components/links/underline-link";
+
 interface MDXPost {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
   meta: ProjectPostMeta;
@@ -23,25 +26,42 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
   return (
     <Layout>
       <Seo templateTitle={post.meta.title} description={post.meta.excerpt} />
-      <img
-        src={post.meta.img}
-        className="object-cover h-56 rounded-md shadow-sm"
-      />
+      <section className="h-64 overflow-hidden rounded-md shadow-sm flex justify-center items-center">
+        <img src={post.meta.img} className="object-cover" />
+      </section>
       <section className="mt-5">
         <Typography variant="h3" color="gradient">
           {post.meta.title}
         </Typography>
-        <div className="mt-2">
-          <Typography variant="small">
-            Written on {post.meta.date.slice(0, 15)}, by Nathanael
-          </Typography>
-          <Typography variant="small" color="muted">
+        <div className="mt-5">
+          <div className="flex justify-between items-center">
+            <div className="w-fit flex gap-2">
+              <UnderlineLink href={post.meta.github}>
+                <AiFillGithub className="text-typography-100 dark:text-typography-800" />
+                Repository
+              </UnderlineLink>
+              {post.meta.link ? (
+                <UnderlineLink href={post.meta.link}>
+                  <AiOutlineLink className="text-typography-100 dark:text-typography-800" />
+                  Live link
+                </UnderlineLink>
+              ) : (
+                ""
+              )}
+            </div>
+            <Typography variant="small" className="text-xs">
+              {post.meta.date.slice(0, 15)}
+            </Typography>
+          </div>
+          <Typography variant="small" color="muted" className="mt-5">
             {post.meta.excerpt}
           </Typography>
         </div>
-        <div className="h-[1px] w-full bg-primary-400"></div>
+        <div className="h-[1px] w-full bg-primary-400 mt-5"></div>
       </section>
-      <MDXRemote {...post.source} />
+      <section className="mt-5">
+        <MDXRemote {...post.source} />
+      </section>
     </Layout>
   );
 }

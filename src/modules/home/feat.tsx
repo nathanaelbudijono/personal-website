@@ -46,7 +46,7 @@ export default function Feat() {
 const project = [
   {
     title: "LNSW Ticketing",
-    desc: "Ticketing is a reporting web page for LNSW users who encounter troubles.",
+    desc: "A prototype ticketing web page for the ministry of finance. Web page is used for public users who encounter trouble.",
     date: "20-08-23",
     img: "/projects/lnsw.png",
     href: "/projects/lnsw-ticketing",
