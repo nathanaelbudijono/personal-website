@@ -8,7 +8,7 @@ export function openGraph({
   siteName,
   templateTitle,
   description,
-  logo = "https://ibb.co/f8dnQVv",
+  logo = "https://nathanaelbudijono.vercel.app/logo.png",
 }: OpenGraphType): string {
   const ogLogo = encodeURIComponent(logo);
   const ogSiteName = encodeURIComponent(siteName.trim());
