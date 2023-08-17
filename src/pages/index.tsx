@@ -4,8 +4,10 @@ import Layout from "@/components/core/layout";
 import Seo from "@/components/core/seo";
 import Typography from "@/components/core/typography";
 import ArrowLink from "@/components/links/arrow-link";
-import { ProjectPostMeta, getAllProject } from "@/lib/api-project";
+
 import MainPage from "@/modules/home/main";
+
+import { ProjectPostMeta, getAllProject } from "@/lib/api-project";
 
 export default function Home({ posts }: { posts: ProjectPostMeta[] }) {
   return (
