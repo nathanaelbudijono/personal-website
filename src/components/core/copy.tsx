@@ -16,11 +16,11 @@ export default function Copy() {
 
   return (
     <div
-      className="relative h-0 -mb-5 bottom-[1.35rem] lg:bottom-3.5 px-4 text-yellow-200 flex items-center justify-end"
+      className="relative h-0 -mb-5 bottom-[1.35rem] lg:bottom-3.5 px-4 text-typography-100 flex items-center justify-end"
       ref={ref}
     >
       <button
-        className={`relative top-14 p-2 text-yellow-200 opacity-50 hover:opacity-100 transition-all duration-300 rounded-md hover:bg-yellow-200/10 ${
+        className={`relative top-14 p-2 text-typography-100 opacity-50 hover:opacity-100 transition-all duration-300 rounded-md hover:bg-primary-300 dark:hover:bg-tertiary-300  ${
           copiedValue && "opacity-100"
         }`}
         onClick={() => copy(value)}
