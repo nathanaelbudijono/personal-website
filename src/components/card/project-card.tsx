@@ -43,7 +43,7 @@ export default function ProjectCard({
   return (
     <div
       className={cn(
-        "overflow-hidden border border-primary-700 rounded-md text-typography-100 h-[442px]",
+        "overflow-hidden border border-primary-700 rounded-md text-typography-100 h-[410px]",
         "transition-all duration-300 ease-in-out",
         "border border-primary-400",
         "hover:scale-[1.02]",

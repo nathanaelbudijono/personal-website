@@ -4,7 +4,9 @@ import { serialize } from "next-mdx-remote/serialize";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
+
 import "highlight.js/styles/atom-one-dark.css";
+
 import {
   ProjectPostMeta,
   getPostProjectFromSlug,
@@ -109,7 +111,15 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
         <div className="h-[1px] w-full bg-primary-400 mt-5"></div>
       </section>
       <section className="mt-5">
-        <MDXRemote {...post.source} components={{ Copy }} />
+        <MDXRemote
+          {...post.source}
+          components={{
+            h1: (props) => <h1 className="h1" {...props} />,
+            p: (props) => <p className="p" {...props} />,
+            li: (props) => <li className="li" {...props} />,
+            Copy,
+          }}
+        />
       </section>
     </Layout>
   );
