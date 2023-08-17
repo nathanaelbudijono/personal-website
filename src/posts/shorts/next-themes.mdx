@@ -19,20 +19,28 @@ Dark mode has been one of the biggest trends in user interface that has gained s
 
 To setup dark mode on NextJs, you will need to install next-themes. It is a lightweight, zero-runtime CSS-in-JS library that allows you to theme your app using CSS variables. It is also compatible with Tailwind CSS. What I love from this libary is that you can set up your button anywhere.
 
+On your tailwind config file add this.
+
+<Copy />
+
+```ts
+ darkMode: "class",
+```
+
 <Copy />
 
 ```tsx
 // src/components/navbar.tsx
 
 import clsx from "clsx";
-
 import {useTheme} from "next-themes";
-import {useEffect, useState} from "react";
-
 import { CiDark, CiSun } from "react-icons/ci";
 
 export default function Navbar() {
   const { setTheme, theme } = useTheme();
+   const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
   return (
     <main>
         <h1>My Page</h1>
@@ -52,7 +60,7 @@ export default function Navbar() {
 }
 ```
 
-On you app page. Wrap your component using ThemeProvider. _Dont worry clsx is just a tailwind CSS libary so that you have a clean CSS_.
+On you app page. Wrap your component using ThemeProvider, it saves your preferences to local storage. _Dont worry clsx is just a tailwind CSS libary so that you have a clean CSS_.
 
 <Copy />
 
@@ -70,6 +78,21 @@ export default function App({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
     </ThemeProvider>
   );
+}
+```
+
+If you are using NextJs add these line of codes at your navbar/button file to prevent hydration error.
+
+<Copy />
+
+```tsx
+const [mounted, setMounted] = useState<boolean>(false);
+
+useEffect(() => {
+  setMounted(true);
+}, []);
+if (!mounted) {
+  return null;
 }
 ```
 
