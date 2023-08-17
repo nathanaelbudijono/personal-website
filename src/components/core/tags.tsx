@@ -44,7 +44,7 @@ const Tag = React.forwardRef<HTMLDivElement, TagProps>(
           color === "nextjs" && "bg-secondary-400  text-typography-100",
           color === "postgre" && "bg-[#e2e9ef] text-[#2596be]",
           color === "tailwind" && "bg-primary-400 text-primary-100",
-          color === "typescript" && "bg-primary-200 text-typogrpahy-100",
+          color === "typescript" && "bg-primary-200 text-typography-100",
           color === "prisma" && "bg-typography-100 text-secondary-400",
           "inline-flex justify-center items-center gap-1 px-1 rounded-md",
           className

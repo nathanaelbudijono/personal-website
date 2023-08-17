@@ -10,12 +10,21 @@ import {
   getPostProjectFromSlug,
   getSlugsProject,
 } from "@/lib/api-project";
+
+import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
+import { TbBrandNextjs } from "react-icons/tb";
+import {
+  BiLogoPostgresql,
+  BiLogoTailwindCss,
+  BiLogoTypescript,
+} from "react-icons/bi";
+import { SiPrisma } from "react-icons/si";
+
 import Seo from "@/components/core/seo";
 import Layout from "@/components/core/layout";
 import Typography from "@/components/core/typography";
-
-import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
 import UnderlineLink from "@/components/links/underline-link";
+import Tag from "@/components/core/tags";
 
 interface MDXPost {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
@@ -56,6 +65,42 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
           <Typography variant="small" color="muted" className="mt-5">
             {post.meta.excerpt}
           </Typography>
+        </div>
+        <div className="mt-5 flex gap-2">
+          <Typography variant="small" className="text-xs">
+            Tech Stack used
+          </Typography>
+          <div className="flex gap-1">
+            {post.meta.nextjs ? <Tag leftIcon={TbBrandNextjs}>nextjs</Tag> : ""}
+            {post.meta.postgre ? (
+              <Tag leftIcon={BiLogoPostgresql} color="postgre">
+                postgre
+              </Tag>
+            ) : (
+              ""
+            )}
+            {post.meta.tailwind ? (
+              <Tag leftIcon={BiLogoTailwindCss} color="tailwind">
+                tailwind
+              </Tag>
+            ) : (
+              ""
+            )}
+            {post.meta.typescript ? (
+              <Tag leftIcon={BiLogoTypescript} color="typescript">
+                typescript
+              </Tag>
+            ) : (
+              ""
+            )}
+            {post.meta.prisma ? (
+              <Tag leftIcon={SiPrisma} color="prisma">
+                prisma
+              </Tag>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
         <div className="h-[1px] w-full bg-primary-400 mt-5"></div>
       </section>
