@@ -78,13 +78,6 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
             ) : (
               ""
             )}
-            {post.meta.tailwind === "y" ? (
-              <Tag leftIcon={BiLogoTailwindCss} color="tailwind">
-                tailwind
-              </Tag>
-            ) : (
-              ""
-            )}
             {post.meta.typescript === "y" ? (
               <Tag leftIcon={BiLogoTypescript} color="typescript">
                 typescript
@@ -92,6 +85,14 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
             ) : (
               ""
             )}
+            {post.meta.tailwind === "y" ? (
+              <Tag leftIcon={BiLogoTailwindCss} color="tailwind">
+                tailwind
+              </Tag>
+            ) : (
+              ""
+            )}
+
             {post.meta.prisma === "y" ? (
               <Tag leftIcon={SiPrisma} color="prisma">
                 prisma
