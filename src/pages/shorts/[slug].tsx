@@ -48,7 +48,7 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
         <Typography variant="h2" color="gradient">
           {post.meta.title}
         </Typography>
-        <div className="mt-5 flex justify-between">
+        <div className="mt-5 flex justify-between items-center">
           <div>
             <Typography variant="small" className="text-xs">
               Tech Stack used
