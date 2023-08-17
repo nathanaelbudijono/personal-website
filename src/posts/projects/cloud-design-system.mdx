@@ -13,8 +13,117 @@ link: https://cloud-design-system.vercel.app
 href: /projects/cloud-design-system
 ---
 
-# Project Overview
+# Description
 
-This project was inspired
+When it comes to building modern web applications, creating reusable components is a crucial skill. Reusable components not only make your codebase more organized but also enhance the maintainability and scalability of your projects.
 
-a quick
+# Objective
+
+In addition to acquiring new skills, the primary objective of this project is to craft a comprehensive library of reusable components. This library will serve as a valuable asset, enabling me to expedite website development by effortlessly integrating well-designed, consistent components that enhance user experience and streamline the development process.
+
+# Overview
+
+In this section, we'll zoom in on crafting a reusable button component that encapsulates both functionality and style. There are some required dependencies.
+
+- clsx
+- tailwind-merge
+
+```ts
+// /src/types/clsxm.tsx
+
+import clsx, { ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export default function cn(...classes: ClassValue[]) {
+  return twMerge(clsx(...classes));
+}
+```
+
+Next, on our button component we are going to define the button variant and button size.
+
+```ts
+// /src/components/button.tsx
+
+const ButtonVariant = ["primary", "outline"] as const;
+const ButtonSize = ["sm", "base"] as const;
+```
+
+Using typescript, we are going to define our types for safety.
+
+```ts
+type ButtonProps = {
+  isLoading?: boolean;
+  variant?: (typeof ButtonVariant)[number];
+  size?: (typeof ButtonSize)[number];
+} & React.ComponentPropsWithRef<"button">;
+```
+
+then on our function
+
+```ts
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    { children, className, variant = "primary", size = "base", ...rest },
+    ref
+  ) => {
+    return (
+      <button
+        ref={ref}
+        type="button"
+        disabled={disabled}
+        className={cn(
+          "inline-flex items-center justify-center rounded-lg ",
+          "focus:outline-none focus-visible:ring",
+          "shadow-sm",
+          "transition-colors duration-100",
+          "disabled:bg-d-200 disabled:border-0",
+          [
+            size === "base" && ["px-2.5 py-2"],
+            size === "sm" && ["px-2 py-1.5"],
+          ],
+          [
+            variant === "primary" && [
+              "bg-d-500 text-color-100",
+              "border border-d-600",
+              "dark:bg-n-200 dark:hover:border-n-300",
+              "hover:bg-d-600 hover:border-d-500",
+              "dark:hover:bg-n-200",
+            ],
+            variant === "outline" && [
+              "bg-clip-padding backdrop-filter backdrop-blur-sm border border-d-400 text-color-100",
+              "hover:bg-d-400 hover:text-typography-800",
+              "dark:hover:bg-n-400 dark:border-n-500",
+            ],
+          ],
+          className
+        )}
+        {...rest}
+      >
+        {children}
+      </button>
+    );
+  }
+);
+
+export default Button;
+```
+
+Note, you can edit the button to include icons. See repository.
+
+To use the button component on your page.
+
+```ts
+export default function index() {
+  return (
+    <>
+      <Button variant="primary" size="sm">
+        My Button
+      </Button>
+    </>
+  );
+}
+```
+
+# Lessons Gained
+
+Creating reusable components with Next.js, TypeScript, and Tailwind CSS has imparted lessons that transcend technical skills. Modular components enhance maintenance and updates, while reusability expedites development. TypeScript ensures type safety, and Tailwind CSS accelerates styling. Valuable insights from [Steven](https://steven2801.vercel.app) and [Theodorus Clarence](https://theodorusclarence.com) underscore the importance of community learning and growth in this dynamic field.
