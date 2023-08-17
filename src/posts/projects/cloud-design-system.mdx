@@ -70,13 +70,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         type="button"
-        disabled={disabled}
         className={cn(
           "inline-flex items-center justify-center rounded-lg ",
           "focus:outline-none focus-visible:ring",
           "shadow-sm",
           "transition-colors duration-100",
-          "disabled:bg-d-200 disabled:border-0",
           [
             size === "base" && ["px-2.5 py-2"],
             size === "sm" && ["px-2 py-1.5"],
