@@ -6,7 +6,79 @@ tailwind: n
 typescript: y
 prisma: n
 date: 09-08-23
-excerpt: Quick dark mode setup on NextJs with next-themes.
+excerpt: Prevent flashing when users wants to access an unautherized page.
 github: https://github.com/nathanaelbudijono/cloud-design-system
-href: /projects/prevent-flashing
+href: /shorts/prevent-flashing
 ---
+
+# Description
+
+Preventing content flashing during unauthorized page access is crucial for a seamless user experience. By leveraging getServerSideProps in Next.js, we can perform authentication checks on the server side before rendering, ensuring unauthorized users are seamlessly redirected without any unwanted content display. This approach offers a smoother and more secure interaction for users.
+
+# Overview
+
+We are going to use jwt for authentication. On this example jwt is stored in cookies and contains user ID and name.
+
+<Copy />
+
+```tsx
+/// src/lib/get-user-server-side.tsx
+
+import jwt from "jsonwebtoken";
+import { GetServerSidePropsContext } from "next";
+export async function getUser(ctx: GetServerSidePropsContext) {
+  const token = ctx.req.cookies.token as string;
+  if (token) {
+    const userToken = await new Promise((resolve, reject) => {
+      jwt.verify(
+        token.substring(1, token.length - 1),
+        process.env.TOKEN_SECRET as string,
+        {},
+        (err, token) => {
+          if (err) {
+            reject(err);
+          }
+          resolve(token);
+        }
+      );
+    });
+    return {
+      props: {
+        user: userToken,
+      },
+    };
+  } else {
+    return {
+      redirect: {
+        destination: "/",
+      },
+    };
+  }
+}
+```
+
+Now we can call this function on any page that we want to protect.
+
+```tsx
+// src/pages/dashboard.tsx
+
+import { getUser } from "@/hooks/get-user-server";
+import { GetServerSidePropsContext } from "next";
+
+Type User = {
+    id:number;
+    username:string
+}
+
+export default function Home({ user }: { user: User }) {
+  return (
+    <main>
+        <h1 variant="large">Welcome to dashboard, {user?.username}</h1>
+    </main>
+  );
+}
+
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+  return await getUser(ctx);
+}
+```

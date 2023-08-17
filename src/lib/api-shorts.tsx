@@ -23,7 +23,6 @@ export const getAllShorts = () => {
       if (a.meta.date < b.meta.date) return -1;
       return 0;
     });
-
   return shortsPost;
 };
 
