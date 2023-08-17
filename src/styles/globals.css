@@ -25,6 +25,10 @@
   @apply mt-5 text-sm font-[400] leading-3 max-sm:text-xs text-typography-100 dark:text-typography-800;
 }
 
+.a {
+  @apply text-primary-300 dark:text-tertiary-400;
+}
+
 @layer base {
   code {
     @apply mt-10 border border-primary-400 rounded-md dark:shadow-sm dark:border-tertiary-300 bg-secondary-200 text-xs;

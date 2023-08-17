@@ -123,6 +123,7 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
             h1: (props) => <h1 className="h1" {...props} />,
             p: (props) => <p className="p" {...props} />,
             li: (props) => <li className="li" {...props} />,
+            a: (props) => <a className="a" {...props} />,
             Copy,
             YouTube,
             ImageMdx,
