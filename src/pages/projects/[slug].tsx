@@ -62,15 +62,12 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
               {post.meta.date.slice(0, 15)}
             </Typography>
           </div>
-          <Typography variant="small" color="muted" className="mt-5">
-            {post.meta.excerpt}
-          </Typography>
         </div>
-        <div className="mt-5 flex gap-2">
+        <div className="mt-5">
           <Typography variant="small" className="text-xs">
             Tech Stack used
           </Typography>
-          <div className="flex gap-1">
+          <div className="flex gap-1 mt-2">
             {post.meta.nextjs ? <Tag leftIcon={TbBrandNextjs}>nextjs</Tag> : ""}
             {post.meta.postgre ? (
               <Tag leftIcon={BiLogoPostgresql} color="postgre">
@@ -101,6 +98,9 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
               ""
             )}
           </div>
+          <Typography variant="small" color="muted" className="mt-5">
+            {post.meta.excerpt}
+          </Typography>
         </div>
         <div className="h-[1px] w-full bg-primary-400 mt-5"></div>
       </section>
