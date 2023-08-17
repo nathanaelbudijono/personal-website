@@ -54,34 +54,26 @@ export default function ProjectCard({
       <UnstyledLink href={href}>
         <div className="px-6 py-4 flex justify-between items-center">
           <div className="flex gap-1">
-            {nextjs ? <Tag leftIcon={TbBrandNextjs}>NextJs</Tag> : ""}
-            {typescript ? (
+            {nextjs === "y" && <Tag leftIcon={TbBrandNextjs}>NextJs</Tag>}
+            {typescript === "y" && (
               <Tag leftIcon={BiLogoTypescript} color="typescript">
                 typescript
               </Tag>
-            ) : (
-              ""
             )}
-            {postgre ? (
+            {postgre === "y" && (
               <Tag leftIcon={BiLogoPostgresql} color="postgre">
                 postgre
               </Tag>
-            ) : (
-              ""
             )}
-            {tailwind ? (
+            {tailwind === "y" && (
               <Tag leftIcon={BiLogoTailwindCss} color="tailwind">
                 tailwind
               </Tag>
-            ) : (
-              ""
             )}
-            {prisma ? (
+            {prisma === "y" && (
               <Tag leftIcon={SiPrisma} color="prisma">
                 prisma
               </Tag>
-            ) : (
-              ""
             )}
           </div>
           <Typography variant="small" color="muted" className="text-xs">

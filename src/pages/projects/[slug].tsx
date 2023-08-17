@@ -68,29 +68,31 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
             Tech Stack used
           </Typography>
           <div className="flex gap-1 mt-2">
-            {post.meta.nextjs ? <Tag leftIcon={TbBrandNextjs}>nextjs</Tag> : ""}
-            {post.meta.postgre ? (
+            {post.meta.nextjs === "y" && (
+              <Tag leftIcon={TbBrandNextjs}>nextjs</Tag>
+            )}
+            {post.meta.postgre === "y" ? (
               <Tag leftIcon={BiLogoPostgresql} color="postgre">
                 postgre
               </Tag>
             ) : (
               ""
             )}
-            {post.meta.tailwind ? (
+            {post.meta.tailwind === "y" ? (
               <Tag leftIcon={BiLogoTailwindCss} color="tailwind">
                 tailwind
               </Tag>
             ) : (
               ""
             )}
-            {post.meta.typescript ? (
+            {post.meta.typescript === "y" ? (
               <Tag leftIcon={BiLogoTypescript} color="typescript">
                 typescript
               </Tag>
             ) : (
               ""
             )}
-            {post.meta.prisma ? (
+            {post.meta.prisma === "y" ? (
               <Tag leftIcon={SiPrisma} color="prisma">
                 prisma
               </Tag>
