@@ -22,7 +22,7 @@ export default function Home({ posts }: { posts: ProjectPostMeta[] }) {
           Featured
         </Typography>
         <Typography variant="small" className="mt-3">
-          Some of my past projects.
+          My latest past projects.
         </Typography>
         <section className="w-full mt-5 grid grid-cols-2 max-sm:grid-cols-1 gap-5">
           {posts.map((item, index) => (
