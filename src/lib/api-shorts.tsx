@@ -22,8 +22,8 @@ export const getAllShorts = () => {
       if (a.meta.date > b.meta.date) return 1;
       if (a.meta.date < b.meta.date) return -1;
       return 0;
-    })
-    .reverse();
+    });
+
   return shortsPost;
 };
 
@@ -42,7 +42,6 @@ export interface ShortsPostMeta {
   prisma: string;
   title: string;
   slug: string;
-  link: string;
   github: string;
   href: string;
 }
@@ -64,7 +63,6 @@ export const getPostShortsFromSlug = (slug: string): ShortsPost => {
       tailwind: data.tailwind,
       typescript: data.typescript,
       prisma: data.prisma,
-      link: data.link,
       github: data.github,
       href: data.href ?? "",
     },
