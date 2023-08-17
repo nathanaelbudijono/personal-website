@@ -77,7 +77,7 @@ export default function ShortCard({
             <Typography variant="h4">{title}</Typography>
             <MdReadMore size={20} className="dark:text-typography-800" />
           </div>
-          <Typography variant="small" color="muted" className="leading-[16px]">
+          <Typography variant="small" color="muted">
             {desc}
           </Typography>
         </div>
