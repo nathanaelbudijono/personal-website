@@ -1,14 +1,15 @@
 import Link, { LinkProps } from "next/link";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
 
 const ActiveLink = ({
   children,
   ...rest
 }: { children: React.ReactNode } & LinkProps) => {
   const { href } = rest;
-  const pathName = usePathname();
-
-  const isActive = pathName === href;
+  const router = useRouter();
+  const pathName = router.asPath;
+  const isActive =
+    pathName === href.toString() || pathName.startsWith(`${href.toString()}/`);
   return (
     <Link
       {...rest}
