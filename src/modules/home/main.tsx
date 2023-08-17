@@ -45,8 +45,8 @@ export default function MainPage() {
 
 const Links = [
   {
-    link: "https://github.com/nathanaelbudijono",
-    title: "Github",
+    link: "https://github.com/nathanaelbudijono/personal-website",
+    title: "Open source",
     icon: AiFillGithub,
   },
   {
