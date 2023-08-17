@@ -28,7 +28,8 @@ import Typography from "@/components/core/typography";
 import UnderlineLink from "@/components/links/underline-link";
 import Tag from "@/components/core/tags";
 import Copy from "@/components/core/copy";
-import YouTube from "@/components/core/youtube-iframe";
+import YouTube from "@/components/core/youtube-iframe-mdx";
+import ImageMdx from "@/components/core/image-mdx";
 
 interface MDXPost {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
@@ -120,6 +121,7 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
             li: (props) => <li className="li" {...props} />,
             Copy,
             YouTube,
+            ImageMdx,
           }}
         />
       </section>

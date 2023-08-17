@@ -27,7 +27,7 @@
 
 @layer base {
   code {
-    @apply mt-10 border border-primary-400 rounded-md dark:shadow-sm dark:border-tertiary-300 bg-secondary-200;
+    @apply mt-10 border border-primary-400 rounded-md dark:shadow-sm dark:border-tertiary-300 bg-secondary-200 text-xs;
   }
 
   span {
