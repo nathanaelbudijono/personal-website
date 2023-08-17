@@ -41,7 +41,6 @@ export interface ShortsPostMeta {
   typescript: string;
   prisma: string;
   title: string;
-  img: string;
   slug: string;
   link: string;
   github: string;
@@ -65,7 +64,6 @@ export const getPostShortsFromSlug = (slug: string): ShortsPost => {
       tailwind: data.tailwind,
       typescript: data.typescript,
       prisma: data.prisma,
-      img: data.img ?? "",
       link: data.link,
       github: data.github,
       href: data.href ?? "",

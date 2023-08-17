@@ -11,6 +11,7 @@ import {
   BiLogoTypescript,
 } from "react-icons/bi";
 import { MdReadMore } from "react-icons/md";
+import { SiPrisma } from "react-icons/si";
 
 type ProjectCardProps = {
   title: string;
@@ -18,10 +19,11 @@ type ProjectCardProps = {
   desc: string;
   date: string;
   href: string;
-  nextjs?: boolean;
-  postgre?: boolean;
-  tailwind?: boolean;
-  typescript?: boolean;
+  nextjs?: string;
+  postgre?: string;
+  tailwind?: string;
+  typescript?: string;
+  prisma?: string;
 } & React.ComponentPropsWithoutRef<"div">;
 
 export default function ShortCard({
@@ -34,6 +36,7 @@ export default function ShortCard({
   postgre,
   tailwind,
   typescript,
+  prisma,
   className,
   ...rest
 }: ProjectCardProps) {
@@ -51,20 +54,25 @@ export default function ShortCard({
       <UnstyledLink href={href}>
         <div className="px-6 pt-4 flex justify-between items-center">
           <div className="flex gap-1">
-            {nextjs && <Tag leftIcon={TbBrandNextjs}>NextJs</Tag>}
-            {typescript && (
+            {nextjs === "y" && <Tag leftIcon={TbBrandNextjs}>NextJs</Tag>}
+            {typescript === "y" && (
               <Tag leftIcon={BiLogoTypescript} color="typescript">
                 typescript
               </Tag>
             )}
-            {postgre && (
+            {postgre === "y" && (
               <Tag leftIcon={BiLogoPostgresql} color="postgre">
                 postgre
               </Tag>
             )}
-            {tailwind && (
+            {tailwind === "y" && (
               <Tag leftIcon={BiLogoTailwindCss} color="tailwind">
                 tailwind
+              </Tag>
+            )}
+            {prisma === "y" && (
+              <Tag leftIcon={SiPrisma} color="prisma">
+                prisma
               </Tag>
             )}
           </div>

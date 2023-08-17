@@ -1,13 +1,23 @@
+import { useState } from "react";
+
 import ShortCard from "@/components/card/short-card";
 import { Framer } from "@/components/core/framer";
 import Layout from "@/components/core/layout";
 import Seo from "@/components/core/seo";
 import Typography from "@/components/core/typography";
-import useShorts from "@/lib/short-search";
-import ShortSearchInput from "@/modules/shorts/short-search-input";
 
-export default function ShortsPage() {
-  const { shortsFilter, setSearch, search } = useShorts();
+import { ShortsPostMeta, getAllShorts } from "@/lib/api-shorts";
+import { AiOutlineSearch } from "react-icons/ai";
+import clsx from "clsx";
+
+export default function ShortsPage({ shorts }: { shorts: ShortsPostMeta[] }) {
+  const [search, setSearch] = useState<string>("");
+  const shortsFilter = shorts?.filter(
+    (item) =>
+      item?.title.toLowerCase().includes(search.toLowerCase()) ||
+      item?.excerpt.toLowerCase().includes(search.toLowerCase()) ||
+      item?.date.toLowerCase().includes(search.toLowerCase())
+  );
   return (
     <Layout>
       <Seo
@@ -21,18 +31,35 @@ export default function ShortsPage() {
         Shorts are a collection of small documentations about a specific topic
         that I have learned.
       </Typography>
-      <ShortSearchInput search={search} setSearch={setSearch} />
+      <section className="mt-5">
+        <section className="relative flex items-ceter">
+          <input
+            placeholder="Type a keyword"
+            className={clsx(
+              "px-1 py-1.5 rounded-md w-full shadown-sm text-sm",
+              "transition-colors duration-200 bg-transparent",
+              "border border-primary-400 text-typography-100",
+              "hover:text-typography-800",
+              "dark:border-tertiary-300 dark:text-typography-800 dark:active:border-quaternary-500"
+            )}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <AiOutlineSearch className="absolute right-2 top-2 focus:outline-none text-typography-400 opacity-80" />
+        </section>
+      </section>
       <section className="grid grid-cols-2 gap-5 mt-5 w-full max-sm:grid-cols-1">
         {shortsFilter.map((item, index) => (
           <Framer delay={index * 0.8} key={index}>
             <ShortCard
               title={item.title}
-              desc={item.desc}
+              desc={item.excerpt}
               date={item.date}
               nextjs={item?.nextjs}
               postgre={item?.postgre}
               tailwind={item?.tailwind}
               typescript={item?.typescript}
+              prisma={item?.prisma}
               href={item.href}
             />
           </Framer>
@@ -40,4 +67,9 @@ export default function ShortsPage() {
       </section>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const shorts = getAllShorts().map((post) => post.meta);
+  return { props: { shorts } };
 }
