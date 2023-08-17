@@ -25,7 +25,6 @@ import { SiPrisma } from "react-icons/si";
 import Seo from "@/components/core/seo";
 import Layout from "@/components/core/layout";
 import Typography from "@/components/core/typography";
-import UnderlineLink from "@/components/links/underline-link";
 import Tag from "@/components/core/tags";
 import Copy from "@/components/core/copy";
 import YouTube from "@/components/core/youtube-iframe-mdx";
