@@ -10,3 +10,64 @@ excerpt: Quick dark mode setup on NextJs with next-themes.
 github: https://github.com/nathanaelbudijono/cloud-design-system
 href: /shorts/next-themes
 ---
+
+# Description
+
+Dark mode has been one of the biggest trends in user interface that has gained significant traction. It offers so much advantages. It can reduce your eye strain, especially in low-light conditions. Additionally, dark mode can improve battery life and enhance readability, as it provides a higher contrast between text and background.
+
+# Overview
+
+To setup dark mode on NextJs, you will need to install next-themes. It is a lightweight, zero-runtime CSS-in-JS library that allows you to theme your app using CSS variables. It is also compatible with Tailwind CSS. What I love from this libary is that you can set up your button anywhere.
+
+<Copy />
+
+```tsx
+// src/components/navbar.tsx import clsx from "clsx";
+import {useTheme} from "next-themes";
+import {useEffect, useState} from "react";
+
+import { CiDark, CiSun } from "react-icons/ci";
+
+export default function Navbar() {
+  const { setTheme, theme } = useTheme();
+  return (
+    <main>
+        <h1>My Page</h1>
+        <button
+            onClick={toggleTheme}
+            className={clsx(
+              "px-2.5 py-2 text-lg rounded-md hover:bg-blue-200 text-black",
+              "dark:hover:bg-orange-200 dark:text-white",
+              "transition-all duration-200 ease-in"
+            )}
+          >
+            {theme === "dark" ? <CiSun /> : <CiDark />}
+        </button>
+        </div>
+    </main>
+  );
+}
+```
+
+On you app page. Wrap your component using ThemeProvider. _Dont worry clsx is just a tailwind CSS libary so that you have a clean CSS_.
+
+<Copy />
+
+```tsx
+// /src/pages/ _app.tsx;
+
+import "@/styles/globals.css";
+import { ThemeProvider } from "next-themes";
+import type { AppProps } from "next/app";
+
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <ThemeProvider attribute="class" defaultTheme="light">
+      <Navbar />
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
+}
+```
+
+There are alot of other features that you can explore on the documentation. Check it out [here]("https://www.npmjs.com/package/next-themes").
