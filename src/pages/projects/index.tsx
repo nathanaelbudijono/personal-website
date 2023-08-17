@@ -3,11 +3,10 @@ import { Framer } from "@/components/core/framer";
 import Layout from "@/components/core/layout";
 import Seo from "@/components/core/seo";
 import Typography from "@/components/core/typography";
-import ProjectCardConstant from "@/constant/project-card-constant";
+
 import { ProjectPostMeta, getAllProject } from "@/lib/api-project";
 
 export default function ProjectPage({ posts }: { posts: ProjectPostMeta[] }) {
-  const { cards } = ProjectCardConstant;
   return (
     <Layout className="max-sm:h-full">
       <Seo
