@@ -19,11 +19,11 @@ type ProjectCardProps = {
   desc: string;
   date: string;
   href: string;
-  nextjs?: boolean;
-  postgre?: boolean;
-  tailwind?: boolean;
-  typescript?: boolean;
-  prisma?: boolean;
+  nextjs?: string;
+  postgre?: string;
+  tailwind?: string;
+  typescript?: string;
+  prisma?: string;
 } & React.ComponentPropsWithoutRef<"div">;
 
 export default function ProjectCard({
@@ -54,26 +54,34 @@ export default function ProjectCard({
       <UnstyledLink href={href}>
         <div className="px-6 py-4 flex justify-between items-center">
           <div className="flex gap-1">
-            {nextjs && <Tag leftIcon={TbBrandNextjs}>NextJs</Tag>}
-            {typescript && (
+            {nextjs ? <Tag leftIcon={TbBrandNextjs}>NextJs</Tag> : ""}
+            {typescript ? (
               <Tag leftIcon={BiLogoTypescript} color="typescript">
                 typescript
               </Tag>
+            ) : (
+              ""
             )}
-            {postgre && (
+            {postgre ? (
               <Tag leftIcon={BiLogoPostgresql} color="postgre">
                 postgre
               </Tag>
+            ) : (
+              ""
             )}
-            {tailwind && (
+            {tailwind ? (
               <Tag leftIcon={BiLogoTailwindCss} color="tailwind">
                 tailwind
               </Tag>
+            ) : (
+              ""
             )}
-            {prisma && (
+            {prisma ? (
               <Tag leftIcon={SiPrisma} color="prisma">
                 prisma
               </Tag>
+            ) : (
+              ""
             )}
           </div>
           <Typography variant="small" color="muted" className="text-xs">
