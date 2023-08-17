@@ -10,7 +10,7 @@ import {
   BiLogoTailwindCss,
   BiLogoTypescript,
 } from "react-icons/bi";
-import { MdReadMore } from "react-icons/md";
+import { RxOpenInNewWindow } from "react-icons/rx";
 import { SiPrisma } from "react-icons/si";
 
 type ProjectCardProps = {
@@ -88,7 +88,10 @@ export default function ProjectCard({
         <div className="px-6 pt-4 pb-6">
           <div className="flex justify-between">
             <Typography variant="h4">{title}</Typography>
-            <MdReadMore size={20} className="dark:text-typography-800" />
+            <RxOpenInNewWindow
+              size={15}
+              className="dark:text-typography-800 translate-y-1"
+            />
           </div>
           <Typography variant="small" color="muted">
             {desc}
