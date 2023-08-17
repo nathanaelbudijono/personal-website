@@ -26,8 +26,8 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
   return (
     <Layout>
       <Seo templateTitle={post.meta.title} description={post.meta.excerpt} />
-      <section className="h-64 overflow-hidden rounded-md shadow-sm flex justify-center items-center">
-        <img src={post.meta.img} className="object-cover" />
+      <section className="overflow-hidden rounded-md shadow-sm">
+        <img src={post.meta.img} className="object-cover w-full h-full" />
       </section>
       <section className="mt-5">
         <Typography variant="h3" color="gradient">
