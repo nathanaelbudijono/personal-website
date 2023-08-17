@@ -18,7 +18,7 @@
 }
 
 .p {
-  @apply mt-5 text-sm font-[400] leading-5 max-sm:text-xs text-typography-100 dark:text-typography-800;
+  @apply mt-5 text-sm font-[400]  max-sm:text-xs text-typography-100 dark:text-typography-800;
 }
 
 .li {
