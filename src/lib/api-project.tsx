@@ -46,6 +46,7 @@ export interface ProjectPostMeta {
   link: string;
   github: string;
   href: string;
+  banner: string;
 }
 
 export const getPostProjectFromSlug = (slug: string): ProjectPost => {
@@ -69,6 +70,7 @@ export const getPostProjectFromSlug = (slug: string): ProjectPost => {
       link: data.link,
       github: data.github,
       href: data.href ?? "",
+      banner: data.banner,
     },
   };
 };
