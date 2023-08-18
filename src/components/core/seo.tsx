@@ -29,13 +29,13 @@ export default function Seo(props: SeoProps) {
     ? `${props.templateTitle} | ${meta.siteName}`
     : meta.title;
 
-  meta["image"] = openGraph({
-    description: meta.description,
-    siteName: props.templateTitle ? meta.siteName : meta.title,
-    templateTitle: props.templateTitle,
-    banner: props.banner,
-    isBanner: props.isBanner,
-  });
+  // meta["image"] = openGraph({
+  //   description: meta.description,
+  //   siteName: props.templateTitle ? meta.siteName : meta.title,
+  //   templateTitle: props.templateTitle,
+  //   banner: props.banner,
+  //   isBanner: props.isBanner,
+  // });
 
   return (
     <Head>
