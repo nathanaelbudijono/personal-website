@@ -1,4 +1,4 @@
-import { openGraph } from "@/lib/open-graph";
+// import { openGraph } from "@/lib/open-graph";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
