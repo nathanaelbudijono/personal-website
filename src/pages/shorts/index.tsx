@@ -36,7 +36,7 @@ export default function ShortsPage({ shorts }: { shorts: ShortsPostMeta[] }) {
           <input
             placeholder="Type a keyword"
             className={clsx(
-              "px-1 py-1.5 rounded-md w-full shadown-sm text-sm",
+              "pl-3 py-1.5 rounded-md w-full shadown-sm text-sm",
               "transition-colors duration-200 bg-transparent",
               "border border-primary-400 text-typography-100",
               "hover:text-typography-800",
