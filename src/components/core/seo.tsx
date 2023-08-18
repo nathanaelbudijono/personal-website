@@ -15,7 +15,7 @@ const defaultMeta = {
 type SeoProps = {
   date?: string;
   templateTitle?: string;
-  isProject?: boolean;
+  isBanner?: boolean;
   banner?: string;
 } & Partial<typeof defaultMeta>;
 
@@ -34,7 +34,7 @@ export default function Seo(props: SeoProps) {
     siteName: props.templateTitle ? meta.siteName : meta.title,
     templateTitle: props.templateTitle,
     banner: props.banner,
-    isProject: props.isProject,
+    isBanner: props.isBanner,
   });
 
   return (

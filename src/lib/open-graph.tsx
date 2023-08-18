@@ -4,7 +4,7 @@ type OpenGraphType = {
   templateTitle?: string;
   logo?: string;
   banner?: string;
-  isProject?: boolean;
+  isBanner?: boolean;
 };
 export function openGraph({
   siteName,
@@ -12,7 +12,7 @@ export function openGraph({
   description,
   logo = "https://nathanaelbudijono.vercel.app/logo.png",
   banner,
-  isProject = false,
+  isBanner = false,
 }: OpenGraphType): string {
   const ogLogo = encodeURIComponent(logo);
   const ogSiteName = encodeURIComponent(siteName.trim());
@@ -21,7 +21,7 @@ export function openGraph({
     : undefined;
   const ogDesc = encodeURIComponent(description.trim());
 
-  if (isProject) {
+  if (isBanner) {
     const ogBanner = banner ? encodeURIComponent(banner.trim()) : undefined;
 
     return `https://nathanaelbudijono.vercel.app/api/project?templateTitle=${ogTemplateTitle}&banner=${ogBanner}`;
