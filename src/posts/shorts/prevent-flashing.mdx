@@ -13,7 +13,7 @@ href: /shorts/prevent-flashing
 
 # Description
 
-Preventing content flashing during unauthorized page access is crucial for a seamless user experience. By leveraging getServerSideProps in Next.js, we can perform authentication checks on the server side before rendering, ensuring unauthorized users are seamlessly redirected without any unwanted content display. This approach offers a smoother and more secure interaction for users.
+Preventing content flashing during unauthorized page access is crucial for a seamless user experience. By leveraging **getServerSideProps** in Next.js, we can perform authentication checks on the server side before rendering, ensuring unauthorized users are seamlessly redirected without any unwanted content display. This approach offers a smoother and more secure interaction for users.
 
 # Overview
 
@@ -64,7 +64,7 @@ Now we can call this function on any page that we want to protect.
 ```tsx
 // src/pages/dashboard.tsx
 
-import { getUser } from "@/hooks/get-user-server";
+import { getUser } from "@/lib/get-user-server";
 import { GetServerSidePropsContext } from "next";
 
 Type User = {
