@@ -43,8 +43,7 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
         templateTitle={post.meta.title}
         description={post.meta.excerpt}
         siteName="Projects"
-        isBanner
-        banner={post.meta.banner}
+        image={post.meta.banner}
       />
       <section className="overflow-hidden rounded-md shadow-sm">
         <img src={post.meta.img} className="object-cover w-full h-[45vh]" />
