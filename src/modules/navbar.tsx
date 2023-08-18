@@ -4,12 +4,16 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 import { CiDark, CiSun } from "react-icons/ci";
+import { Howl } from "howler";
 
 export default function Navbar() {
   const { setTheme, theme } = useTheme();
   const [mounted, setMounted] = useState<boolean>(false);
+  const [sound] = useState(new Howl({ src: ["/click.wav"] }));
+
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
+    sound.play();
   };
   useEffect(() => {
     setMounted(true);
