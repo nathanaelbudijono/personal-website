@@ -5,7 +5,8 @@ import { useRouter } from "next/router";
 const defaultMeta = {
   title: "Nathanael",
   siteName: "Portfolio Website",
-  description: "Nathanael online portfolio website.",
+  description:
+    "Welcome to my digital garden where I share what I'm learning about shipping great products, becoming a better developer and growing a career in tech.",
   url: "https://nathanaelbudijono.vercel.app/",
   type: "website",
   robots: "follow, index",
