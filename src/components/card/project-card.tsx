@@ -99,7 +99,7 @@ export default function ProjectCard({
           <div className="flex items-center gap-2 mb-2">
             <AiFillEye size={15} />
             <Typography variant="small" color="muted">
-              {views}
+              {views} views
             </Typography>
           </div>
           <Typography variant="small" color="muted">
