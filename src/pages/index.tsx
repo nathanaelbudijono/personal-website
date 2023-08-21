@@ -8,8 +8,11 @@ import ArrowLink from "@/components/links/arrow-link";
 import MainPage from "@/modules/home/main";
 
 import { ProjectPostMeta, getAllProject } from "@/lib/api-project";
+import { usePopulatedProjectPosts } from "@/hooks/metrics/useProjectPopulated";
 
 export default function Home({ posts }: { posts: ProjectPostMeta[] }) {
+  const { populatedProjectPosts: projects, isLoading } =
+    usePopulatedProjectPosts(posts, "projects");
   return (
     <main>
       <Seo
@@ -27,7 +30,7 @@ export default function Home({ posts }: { posts: ProjectPostMeta[] }) {
           My latest past projects.
         </Typography>
         <section className="w-full mt-5 grid grid-cols-2 max-sm:grid-cols-1 gap-5">
-          {posts.map((item, index) => (
+          {projects.map((item, index) => (
             <Framer delay={index * 0.8} key={index}>
               <ProjectCard
                 title={item.title}
@@ -40,6 +43,7 @@ export default function Home({ posts }: { posts: ProjectPostMeta[] }) {
                 typescript={item?.typescript}
                 prisma={item?.prisma}
                 href={item.href}
+                views={item?.views}
               />
             </Framer>
           ))}
