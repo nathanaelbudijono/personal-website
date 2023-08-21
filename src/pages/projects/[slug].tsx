@@ -31,7 +31,6 @@ import Copy from "@/components/core/copy";
 import YouTube from "@/components/core/youtube-iframe-mdx";
 import ImageMdx from "@/components/core/image-mdx";
 import ViewsMetric from "@/modules/metrics/project-view";
-import { useRouter } from "next/router";
 
 interface MDXPost {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
@@ -39,8 +38,6 @@ interface MDXPost {
 }
 
 export default function ProjectContent({ post }: { post: MDXPost }) {
-  const router = useRouter();
-  const { slug } = router.query;
   return (
     <Layout className="h-full">
       <Seo
@@ -78,7 +75,7 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
         </div>
 
         <div className="mt-5">
-          <ViewsMetric slug={slug} />
+          <ViewsMetric slug={post.meta.slug} />
         </div>
 
         <div className="mt-5">
