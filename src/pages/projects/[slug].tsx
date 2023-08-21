@@ -30,6 +30,8 @@ import Tag from "@/components/core/tags";
 import Copy from "@/components/core/copy";
 import YouTube from "@/components/core/youtube-iframe-mdx";
 import ImageMdx from "@/components/core/image-mdx";
+import ViewsMetric from "@/modules/metrics/project-view";
+import { useRouter } from "next/router";
 
 interface MDXPost {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
@@ -37,6 +39,8 @@ interface MDXPost {
 }
 
 export default function ProjectContent({ post }: { post: MDXPost }) {
+  const router = useRouter();
+  const { slug } = router.query;
   return (
     <Layout className="h-full">
       <Seo
@@ -52,27 +56,31 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
         <Typography variant="h2" color="gradient">
           {post.meta.title}
         </Typography>
-        <div className="mt-5">
-          <div className="flex justify-between items-center">
-            <div className="w-fit flex gap-2">
-              <UnderlineLink href={post.meta.github}>
-                <AiFillGithub className="text-typography-100 dark:text-typography-800" />
-                Repository
+
+        <div className="flex justify-between items-center mt-5">
+          <div className="w-fit flex gap-2">
+            <UnderlineLink href={post.meta.github}>
+              <AiFillGithub className="text-typography-100 dark:text-typography-800" />
+              Repository
+            </UnderlineLink>
+            {post.meta.link ? (
+              <UnderlineLink href={post.meta.link}>
+                <AiOutlineLink className="text-typography-100 dark:text-typography-800" />
+                Live link
               </UnderlineLink>
-              {post.meta.link ? (
-                <UnderlineLink href={post.meta.link}>
-                  <AiOutlineLink className="text-typography-100 dark:text-typography-800" />
-                  Live link
-                </UnderlineLink>
-              ) : (
-                ""
-              )}
-            </div>
-            <Typography variant="small" className="text-xs">
-              {post.meta.date.slice(0, 15)}
-            </Typography>
+            ) : (
+              ""
+            )}
           </div>
+          <Typography variant="small" className="text-xs">
+            {post.meta.date.slice(0, 15)}
+          </Typography>
         </div>
+
+        <div className="mt-5">
+          <ViewsMetric slug={slug} />
+        </div>
+
         <div className="mt-5">
           <Typography variant="small" className="text-xs">
             Tech Stack used
