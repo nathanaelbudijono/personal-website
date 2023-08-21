@@ -7,6 +7,7 @@ import { AiFillEye } from "react-icons/ai";
 
 export default function ViewsMetric({ slug }: { slug: any }) {
   const [view, setViews] = useState<number>(0);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   useEffect(() => {
     const incrementView = async () => {
       try {
@@ -14,8 +15,10 @@ export default function ViewsMetric({ slug }: { slug: any }) {
           slug,
         });
         setViews(response.data.views);
+        setIsLoading(false);
       } catch (error) {
         console.error("Error incrementing view:", error);
+        setIsLoading(false);
       }
     };
 
@@ -24,7 +27,7 @@ export default function ViewsMetric({ slug }: { slug: any }) {
   return (
     <main className="flex items-center gap-2">
       <AiFillEye className="text-typography-100 dark:text-typography-800" />
-      {view === null ? (
+      {isLoading ? (
         <Skeleton className="w-[48px] h-[15px]" />
       ) : (
         <Typography variant="small">{view} views</Typography>
