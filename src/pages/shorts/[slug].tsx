@@ -29,6 +29,7 @@ import Tag from "@/components/core/tags";
 import Copy from "@/components/core/copy";
 import YouTube from "@/components/core/youtube-iframe-mdx";
 import ImageMdx from "@/components/core/image-mdx";
+import ShortsViewsMetric from "@/modules/metrics/shorts-view";
 
 interface MDXPost {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
@@ -89,6 +90,9 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
           <Typography variant="small" className="text-xs">
             {post.meta.date}
           </Typography>
+        </div>
+        <div className="mt-5">
+          <ShortsViewsMetric slug={post.meta.slug} />
         </div>
         <Typography variant="small" color="muted" className="mt-5">
           {post.meta.excerpt}
