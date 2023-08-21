@@ -4,6 +4,12 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 connectToDatabase();
 
+export type Metrics = {
+  [slug: string]: {
+    views: string | number;
+  };
+};
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -12,7 +18,12 @@ export default async function handler(
     case "GET":
       try {
         const getProjectViews = await ProjectView.find();
-        res.status(200).json(getProjectViews);
+        let metrics: Metrics = {};
+        getProjectViews.forEach((item) => {
+          const slug = item?.slug.split("-")[1];
+          metrics[slug] = item?.views || 0;
+        });
+        res.status(200).json(metrics);
       } catch (err) {
         return res.status(500).json({ message: "Error fetching data." });
       }

@@ -12,6 +12,7 @@ import {
 } from "react-icons/bi";
 import { RxOpenInNewWindow } from "react-icons/rx";
 import { SiPrisma } from "react-icons/si";
+import { AiFillEye } from "react-icons/ai";
 
 type ProjectCardProps = {
   title: string;
@@ -19,6 +20,7 @@ type ProjectCardProps = {
   desc: string;
   date: string;
   href: string;
+  views: string | number;
   nextjs?: string;
   postgre?: string;
   tailwind?: string;
@@ -32,6 +34,7 @@ export default function ProjectCard({
   img,
   date,
   href,
+  views,
   nextjs,
   postgre,
   tailwind,
@@ -92,6 +95,12 @@ export default function ProjectCard({
               size={15}
               className="dark:text-typography-800 translate-y-1"
             />
+          </div>
+          <div className="flex items-center gap-2 mb-2">
+            <AiFillEye size={15} />
+            <Typography variant="small" color="muted">
+              {views}
+            </Typography>
           </div>
           <Typography variant="small" color="muted">
             {desc}
