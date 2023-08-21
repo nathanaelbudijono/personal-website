@@ -13,6 +13,7 @@ import {
 import { RxOpenInNewWindow } from "react-icons/rx";
 import { SiPrisma } from "react-icons/si";
 import { AiFillEye } from "react-icons/ai";
+import Skeleton from "../core/skeleton";
 
 type ProjectCardProps = {
   title: string;
@@ -98,9 +99,13 @@ export default function ProjectCard({
           </div>
           <div className="flex items-center gap-2 mb-2">
             <AiFillEye size={15} />
-            <Typography variant="small" color="muted">
-              {views}
-            </Typography>
+            {views === null ? (
+              <Skeleton className="w-[48px] h-[15px]" />
+            ) : (
+              <Typography variant="small" color="muted">
+                {views} views
+              </Typography>
+            )}
           </div>
           <Typography variant="small" color="muted">
             {desc}
