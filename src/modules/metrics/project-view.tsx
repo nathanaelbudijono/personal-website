@@ -1,4 +1,5 @@
 import Typography from "@/components/core/typography";
+import { nextAPIUrl } from "@/constant/env";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { AiFillEye } from "react-icons/ai";
@@ -10,10 +11,9 @@ export default function ViewsMetric({ slug }: { slug: any }) {
   useEffect(() => {
     const incrementView = async () => {
       try {
-        const response = await axios.post(
-          `http://localhost:3000/api/projects/${slug}`,
-          { slug }
-        );
+        const response = await axios.post(`${nextAPIUrl}/projects/${slug}`, {
+          slug,
+        });
         setViews(response.data.views);
       } catch (error) {
         console.error("Error incrementing view:", error);
