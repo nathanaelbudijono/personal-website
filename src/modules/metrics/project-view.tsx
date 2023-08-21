@@ -1,3 +1,4 @@
+import Skeleton from "@/components/core/skeleton";
 import Typography from "@/components/core/typography";
 import { nextAPIUrl } from "@/constant/env";
 import axios from "axios";
@@ -6,8 +7,6 @@ import { AiFillEye } from "react-icons/ai";
 
 export default function ViewsMetric({ slug }: { slug: any }) {
   const [view, setViews] = useState<number>(0);
-  console.log(slug);
-
   useEffect(() => {
     const incrementView = async () => {
       try {
@@ -25,7 +24,11 @@ export default function ViewsMetric({ slug }: { slug: any }) {
   return (
     <main className="flex items-center gap-2">
       <AiFillEye className="text-typography-100 dark:text-typography-800" />
-      <Typography variant="small">{view} views</Typography>
+      {view === null ? (
+        <Skeleton className="w-[48px] h-[14px]" />
+      ) : (
+        <Typography variant="small">{view} views</Typography>
+      )}
     </main>
   );
 }
