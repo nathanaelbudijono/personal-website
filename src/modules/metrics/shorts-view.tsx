@@ -11,7 +11,7 @@ export default function ShortsViewsMetric({ slug }: { slug: any }) {
   useEffect(() => {
     const incrementView = async () => {
       try {
-        const response = await axios.post(`${nextAPIUrl}/likes/${slug}`, {
+        const response = await axios.post(`${nextAPIUrl}/shorts/${slug}`, {
           slug,
         });
         setViews(response.data.views);
