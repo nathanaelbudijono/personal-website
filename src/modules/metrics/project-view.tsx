@@ -25,7 +25,7 @@ export default function ViewsMetric({ slug }: { slug: any }) {
     <main className="flex items-center gap-2">
       <AiFillEye className="text-typography-100 dark:text-typography-800" />
       {view === null ? (
-        <Skeleton className="w-[48px] h-[14px]" />
+        <Skeleton className="w-[48px] h-[15px]" />
       ) : (
         <Typography variant="small">{view} views</Typography>
       )}
