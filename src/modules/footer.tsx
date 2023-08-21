@@ -15,14 +15,7 @@ export default function Footer() {
           </Typography>
           <div className="flex gap-[1.5px] items-center mt-1">
             <Typography variant="small" className="text-xs">
-              Hosted
-            </Typography>
-            <Typography variant="small" className="text-xs">
-              on
-            </Typography>
-            <UnderlineLink href="https://vercel.com">Vercel.</UnderlineLink>
-            <Typography variant="small" className="text-xs">
-              Build
+              Made
             </Typography>
             <Typography variant="small" className="text-xs">
               with
@@ -35,9 +28,13 @@ export default function Footer() {
               TailwindCSS
             </UnderlineLink>
             <Typography variant="small" className="text-xs">
-              &
+              ,
             </Typography>
             <UnderlineLink href="https://mdxjs.com">MDX</UnderlineLink>
+            <Typography variant="small" className="text-xs">
+              &
+            </Typography>
+            <UnderlineLink href="https://mongodb.com">MongoDB</UnderlineLink>
           </div>
         </div>
         <div className="flex gap-2">
