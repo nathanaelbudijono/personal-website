@@ -99,7 +99,7 @@ export default function ProjectCard({
           </div>
           <div className="flex items-center gap-2 mb-2">
             <AiFillEye size={15} />
-            {views === null ? (
+            {views === 0 ? (
               <Skeleton className="w-[48px] h-[15px]" />
             ) : (
               <Typography variant="small" color="muted">
