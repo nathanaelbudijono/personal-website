@@ -17,7 +17,7 @@ export default function Home({ posts }: { posts: ProjectPostMeta[] }) {
     <main>
       <Seo
         templateTitle="Home"
-        description="A Math enthusiast who dreams to build Computer Science with Mathematics. Currently learning Software Development as a full-stack developer. I also enjoy writing blogs and documentation regarding certain past projects ."
+        description="Welcome to my digital notebook where I share what I'm learning about shipping great products, becoming a better developer and growing a career in tech."
         isBanner
         banner="https://nathanaelbudijono.vercel.app/logo.png"
       />
