@@ -7,7 +7,7 @@ const options: any = {
 
 export const connectToDatabase = async () => {
   if (!connection.readyState) {
-    console.log("Connected to databas");
+    console.log("Connected to database");
     connect(`${process.env.MONGO_URI}`, options);
   }
 };
