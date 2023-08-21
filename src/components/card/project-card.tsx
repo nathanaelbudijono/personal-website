@@ -20,7 +20,7 @@ type ProjectCardProps = {
   desc: string;
   date: string;
   href: string;
-  views: string | number;
+  views?: string | number;
   nextjs?: string;
   postgre?: string;
   tailwind?: string;
