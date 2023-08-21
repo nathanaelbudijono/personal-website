@@ -31,8 +31,8 @@ export default function ArrowLink<C extends React.ElementType>({
       <span>{children}</span>
       <svg
         viewBox="0 0 16 16"
-        height="1em"
-        width="1em"
+        height="12px"
+        width="12px"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className={cn(
