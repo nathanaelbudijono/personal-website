@@ -23,23 +23,26 @@ export default function ProjectPage({ posts }: { posts: ProjectPostMeta[] }) {
         Showcase of my experiences throughout my learning process.
       </Typography>
       <section className="w-full mt-5 grid grid-cols-2 max-sm:grid-cols-1 gap-5">
-        {projects.map((item, index) => (
-          <Framer delay={index * 0.8} key={index}>
-            <ProjectCard
-              title={item.title}
-              desc={item.excerpt}
-              date={item.date}
-              img={item.img}
-              nextjs={item?.nextjs}
-              postgre={item?.postgre}
-              tailwind={item?.tailwind}
-              typescript={item?.typescript}
-              prisma={item?.prisma}
-              href={item.href}
-              views={item?.views}
-            />
-          </Framer>
-        ))}
+        {projects.map((item, index) => {
+          // console.log(item.views);
+          return (
+            <Framer delay={index * 0.8} key={index}>
+              <ProjectCard
+                title={item.title}
+                desc={item.excerpt}
+                date={item.date}
+                img={item.img}
+                nextjs={item?.nextjs}
+                postgre={item?.postgre}
+                tailwind={item?.tailwind}
+                typescript={item?.typescript}
+                prisma={item?.prisma}
+                href={item.href}
+                views={item?.views}
+              />
+            </Framer>
+          );
+        })}
       </section>
     </Layout>
   );

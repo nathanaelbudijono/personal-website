@@ -20,8 +20,8 @@ export default async function handler(
         const getProjectViews = await ProjectView.find();
         let metrics: Metrics = {};
         getProjectViews.forEach((item) => {
-          const slug = item?.slug.split("-")[1];
-          metrics[slug] = item?.views || 0;
+          const slug = item?.slug;
+          metrics[slug] = { views: item?.views || 0 };
         });
         res.status(200).json(metrics);
       } catch (err) {
