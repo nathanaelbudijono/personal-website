@@ -9,21 +9,18 @@ import Typography from "@/components/core/typography";
 import { ShortsPostMeta, getAllShorts } from "@/lib/api-shorts";
 import { AiOutlineSearch } from "react-icons/ai";
 
-import clsx from "clsx";
 import { usePopulatedShortsPosts } from "@/hooks/metrics/useShortsPopulated";
+import SearchFilter from "@/components/core/searchFilter";
+import SortListBox from "@/components/core/sort-list-box";
 
 export default function ShortsPage({ posts }: { posts: ShortsPostMeta[] }) {
-  const [search, setSearch] = useState<string>("");
   const { populatedShortsPost: shorts } = usePopulatedShortsPosts(
     posts,
     "shorts"
   );
-  const shortsFilter = shorts?.filter(
-    (item) =>
-      item?.title.toLowerCase().includes(search.toLowerCase()) ||
-      item?.excerpt.toLowerCase().includes(search.toLowerCase()) ||
-      item?.date.toLowerCase().includes(search.toLowerCase())
-  );
+
+  const [filtered, setFiltered] = useState(() => shorts);
+  const [selected, setSelected] = useState(() => "Sort by name");
   return (
     <Layout>
       <Seo
@@ -39,23 +36,20 @@ export default function ShortsPage({ posts }: { posts: ShortsPostMeta[] }) {
       </Typography>
       <section className="mt-5">
         <section className="relative flex items-ceter">
-          <input
-            placeholder="Type a keyword"
-            className={clsx(
-              "pl-3 py-1.5 rounded-md w-full shadown-sm text-sm",
-              "transition-colors duration-200 bg-transparent",
-              "border border-primary-400 text-typography-100",
-              "active:text-typography-100",
-              "dark:border-tertiary-300 dark:text-typography-800 dark:active:border-quaternary-500"
-            )}
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
+          <div className="flex flex-col z-[100] w-full">
+            <SearchFilter
+              setFiltered={setFiltered}
+              populatedPosts={shorts}
+              selected={selected}
+            />
+            <SortListBox selected={selected} setSelected={setSelected} />
+          </div>
+
           <AiOutlineSearch className="absolute right-2 top-2 focus:outline-none text-typography-400 opacity-80" />
         </section>
       </section>
       <section className="grid grid-cols-2 gap-5 mt-5 w-full max-sm:grid-cols-1">
-        {shortsFilter.map((item, index) => (
+        {filtered?.map((item, index) => (
           <Framer delay={index * 0.8} key={index}>
             <ShortCard
               title={item.title}
