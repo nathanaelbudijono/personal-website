@@ -8,6 +8,7 @@ import Typography from "@/components/core/typography";
 
 import { ShortsPostMeta, getAllShorts } from "@/lib/api-shorts";
 import { AiOutlineSearch } from "react-icons/ai";
+
 import clsx from "clsx";
 import { usePopulatedShortsPosts } from "@/hooks/metrics/useShortsPopulated";
 
