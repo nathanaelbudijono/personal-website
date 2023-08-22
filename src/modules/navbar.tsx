@@ -10,7 +10,7 @@ export default function Navbar() {
   const { setTheme, theme } = useTheme();
   const [mounted, setMounted] = useState<boolean>(false);
   const [sound] = useState(new Howl({ src: ["/click.wav"] }));
-
+  //----- Start Region Dark Mode -----//
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
     sound.play();
@@ -21,6 +21,7 @@ export default function Navbar() {
   if (!mounted) {
     return null;
   }
+  //----- End Region Dark Mode -----//
   return (
     <main
       className={clsx(
