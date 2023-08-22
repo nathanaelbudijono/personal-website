@@ -3,6 +3,7 @@ import * as React from "react";
 import Typography from "../core/typography";
 import Tag from "../core/tags";
 import UnstyledLink from "../links/unstyled-link";
+import Skeleton from "../core/skeleton";
 
 import { TbBrandNextjs } from "react-icons/tb";
 import {
@@ -13,7 +14,6 @@ import {
 import { RxOpenInNewWindow } from "react-icons/rx";
 import { SiPrisma } from "react-icons/si";
 import { AiFillEye } from "react-icons/ai";
-import Skeleton from "../core/skeleton";
 
 type ProjectCardProps = {
   title: string;
