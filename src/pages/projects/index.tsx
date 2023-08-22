@@ -8,8 +8,10 @@ import { usePopulatedProjectPosts } from "@/hooks/metrics/useProjectPopulated";
 import { ProjectPostMeta, getAllProject } from "@/lib/api-project";
 
 export default function ProjectPage({ posts }: { posts: ProjectPostMeta[] }) {
-  const { populatedProjectPosts: projects, isLoading } =
-    usePopulatedProjectPosts(posts, "projects");
+  const { populatedProjectPosts: projects } = usePopulatedProjectPosts(
+    posts,
+    "projects"
+  );
   return (
     <Layout className="max-sm:h-full">
       <Seo
