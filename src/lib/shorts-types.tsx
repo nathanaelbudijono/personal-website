@@ -11,6 +11,8 @@ export type ShortsPostMeta = {
   tailwind: string;
   typescript: string;
   prisma: string;
+  express: string;
+  nodejs: string;
   title: string;
   slug: string;
   href: string;

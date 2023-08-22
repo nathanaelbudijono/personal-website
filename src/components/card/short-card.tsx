@@ -10,9 +10,10 @@ import {
   BiLogoPostgresql,
   BiLogoTailwindCss,
   BiLogoTypescript,
+  BiLogoNodejs,
 } from "react-icons/bi";
 import { RxOpenInNewWindow } from "react-icons/rx";
-import { SiPrisma } from "react-icons/si";
+import { SiPrisma, SiExpress } from "react-icons/si";
 import { AiFillEye } from "react-icons/ai";
 
 type ProjectCardProps = {
@@ -27,6 +28,8 @@ type ProjectCardProps = {
   tailwind?: string;
   typescript?: string;
   prisma?: string;
+  express?: string;
+  nodejs?: string;
 } & React.ComponentPropsWithoutRef<"div">;
 
 export default function ShortCard({
@@ -41,6 +44,8 @@ export default function ShortCard({
   tailwind,
   typescript,
   prisma,
+  express,
+  nodejs,
   className,
   ...rest
 }: ProjectCardProps) {
@@ -77,6 +82,16 @@ export default function ShortCard({
             {prisma === "y" && (
               <Tag leftIcon={SiPrisma} color="prisma">
                 prisma
+              </Tag>
+            )}
+            {express === "y" && (
+              <Tag leftIcon={SiExpress} color="express">
+                express
+              </Tag>
+            )}
+            {nodejs === "y" && (
+              <Tag leftIcon={BiLogoNodejs} color="nodejs">
+                nodejs
               </Tag>
             )}
           </div>

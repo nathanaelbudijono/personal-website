@@ -11,6 +11,8 @@ const TAG_COLOR = [
   "tailwind",
   "typescript",
   "prisma",
+  "express",
+  "nodejs",
 ] as const;
 type TagColor = (typeof TAG_COLOR)[number];
 
@@ -46,6 +48,8 @@ const Tag = React.forwardRef<HTMLDivElement, TagProps>(
           color === "tailwind" && "bg-primary-400 text-primary-100",
           color === "typescript" && "bg-primary-200 text-typography-100",
           color === "prisma" && "bg-typography-100 text-secondary-400",
+          color === "express" && "bg-typography-600 text-typography-100",
+          color === "nodejs" && "bg-typography-100 text-green-700",
           "inline-flex justify-center items-center gap-1 px-1 rounded-md",
           className
         )}

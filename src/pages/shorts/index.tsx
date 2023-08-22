@@ -60,6 +60,8 @@ export default function ShortsPage({ posts }: { posts: ShortsPostMeta[] }) {
               tailwind={item?.tailwind}
               typescript={item?.typescript}
               prisma={item?.prisma}
+              express={item?.express}
+              nodejs={item?.nodejs}
               href={item.href}
               views={item?.views}
             />
