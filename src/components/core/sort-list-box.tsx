@@ -1,9 +1,10 @@
 import React, { Fragment, SetStateAction } from "react";
 import { Listbox, Transition } from "@headlessui/react";
+
 import { HiCheck, HiSelector } from "react-icons/hi";
-import { useTheme } from "next-themes";
 import { TbSortAscendingLetters } from "react-icons/tb";
-import { FaHeartbeat } from "react-icons/fa";
+import { AiFillEye } from "react-icons/ai";
+
 import Typography from "./typography";
 
 export default function SortListBox({
@@ -25,7 +26,7 @@ export default function SortListBox({
               {selected === "Sort by name" ? (
                 <TbSortAscendingLetters className="mr-2 text-xs" />
               ) : (
-                <FaHeartbeat className="mr-2 text-xs" />
+                <AiFillEye className="mr-2 text-xs" />
               )}
               <Typography variant="small">{selected}</Typography>
             </span>
