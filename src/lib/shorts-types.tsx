@@ -13,10 +13,7 @@ export type ShortsPostMeta = {
   prisma: string;
   title: string;
   slug: string;
-  link: string;
-  github: string;
   href: string;
-  banner: string;
 };
 
 export type PopulatedShorts = {

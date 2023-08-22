@@ -12,6 +12,8 @@ import {
 } from "react-icons/bi";
 import { RxOpenInNewWindow } from "react-icons/rx";
 import { SiPrisma } from "react-icons/si";
+import { AiFillEye } from "react-icons/ai";
+import Skeleton from "../core/skeleton";
 
 type ProjectCardProps = {
   title: string;
@@ -19,6 +21,7 @@ type ProjectCardProps = {
   desc: string;
   date: string;
   href: string;
+  views?: number | string;
   nextjs?: string;
   postgre?: string;
   tailwind?: string;
@@ -32,6 +35,7 @@ export default function ShortCard({
   img,
   date,
   href,
+  views,
   nextjs,
   postgre,
   tailwind,
@@ -43,7 +47,7 @@ export default function ShortCard({
   return (
     <div
       className={cn(
-        "overflow-hidden border border-primary-700 rounded-md text-typography-100 h-[146px]",
+        "overflow-hidden border border-primary-700 rounded-md text-typography-100 h-[162px]",
         "transition-all duration-300 ease-in-out",
         "border border-primary-400",
         "hover:scale-[1.02]",
@@ -87,6 +91,19 @@ export default function ShortCard({
               size={15}
               className="dark:text-typography-800 translate-y-1"
             />
+          </div>
+          <div className="flex items-center gap-2 mb-2">
+            <AiFillEye
+              size={15}
+              className="dark:text-typography-800 text-typography-100"
+            />
+            {views === 0 ? (
+              <Skeleton className="w-[48px] h-[15px]" />
+            ) : (
+              <Typography variant="small" color="muted">
+                {views} views
+              </Typography>
+            )}
           </div>
           <Typography variant="small" color="muted">
             {desc}

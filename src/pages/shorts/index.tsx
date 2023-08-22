@@ -9,9 +9,14 @@ import Typography from "@/components/core/typography";
 import { ShortsPostMeta, getAllShorts } from "@/lib/api-shorts";
 import { AiOutlineSearch } from "react-icons/ai";
 import clsx from "clsx";
+import { usePopulatedShortsPosts } from "@/hooks/metrics/useShortsPopulated";
 
-export default function ShortsPage({ shorts }: { shorts: ShortsPostMeta[] }) {
+export default function ShortsPage({ posts }: { posts: ShortsPostMeta[] }) {
   const [search, setSearch] = useState<string>("");
+  const { populatedShortsPost: shorts } = usePopulatedShortsPosts(
+    posts,
+    "shorts"
+  );
   const shortsFilter = shorts?.filter(
     (item) =>
       item?.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -61,6 +66,7 @@ export default function ShortsPage({ shorts }: { shorts: ShortsPostMeta[] }) {
               typescript={item?.typescript}
               prisma={item?.prisma}
               href={item.href}
+              views={item?.views}
             />
           </Framer>
         ))}
@@ -70,6 +76,6 @@ export default function ShortsPage({ shorts }: { shorts: ShortsPostMeta[] }) {
 }
 
 export async function getStaticProps() {
-  const shorts = getAllShorts().map((post) => post.meta);
-  return { props: { shorts } };
+  const posts = getAllShorts().map((post) => post.meta);
+  return { props: { posts } };
 }
