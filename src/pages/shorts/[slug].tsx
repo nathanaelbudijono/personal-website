@@ -104,6 +104,7 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
           {...post.source}
           components={{
             h1: (props) => <h1 className="h1" {...props} />,
+            h2: (props) => <h2 className="h2" {...props} />,
             p: (props) => <p className="p" {...props} />,
             li: (props) => <li className="li" {...props} />,
             a: (props) => <a className="a" {...props} />,

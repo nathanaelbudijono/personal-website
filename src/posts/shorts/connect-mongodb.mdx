@@ -1,0 +1,85 @@
+---
+title: MongoDB Setup
+nextjs: y
+postgre: n
+tailwind: n
+typescript: y
+prisma: n
+date: 22-08-23
+excerpt: Establish a quick connection to MongoDB.
+github: https://github.com/nathanaelbudijono/cloud-design-system
+href: /shorts/connect-mongodb
+---
+
+# Description
+
+MongoDB is a popular and versatile open-source database system designed for managing and storing large volumes of data in a flexible, schema-less format. It belongs to the NoSQL family of databases, which prioritizes scalability and agility. MongoDB's distinctive feature is its ability to store data in JSON-like BSON format, allowing for complex data structures and dynamic schemas. Renowned for its speed and scalability, MongoDB is often chosen for projects that demand high-performance data storage and retrieval.
+
+# Overview
+
+To setup a connnection from your application to MongoDB, you will need to to have a [MongoDb](https://mongodb.com) account. Complete the initial setup and choose create a database. Choose connections, then drivers and copy the connection string to your clipboard. You will need to install a dependency called mongoose.
+In this section, I will show how to establish a connection from NextJs and ExpressJs.
+
+## NextJs
+
+<Copy />
+
+```tsx
+// src/lib/connection.tsx
+
+import { connect, connection } from "mongoose";
+const options: any = {
+  useUnifiedTopology: true,
+
+  useNewUrlParser: true,
+};
+
+export const connectToDatabase = async () => {
+  if (!connection.readyState) {
+    console.log("Connected to database");
+    connect(`${process.env.MONGO_URI}`, options);
+  }
+};
+```
+
+## ExpressJs
+
+<Copy />
+
+```js
+// src/lib/connection.js
+
+const mongoose = require("mongoose");
+
+async function connected() {
+  await mongoose.connect(`${process.env.MONGO_URI}`);
+  console.log("connected to database");
+}
+
+module.exports = { connected };
+```
+
+<Copy />
+
+```js
+// src/lib/server.js
+
+const express = require("express");
+const { connected } = require("./database/connection");
+
+const app = express();
+
+const PORT = 8000;
+
+connected().then(() => {
+  try {
+    app.listen(PORT, () => {
+      console.log("Server is online");
+    });
+  } catch (err) {
+    console.log("Cant connect to server");
+  }
+});
+```
+
+Keep in mind this is the quickest way to setup a connection to MongoDb, you might want to read the full documentation to learn more about the options you can pass in.

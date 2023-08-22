@@ -17,6 +17,10 @@
   @apply mt-5 border-l-2 pl-5 border-primary-100 dark:border-quaternary-400 scroll-m-20 text-[22px] font-semibold tracking-tight text-typography-100 dark:text-typography-800;
 }
 
+.h2 {
+  @apply mt-5 text-xl tracking-tight transition-colors;
+}
+
 .p {
   @apply mt-5 text-sm font-[400]  max-sm:text-xs text-typography-100 dark:text-typography-800;
 }
