@@ -68,15 +68,15 @@ Now we can call this function on any page that we want to protect.
 import { getUser } from "@/lib/get-user-server";
 import { GetServerSidePropsContext } from "next";
 
-Type User = {
-    id:number;
-    username:string
-}
+type User = {
+  id: number;
+  username: string;
+};
 
 export default function Home({ user }: { user: User }) {
   return (
     <main>
-        <h1>Welcome to dashboard, {user?.username}</h1>
+      <h1>Welcome to dashboard, {user?.username}</h1>
     </main>
   );
 }
