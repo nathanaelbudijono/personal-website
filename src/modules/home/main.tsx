@@ -19,8 +19,8 @@ export default function MainPage() {
           <Typography variant="p">
             A Math enthusiast who dreams to build Computer Science with
             Mathematics. Currently learning Software Development as a full-stack
-            developer. I also enjoy writing blogs and documentation regarding
-            certain past projects.
+            developer. I also enjoy writing short notes and documentation
+            regarding certain past projects.
           </Typography>
           <Framer delay={0.5}>
             <div className="mt-5 flex gap-3">
