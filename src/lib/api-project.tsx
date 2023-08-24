@@ -35,11 +35,7 @@ interface ProjectPost {
 export interface ProjectPostMeta {
   excerpt: string;
   date: string;
-  nextjs: string;
-  postgre: string;
-  tailwind: string;
-  typescript: string;
-  prisma: string;
+  tags: string[];
   title: string;
   img: string;
   slug: string;
@@ -61,11 +57,7 @@ export const getPostProjectFromSlug = (slug: string): ProjectPost => {
       excerpt: data.excerpt,
       title: data.title ?? "slug",
       date: (data.date ?? new Date()).toString(),
-      nextjs: data.nextjs,
-      postgre: data.postgre,
-      tailwind: data.tailwind,
-      typescript: data.typescript,
-      prisma: data.prisma,
+      tags: (data?.tags ?? []).sort(),
       img: data.img ?? "",
       link: data.link,
       github: data.github,

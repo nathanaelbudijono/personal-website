@@ -1,19 +1,36 @@
 import cn from "@/type/clsxm";
 import * as React from "react";
 import Typography from "../core/typography";
-import Tag from "../core/tags";
 import UnstyledLink from "../links/unstyled-link";
-
-import { TbBrandNextjs } from "react-icons/tb";
-import {
-  BiLogoPostgresql,
-  BiLogoTailwindCss,
-  BiLogoTypescript,
-} from "react-icons/bi";
-import { RxOpenInNewWindow } from "react-icons/rx";
-import { SiPrisma } from "react-icons/si";
-import { AiFillEye } from "react-icons/ai";
 import Skeleton from "../core/skeleton";
+
+import { RxOpenInNewWindow } from "react-icons/rx";
+import { AiFillEye } from "react-icons/ai";
+import {
+  SiNextdotjs,
+  SiTailwindcss,
+  SiTypescript,
+  SiMarkdown,
+  SiExpress,
+  SiPrisma,
+  SiMongodb,
+  SiMongoose,
+} from "react-icons/si";
+import { BiLogoNodejs } from "react-icons/bi";
+
+export const icons = {
+  nextjs: <SiNextdotjs />,
+  tailwind: <SiTailwindcss />,
+  typescript: <SiTypescript />,
+  mdx: <SiMarkdown />,
+  prisma: <SiPrisma />,
+  express: <SiExpress />,
+  nodejs: <BiLogoNodejs />,
+  mongodb: <SiMongodb />,
+  mongoose: <SiMongoose />,
+};
+
+export type Icons = keyof typeof icons;
 
 type ProjectCardProps = {
   title: string;
@@ -22,11 +39,7 @@ type ProjectCardProps = {
   date: string;
   href: string;
   views?: string | number;
-  nextjs?: string;
-  postgre?: string;
-  tailwind?: string;
-  typescript?: string;
-  prisma?: string;
+  tags?: string[];
 } & React.ComponentPropsWithoutRef<"div">;
 
 export default function ProjectCard({
@@ -36,11 +49,7 @@ export default function ProjectCard({
   date,
   href,
   views,
-  nextjs,
-  postgre,
-  tailwind,
-  typescript,
-  prisma,
+  tags,
   className,
   ...rest
 }: ProjectCardProps) {
@@ -57,29 +66,13 @@ export default function ProjectCard({
     >
       <UnstyledLink href={href}>
         <div className="px-6 py-4 flex justify-between items-center">
-          <div className="flex gap-1">
-            {nextjs === "y" && <Tag leftIcon={TbBrandNextjs}>NextJs</Tag>}
-            {typescript === "y" && (
-              <Tag leftIcon={BiLogoTypescript} color="typescript">
-                typescript
-              </Tag>
-            )}
-            {postgre === "y" && (
-              <Tag leftIcon={BiLogoPostgresql} color="postgre">
-                postgre
-              </Tag>
-            )}
-            {tailwind === "y" && (
-              <Tag leftIcon={BiLogoTailwindCss} color="tailwind">
-                tailwind
-              </Tag>
-            )}
-            {prisma === "y" && (
-              <Tag leftIcon={SiPrisma} color="prisma">
-                prisma
-              </Tag>
-            )}
-          </div>
+          <ul className="flex gap-1">
+            {tags?.map((tag: string) => (
+              <li key={tag} className={`tag-icon-${tag}`}>
+                {icons[tag as Icons]}
+              </li>
+            ))}
+          </ul>
           <Typography variant="small" color="muted" className="text-xs">
             {date}
           </Typography>

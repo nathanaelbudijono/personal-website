@@ -6,11 +6,7 @@ export type ProjectPost = {
 export type ProjectPostMeta = {
   excerpt: string;
   date: string;
-  nextjs: string;
-  postgre: string;
-  tailwind: string;
-  typescript: string;
-  prisma: string;
+  tags: string[];
   title: string;
   img: string;
   slug: string;

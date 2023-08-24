@@ -32,11 +32,7 @@ export default function ProjectPage({ posts }: { posts: ProjectPostMeta[] }) {
               desc={item.excerpt}
               date={item.date}
               img={item.img}
-              nextjs={item?.nextjs}
-              postgre={item?.postgre}
-              tailwind={item?.tailwind}
-              typescript={item?.typescript}
-              prisma={item?.prisma}
+              tags={item.tags}
               href={item.href}
               views={item?.views}
             />
