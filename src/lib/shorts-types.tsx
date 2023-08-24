@@ -10,6 +10,7 @@ export type ShortsPostMeta = {
   title: string;
   slug: string;
   href: string;
+  id: number;
 };
 
 export type PopulatedShorts = {

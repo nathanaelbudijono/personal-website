@@ -38,6 +38,7 @@ export interface ShortsPostMeta {
   title: string;
   slug: string;
   href: string;
+  id: number;
 }
 
 export const getPostShortsFromSlug = (slug: string): ShortsPost => {
@@ -54,6 +55,7 @@ export const getPostShortsFromSlug = (slug: string): ShortsPost => {
       date: (data.date ?? new Date()).toString(),
       tags: (data?.tags ?? []).sort(),
       href: data.href ?? "",
+      id: data.id ?? 0,
     },
   };
 };
