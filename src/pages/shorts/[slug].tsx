@@ -25,11 +25,11 @@ import { SiPrisma } from "react-icons/si";
 import Seo from "@/components/core/seo";
 import Layout from "@/components/core/layout";
 import Typography from "@/components/core/typography";
-import Tag from "@/components/core/tags";
 import Copy from "@/components/core/copy";
 import YouTube from "@/components/core/youtube-iframe-mdx";
 import ImageMdx from "@/components/core/image-mdx";
 import ShortsViewsMetric from "@/modules/metrics/shorts-view";
+import IconTags from "@/components/core/icon-tag";
 
 interface MDXPost {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
@@ -53,39 +53,7 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
             <Typography variant="small" className="text-xs">
               Tech Stack used
             </Typography>
-            <div className="mt-2 flex gap-2">
-              {post.meta.nextjs === "y" && (
-                <Tag leftIcon={TbBrandNextjs}>nextjs</Tag>
-              )}
-              {post.meta.postgre === "y" ? (
-                <Tag leftIcon={BiLogoPostgresql} color="postgre">
-                  postgre
-                </Tag>
-              ) : (
-                ""
-              )}
-              {post.meta.typescript === "y" ? (
-                <Tag leftIcon={BiLogoTypescript} color="typescript">
-                  typescript
-                </Tag>
-              ) : (
-                ""
-              )}
-              {post.meta.tailwind === "y" ? (
-                <Tag leftIcon={BiLogoTailwindCss} color="tailwind">
-                  tailwind
-                </Tag>
-              ) : (
-                ""
-              )}
-              {post.meta.prisma === "y" ? (
-                <Tag leftIcon={SiPrisma} color="prisma">
-                  prisma
-                </Tag>
-              ) : (
-                ""
-              )}
-            </div>
+            <IconTags tags={post.meta.tags} />
           </div>
           <Typography variant="small" className="text-xs">
             {post.meta.date}
