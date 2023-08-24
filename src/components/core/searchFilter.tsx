@@ -27,12 +27,20 @@ export default function SearchFilter({
         filtered =
           selected === "Sort by name"
             ? filtered.sort((a, z) => a.title.localeCompare(z.title))
-            : filtered.sort((a, z) => {
+            : selected === "Sort by popularity"
+            ? filtered.sort((a, z) => {
                 if (
                   typeof a.views === "number" &&
                   typeof z.views === "number"
                 ) {
                   return +z.views - a.views;
+                } else {
+                  return 0;
+                }
+              })
+            : filtered.sort((a, z) => {
+                if (typeof a.id === "number" && typeof z.id === "number") {
+                  return +z.id - a.id;
                 } else {
                   return 0;
                 }
