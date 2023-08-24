@@ -20,7 +20,9 @@ export default function SearchFilter({
           (post) =>
             post.title.toLowerCase().includes(value.toLowerCase()) ||
             post.excerpt.toLowerCase().includes(value.toLowerCase()) ||
-            post.date.toLowerCase().includes(value.toLowerCase())
+            post.date.toLowerCase().includes(value.toLowerCase()) ||
+            post.tags.filter((tag) => tag.includes(value.toLowerCase()))
+              .length > 0
         );
         filtered =
           selected === "Sort by name"
