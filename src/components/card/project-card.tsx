@@ -16,7 +16,7 @@ import {
   SiMongodb,
   SiMongoose,
 } from "react-icons/si";
-import { BiLogoNodejs } from "react-icons/bi";
+import { BiLogoNodejs, BiLogoPostgresql } from "react-icons/bi";
 
 export const icons = {
   nextjs: <SiNextdotjs />,
@@ -28,6 +28,7 @@ export const icons = {
   nodejs: <BiLogoNodejs />,
   mongodb: <SiMongodb />,
   mongoose: <SiMongoose />,
+  postgre: <BiLogoPostgresql />,
 };
 
 export type Icons = keyof typeof icons;
@@ -66,9 +67,9 @@ export default function ProjectCard({
     >
       <UnstyledLink href={href}>
         <div className="px-6 py-4 flex justify-between items-center">
-          <ul className="flex gap-1">
+          <ul className="flex gap-1 text-xs">
             {tags?.map((tag: string) => (
-              <li key={tag} className={`tag-icon-${tag}`}>
+              <li key={tag} className={`tag-icon-${tag}  rounded-md`}>
                 {icons[tag as Icons]}
               </li>
             ))}

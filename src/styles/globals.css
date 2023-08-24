@@ -42,3 +42,27 @@
     @apply text-xs;
   }
 }
+
+.tag-icon-nextjs {
+  @apply p-1 bg-secondary-400 text-typography-100;
+}
+
+.tag-icon-postgre {
+  @apply bg-[#e2e9ef] text-[#2596be] p-1;
+}
+
+.tag-icon-prisma {
+  @apply bg-typography-100 text-secondary-400 p-1;
+}
+
+.tag-icon-tailwind {
+  @apply bg-primary-400 text-primary-100 p-1;
+}
+
+.tag-icon-typescript {
+  @apply bg-primary-200 text-typography-100 p-1;
+}
+
+.tag-icon-mongodb {
+  @apply bg-primary-200 text-typography-100 p-1;
+}
