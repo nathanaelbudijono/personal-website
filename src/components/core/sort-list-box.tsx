@@ -23,7 +23,7 @@ export default function SortListBox({
             border border-primary-400 dark:border-quaternary-500 py-2 pl-3 pr-10 text-left rounded-md shadow-sm focus:outline-none sm:text-sm`}
           >
             <span className="flex items-center text-typography-100 dark:text-typography-800">
-              {selected === "Sort by name" ? (
+              {selected === "Sort by date" ? (
                 <TbSortAscendingLetters className="mr-2 text-xs" />
               ) : (
                 <AiFillEye className="mr-2 text-xs" />
