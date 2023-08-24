@@ -1,7 +1,6 @@
 import cn from "@/type/clsxm";
 import * as React from "react";
 import Typography from "../core/typography";
-import Tag from "../core/tags";
 import UnstyledLink from "../links/unstyled-link";
 import Skeleton from "../core/skeleton";
 
