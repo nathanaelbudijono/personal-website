@@ -25,8 +25,14 @@ export default function SearchFilter({
               .length > 0
         );
         filtered =
-          selected === "Sort by name"
-            ? filtered.sort((a, z) => a.title.localeCompare(z.title))
+          selected === "Sort by date"
+            ? filtered.sort((a, z) => {
+                if (typeof a.id === "number" && typeof z.id === "number") {
+                  return +z.id - a.id;
+                } else {
+                  return 0;
+                }
+              })
             : selected === "Sort by popularity"
             ? filtered.sort((a, z) => {
                 if (
@@ -38,13 +44,7 @@ export default function SearchFilter({
                   return 0;
                 }
               })
-            : filtered.sort((a, z) => {
-                if (typeof a.id === "number" && typeof z.id === "number") {
-                  return +z.id - a.id;
-                } else {
-                  return 0;
-                }
-              });
+            : filtered.sort((a, z) => a.title.localeCompare(z.title));
         return filtered;
       });
     }, 100);
