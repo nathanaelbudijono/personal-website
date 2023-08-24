@@ -20,7 +20,7 @@ export default function ShortsPage({ posts }: { posts: ShortsPostMeta[] }) {
   );
 
   const [filtered, setFiltered] = useState(() => shorts);
-  const [selected, setSelected] = useState(() => "Sort by name");
+  const [selected, setSelected] = useState(() => "Sort by date");
   return (
     <Layout>
       <Seo
