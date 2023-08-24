@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import * as React from "react";
 import { Metrics } from "@/pages/api/projects";
-import { PopulatedProject, ProjectPostMeta } from "@/lib/projectTypes";
+import { PopulatedProject, ProjectPostMeta } from "@/lib/project-types";
 
 const API_URL = `/api/projects`;
 
