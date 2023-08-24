@@ -14,13 +14,6 @@ import {
 } from "@/lib/api-project";
 
 import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
-import { TbBrandNextjs } from "react-icons/tb";
-import {
-  BiLogoPostgresql,
-  BiLogoTailwindCss,
-  BiLogoTypescript,
-} from "react-icons/bi";
-import { SiPrisma } from "react-icons/si";
 
 import Seo from "@/components/core/seo";
 import Layout from "@/components/core/layout";
