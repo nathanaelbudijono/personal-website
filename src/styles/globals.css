@@ -66,3 +66,11 @@
 .tag-icon-mongodb {
   @apply bg-primary-200 text-typography-100 p-1;
 }
+
+.tag-icon-express {
+  @apply bg-typography-600 text-typography-100 p-1;
+}
+
+.tag-icon-mongoose {
+  @apply bg-typography-100 text-lime-800 p-1;
+}
