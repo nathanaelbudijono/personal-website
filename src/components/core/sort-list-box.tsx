@@ -47,7 +47,7 @@ export default function SortListBox({
               className="rounded-md whitespace-nowrap absolute mt-2 max-h-60 w-full overflow-auto py-1 text-sm sm:text-base shadow-sm
               z-[100] bg-gradient-to-b from-primary-400 to-primary-300 dark:from-tertiary-400 dark:to-tertiary-300"
             >
-              {["Sort by name", "Sort by popularity"].map(
+              {["Sort by date", "Sort by name", "Sort by popularity"].map(
                 (option, optionIdx) => (
                   <Listbox.Option
                     key={optionIdx}
