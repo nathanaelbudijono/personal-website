@@ -55,13 +55,7 @@ export default function ShortsPage({ posts }: { posts: ShortsPostMeta[] }) {
               title={item.title}
               desc={item.excerpt}
               date={item.date}
-              nextjs={item?.nextjs}
-              postgre={item?.postgre}
-              tailwind={item?.tailwind}
-              typescript={item?.typescript}
-              prisma={item?.prisma}
-              express={item?.express}
-              nodejs={item?.nodejs}
+              tags={item?.tags}
               href={item.href}
               views={item?.views}
             />

@@ -5,16 +5,34 @@ import Tag from "../core/tags";
 import UnstyledLink from "../links/unstyled-link";
 import Skeleton from "../core/skeleton";
 
-import { TbBrandNextjs } from "react-icons/tb";
 import {
-  BiLogoPostgresql,
-  BiLogoTailwindCss,
-  BiLogoTypescript,
-  BiLogoNodejs,
-} from "react-icons/bi";
+  SiNextdotjs,
+  SiTailwindcss,
+  SiTypescript,
+  SiMarkdown,
+  SiExpress,
+  SiPrisma,
+  SiMongodb,
+  SiMongoose,
+} from "react-icons/si";
+import { BiLogoNodejs, BiLogoPostgresql } from "react-icons/bi";
 import { RxOpenInNewWindow } from "react-icons/rx";
-import { SiPrisma, SiExpress } from "react-icons/si";
 import { AiFillEye } from "react-icons/ai";
+
+export const icons = {
+  nextjs: <SiNextdotjs />,
+  tailwind: <SiTailwindcss />,
+  typescript: <SiTypescript />,
+  mdx: <SiMarkdown />,
+  prisma: <SiPrisma />,
+  express: <SiExpress />,
+  nodejs: <BiLogoNodejs />,
+  mongodb: <SiMongodb />,
+  mongoose: <SiMongoose />,
+  postgre: <BiLogoPostgresql />,
+};
+
+export type Icons = keyof typeof icons;
 
 type ProjectCardProps = {
   title: string;
@@ -23,13 +41,7 @@ type ProjectCardProps = {
   date: string;
   href: string;
   views?: number | string;
-  nextjs?: string;
-  postgre?: string;
-  tailwind?: string;
-  typescript?: string;
-  prisma?: string;
-  express?: string;
-  nodejs?: string;
+  tags?: string[];
 } & React.ComponentPropsWithoutRef<"div">;
 
 export default function ShortCard({
@@ -39,13 +51,7 @@ export default function ShortCard({
   date,
   href,
   views,
-  nextjs,
-  postgre,
-  tailwind,
-  typescript,
-  prisma,
-  express,
-  nodejs,
+  tags,
   className,
   ...rest
 }: ProjectCardProps) {
@@ -62,39 +68,13 @@ export default function ShortCard({
     >
       <UnstyledLink href={href}>
         <div className="px-6 pt-4 flex justify-between items-center">
-          <div className="flex gap-1">
-            {nextjs === "y" && <Tag leftIcon={TbBrandNextjs}>NextJs</Tag>}
-            {typescript === "y" && (
-              <Tag leftIcon={BiLogoTypescript} color="typescript">
-                typescript
-              </Tag>
-            )}
-            {postgre === "y" && (
-              <Tag leftIcon={BiLogoPostgresql} color="postgre">
-                postgre
-              </Tag>
-            )}
-            {tailwind === "y" && (
-              <Tag leftIcon={BiLogoTailwindCss} color="tailwind">
-                tailwind
-              </Tag>
-            )}
-            {prisma === "y" && (
-              <Tag leftIcon={SiPrisma} color="prisma">
-                prisma
-              </Tag>
-            )}
-            {express === "y" && (
-              <Tag leftIcon={SiExpress} color="express">
-                express
-              </Tag>
-            )}
-            {nodejs === "y" && (
-              <Tag leftIcon={BiLogoNodejs} color="nodejs">
-                nodejs
-              </Tag>
-            )}
-          </div>
+          <ul className="flex gap-1 text-xs">
+            {tags?.map((tag: string) => (
+              <li key={tag} className={`tag-icon-${tag}  rounded-md`}>
+                {icons[tag as Icons]}
+              </li>
+            ))}
+          </ul>
           <Typography variant="small" color="muted" className="text-xs">
             {date}
           </Typography>

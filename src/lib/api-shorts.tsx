@@ -34,13 +34,7 @@ interface ShortsPost {
 export interface ShortsPostMeta {
   excerpt: string;
   date: string;
-  nextjs: string;
-  postgre: string;
-  tailwind: string;
-  typescript: string;
-  prisma: string;
-  express: string;
-  nodejs: string;
+  tags: string[];
   title: string;
   slug: string;
   href: string;
@@ -58,13 +52,7 @@ export const getPostShortsFromSlug = (slug: string): ShortsPost => {
       excerpt: data.excerpt,
       title: data.title ?? "slug",
       date: (data.date ?? new Date()).toString(),
-      nextjs: data.nextjs,
-      postgre: data.postgre,
-      tailwind: data.tailwind,
-      typescript: data.typescript,
-      prisma: data.prisma,
-      express: data.express,
-      nodejs: data.nodejs,
+      tags: (data?.tags ?? []).sort(),
       href: data.href ?? "",
     },
   };

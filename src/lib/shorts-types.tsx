@@ -6,13 +6,7 @@ export type ShortsPost = {
 export type ShortsPostMeta = {
   excerpt: string;
   date: string;
-  nextjs: string;
-  postgre: string;
-  tailwind: string;
-  typescript: string;
-  prisma: string;
-  express: string;
-  nodejs: string;
+  tags: string[];
   title: string;
   slug: string;
   href: string;
