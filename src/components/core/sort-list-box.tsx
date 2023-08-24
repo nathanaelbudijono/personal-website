@@ -3,6 +3,7 @@ import { Listbox, Transition } from "@headlessui/react";
 
 import { HiCheck, HiSelector } from "react-icons/hi";
 import { TbSortAscendingLetters } from "react-icons/tb";
+import { MdDateRange } from "react-icons/md";
 import { AiFillEye } from "react-icons/ai";
 
 import Typography from "./typography";
@@ -24,9 +25,11 @@ export default function SortListBox({
           >
             <span className="flex items-center text-typography-100 dark:text-typography-800">
               {selected === "Sort by date" ? (
-                <TbSortAscendingLetters className="mr-2 text-xs" />
-              ) : (
+                <MdDateRange className="mr-2 text-xs" />
+              ) : selected === "Sort by popularity" ? (
                 <AiFillEye className="mr-2 text-xs" />
+              ) : (
+                <TbSortAscendingLetters className="mr-2 text-xs" />
               )}
               <Typography variant="small">{selected}</Typography>
             </span>
