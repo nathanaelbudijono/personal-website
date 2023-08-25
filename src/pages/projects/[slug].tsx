@@ -4,6 +4,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
+import Giscus from "@giscus/react";
 
 import "highlight.js/styles/atom-one-dark.css";
 
@@ -94,6 +95,23 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
             YouTube,
             ImageMdx,
           }}
+        />
+      </section>
+      <section className="mt-5">
+        <Giscus
+          id="comments"
+          repo="nathanaelbudijono/personal-website"
+          repoId="R_kgDOKG44yQ"
+          category="Announcements"
+          categoryId="DIC_kwDOKG44yc4CY2TI"
+          mapping="pathname"
+          term="Welcome to @giscus/react component!"
+          reactionsEnabled="1"
+          emitMetadata="0"
+          inputPosition="bottom"
+          theme="dark_dimmed"
+          lang="en"
+          loading="lazy"
         />
       </section>
     </Layout>
