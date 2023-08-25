@@ -4,8 +4,6 @@ import { serialize } from "next-mdx-remote/serialize";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
-import Giscus, { Repo, Theme } from "@giscus/react";
-
 import "highlight.js/styles/atom-one-dark.css";
 
 import {
@@ -25,6 +23,7 @@ import YouTube from "@/components/core/youtube-iframe-mdx";
 import ImageMdx from "@/components/core/image-mdx";
 import ViewsMetric from "@/modules/metrics/project-view";
 import IconTags from "@/components/core/icon-tag";
+import GiscusComment from "@/components/core/giscus";
 
 interface MDXPost {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
@@ -98,21 +97,7 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
         />
       </section>
       <section className="mt-10">
-        <Giscus
-          id="comments"
-          repo={(process.env.NEXT_PUBLIC_GISCUS_REPO as Repo) || ""}
-          repoId={process.env.NEXT_PUBLIC_GISCUS_REPO_ID || ""}
-          category="Announcements"
-          categoryId="DIC_kwDOKG44yc4CY2TI"
-          mapping="pathname"
-          term="Welcome to @giscus/react component!"
-          reactionsEnabled="0"
-          emitMetadata="0"
-          inputPosition="bottom"
-          theme="dark_dimmed"
-          lang="en"
-          loading="lazy"
-        />
+        <GiscusComment />
       </section>
     </Layout>
   );
