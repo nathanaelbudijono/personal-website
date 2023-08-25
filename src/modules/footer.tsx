@@ -52,18 +52,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-const icons = [
-  {
-    icon: "AiFillMail",
-    link: "mailto:nathanaelbudijono@gmail.com",
-  },
-  {
-    icon: "AiFillGithub",
-    link: "https://github.com/nathanaelbudijono",
-  },
-  {
-    icon: "AiFillLinkedin",
-    link: "https://www.linkedin.com/in/nathanael-budijono/",
-  },
-];
