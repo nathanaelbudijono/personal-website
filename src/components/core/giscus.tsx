@@ -1,4 +1,4 @@
-import Giscus, { Repo, Theme } from "@giscus/react";
+import Giscus, { Repo } from "@giscus/react";
 
 export default function GiscusComment() {
   return (
