@@ -1,0 +1,129 @@
+---
+title: Zustand
+tags:
+  - typescript
+date: 07-09-23
+excerpt: A small, fast and scalable bearbones state-management solution using simplified flux principles.
+href: /shorts/zustand
+id: 4
+---
+
+# Description
+
+State management is a big topic in the React ecosystem.
+First of all we have too look at the definition of a state. State is where you store property values that belong to the component.
+The state can be from the back-end, from the database or components of the front-end as well.
+State management is the process of managing different states of the application. It is an implementation of a design pattern.
+with the help of this design pattern we can synchronize the state of the application throughout all components of the application.
+
+# Overview
+
+We will be using zustand state management. Zustand is a small, fast and scalable bearbones state-management solution using simplified flux principles.
+Zustand require less boilerplate code and is easy to use. In this example we will be fetching a fruit data.
+
+Create a slice.
+
+<Copy />
+
+```ts
+// lib/slice/fruit-slice.ts
+
+import { StateCreator } from "zustand";
+import axios from "axios";
+
+export interface Fruits {
+  id: number;
+  name: string;
+  color: string;
+  count: number;
+}
+
+export interface FruitState {
+  fruits: Fruits[];
+  getFruits: () => void;
+  errorMessage: string;
+}
+
+export const FruitSlice: StateCreator<FruitState> = (set, get) => ({
+  fruits: [],
+  getFruits: async () => {
+    try {
+      const res = await axios.get("https://www.fruitmap.org/api/trees");
+      set({ fruits: res.data });
+    } catch (error) {
+      set({ errorMessage: error.message });
+    }
+  },
+  errorMessage: "",
+});
+```
+
+Next we are going to create a store.
+
+<Copy />
+
+```ts
+// lib/store.ts
+
+import { create } from "zustand";
+import { FruitSlice, FruitState } from "./slice/slices";
+
+type storeState = FruitState;
+
+export const useAppStore = create<storeState>()((...a) => ({
+  ...FruitSlice(...a),
+}));
+```
+
+Here is an example of calling the store. We are going to create a function to handle it.
+
+<Copy />
+
+```ts
+// lib/getFruit.ts
+
+import * as React from "react";
+import { useAppStore } from "./store";
+import { Fruits } from "./slice/slices";
+
+export default function useFruit() {
+  const [fruit, setFruit] = React.useState<Fruits[]>([]);
+  const { getFruits, fruits } = useAppStore();
+  // get the fruits
+  React.useEffect(() => {
+    getFruits();
+  }, []);
+  // set the fruits
+  React.useEffect(() => {
+    setFruit(fruits);
+  }, [fruits]);
+  return fruit;
+}
+```
+
+Calling the function on your page.
+
+<Copy />
+
+```ts
+// pages/index.tsx
+
+import useFruit from "@/lib/getFruit";
+
+export default function Home() {
+  const fruit = useFruit();
+  return (
+    <main className="h-screen">
+      <h1>hello</h1>
+      {fruit?.map((item) => (
+        <div>
+          <h1>{item?.name}</h1>
+        </div>
+      ))}
+    </main>
+  );
+}
+}
+```
+
+Check the complete zustand documentation [here]("https://github.com/pmndrs/zustand").
