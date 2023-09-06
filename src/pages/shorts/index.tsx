@@ -50,7 +50,7 @@ export default function ShortsPage({ posts }: { posts: ShortsPostMeta[] }) {
       </section>
       <section className="grid grid-cols-2 gap-5 mt-5 w-full max-sm:grid-cols-1">
         {filtered?.map((item, index) => (
-          <Framer delay={index * 0.8} key={index}>
+          <Framer delay={index * 0.3} key={index}>
             <ShortCard
               title={item.title}
               desc={item.excerpt}
