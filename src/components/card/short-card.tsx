@@ -14,7 +14,11 @@ import {
   SiMongodb,
   SiMongoose,
 } from "react-icons/si";
-import { BiLogoNodejs, BiLogoPostgresql } from "react-icons/bi";
+import {
+  BiLogoNodejs,
+  BiLogoPostgresql,
+  BiLogoJavascript,
+} from "react-icons/bi";
 import { RxOpenInNewWindow } from "react-icons/rx";
 import { AiFillEye } from "react-icons/ai";
 
@@ -29,6 +33,7 @@ export const icons = {
   mongodb: <SiMongodb />,
   mongoose: <SiMongoose />,
   postgre: <BiLogoPostgresql />,
+  javascript: <BiLogoJavascript />,
 };
 
 export type Icons = keyof typeof icons;
