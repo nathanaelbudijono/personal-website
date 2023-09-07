@@ -74,3 +74,7 @@
 .tag-icon-mongoose {
   @apply bg-typography-100 text-lime-800 p-1;
 }
+
+.tag-icon-javascript {
+  @apply bg-yellow-300 text-typography-800 p-1;
+}
