@@ -41,7 +41,7 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
         image={post.meta.banner}
       />
       <section className="overflow-hidden rounded-md shadow-sm">
-        <img src={post.meta.img} className="object-cover w-full h-[45vh]" />
+        <img src={post.meta.img} className="object-cover w-full h-[46vh]" />
       </section>
       <section className="mt-5">
         <Typography variant="h2" color="gradient">
