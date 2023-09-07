@@ -1,0 +1,73 @@
+---
+title: Prisma Client
+tags:
+  - typescript
+  - prisma
+  - javascript
+date: 08-09-23
+excerpt: An auto-generated query builder that enables type-safe database access
+href: /shorts/prisma-client
+id: 5
+---
+
+# Description
+
+Object-relational mapping ORM is a way to align programming code with database structures.
+ORM uses metadata descriptors to create a layer between the programming language and a relational database.
+It thus connects object-oriented program OOP code with the database and simplifies the interaction between relational databases and OOP languages.
+
+# Overview
+
+One of the most popular ORM tools is Prisma Client.
+The Prisma client is an auto-generated library that can be used as an alternative to Prisma bindings to access data in your applications.
+It is available in JavaScript, TypeScript, Flow and Go.
+
+Your application should generally only create one instance of PrismaClient. How to achieve this depends on whether you are using Prisma in a long-running application or in a serverless environment.
+The reason for this is that each instance of PrismaClient manages a connection pool, which means that a large number of clients can exhaust the database connection limit.
+
+## TypeScript
+
+<Copy />
+
+```ts
+// lib/prisma.tsx
+
+import { PrismaClient } from "@prisma/client";
+
+interface CustomNodeJsGlobal {
+  prisma: PrismaClient;
+}
+
+declare const global: CustomNodeJsGlobal;
+
+const prisma = global.prisma || new PrismaClient();
+
+if (process.env.DATABASE_URL === "development") global.prisma = prisma;
+
+export default prisma;
+```
+
+## JavaScript
+
+<Copy />
+
+```js
+// lib/prisma.js
+
+import { PrismaClient } from "@prisma/client";
+
+let prisma;
+
+if (process.env.DATABASE_URL === "production") {
+  prisma = new PrismaClient();
+} else {
+  if (!global.prisma) {
+    global.prisma = new PrismaClient();
+  }
+  prisma = global.prisma;
+}
+
+export default prisma;
+```
+
+Check the complete prisma documentation [here]("https://www.prisma.io").
