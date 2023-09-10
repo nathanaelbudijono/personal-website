@@ -7,6 +7,8 @@ import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/atom-one-dark.css";
 import Giscus, { Repo } from "@giscus/react";
 
+import useCloudinaryImage from "@/hooks/useCloudinaryImage";
+
 import {
   ProjectPostMeta,
   getPostProjectFromSlug,
@@ -24,6 +26,8 @@ import YouTube from "@/components/core/youtube-iframe-mdx";
 import ImageMdx from "@/components/core/image-mdx";
 import ViewsMetric from "@/modules/metrics/project-view";
 import IconTags from "@/components/core/icon-tag";
+import Image from "next/image";
+
 // import GiscusComment from "@/components/core/giscus";
 
 interface MDXPost {
@@ -32,6 +36,11 @@ interface MDXPost {
 }
 
 export default function ProjectContent({ post }: { post: MDXPost }) {
+  const publicId = post.meta.img;
+  const [src, ready] = useCloudinaryImage(
+    publicId,
+    process.env.NEXT_PUBLIC_CLOUDNAME as string
+  );
   return (
     <Layout className="h-full">
       <Seo
@@ -41,7 +50,21 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
         image={post.meta.banner}
       />
       <section className="overflow-hidden rounded-md shadow-sm">
-        <img src={post.meta.img} className="object-cover w-full h-[46vh]" />
+        <div className="w-full h-[46vh] relative">
+          {src && (
+            <Image
+              src={src}
+              alt="card picture"
+              layout="fill"
+              objectFit="cover"
+              className="text-xs"
+              style={{
+                filter: !ready ? "blur(4px)" : "none",
+                transition: !ready ? "none" : "filter 0.3s ease-out",
+              }}
+            />
+          )}
+        </div>
       </section>
       <section className="mt-5">
         <Typography variant="h2" color="gradient">

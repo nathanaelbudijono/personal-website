@@ -3,6 +3,9 @@ import * as React from "react";
 import Typography from "../core/typography";
 import UnstyledLink from "../links/unstyled-link";
 import Skeleton from "../core/skeleton";
+import Image from "next/image";
+
+import useCloudinaryImage from "@/hooks/useCloudinaryImage";
 
 import { RxOpenInNewWindow } from "react-icons/rx";
 import { AiFillEye } from "react-icons/ai";
@@ -54,6 +57,11 @@ export default function ProjectCard({
   className,
   ...rest
 }: ProjectCardProps) {
+  const publicId = img;
+  const [src, ready] = useCloudinaryImage(
+    publicId,
+    process.env.NEXT_PUBLIC_CLOUDNAME as string
+  );
   return (
     <div
       className={cn(
@@ -78,11 +86,21 @@ export default function ProjectCard({
             {date}
           </Typography>
         </div>
-        <img
-          src={img}
-          alt="Project Card"
-          className="object-cover h-56 max-sm:h-52 w-full text-xs"
-        />
+        <div className="h-56 max-sm:h-52 relative">
+          {src && (
+            <Image
+              src={src}
+              alt="card picture"
+              layout="fill"
+              objectFit="cover"
+              className="text-xs"
+              style={{
+                filter: !ready ? "blur(4px)" : "none",
+                transition: !ready ? "none" : "filter 0.3s ease-out",
+              }}
+            />
+          )}
+        </div>
         <div className="px-6 pt-4 pb-6">
           <div className="flex justify-between">
             <Typography variant="h4">{title}</Typography>

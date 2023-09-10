@@ -7,6 +7,9 @@ const withRemoteRefresh = require("next-remote-refresh")({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    domains: ["res.cloudinary.com"],
+  },
 };
 
 module.exports = withRemoteRefresh(nextConfig);
