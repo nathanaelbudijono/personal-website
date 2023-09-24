@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "npm run sitemap",
-    "sitemap": "next-sitemap"
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@giscus/react": "^2.3.0",
