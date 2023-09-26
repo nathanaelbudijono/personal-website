@@ -26,7 +26,6 @@ module.exports = {
         "typography-700": "#404040",
         "typography-800": "#262626",
         "typography-900": "#171717",
-        "typography-950": "#0a0a0a",
 
         "ready-400": "#4ade80",
         "ready-500": "#22c55e",
