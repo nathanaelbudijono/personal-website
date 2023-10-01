@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://nathanaelbudijono.vercel.app/
+Host: https://nathanaelbudijono.vercel.app
 
 # Sitemaps
 Sitemap: https://nathanaelbudijono.vercel.app/sitemap.xml
