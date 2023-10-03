@@ -7,7 +7,7 @@ const defaultMeta = {
   siteName: "Portfolio Website",
   description:
     "Welcome to my digital notebook where I share what I'm learning about shipping great products, becoming a better developer and growing a career in tech.",
-  url: "https://nathanaelbudijono.vercel.app/",
+  url: "https://nathanaelbudijono.vercel.app",
   type: "website",
   robots: "follow, index",
   image: "https://nathanaelbudijono.vercel.app/logo.png",
