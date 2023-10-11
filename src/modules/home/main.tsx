@@ -2,6 +2,9 @@ import { Framer } from "@/components/core/framer";
 import Layout from "@/components/core/layout";
 import Typography from "@/components/core/typography";
 import ButtonLink from "@/components/links/button-links";
+import UnstyledLink from "@/components/links/unstyled-link";
+
+import cn from "@/type/clsxm";
 
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
@@ -18,9 +21,19 @@ export default function MainPage() {
           </div>
           <Typography variant="p">
             A Math enthusiast who dreams to build Computer Science with
-            Mathematics. Currently learning Software Development as a full-stack
-            developer. I also enjoy writing short notes and documentation
-            regarding certain past projects.
+            Mathematics. Currently a full-stack engineer at{" "}
+            <UnstyledLink
+              href="https://bendega.id"
+              className={cn(
+                "bg-gradient-to-r from-primary-400 to-primary-100",
+                "bg-clip-text text-transparent",
+                "dark:from-tertiary-400 dark:to-tertiary-300"
+              )}
+            >
+              Bendega
+            </UnstyledLink>
+            . I also enjoy writing short notes and documentation regarding
+            certain past projects.
           </Typography>
           <Framer delay={0.5}>
             <div className="mt-5 flex gap-3">
