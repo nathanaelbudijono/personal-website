@@ -1,0 +1,147 @@
+---
+title: Next-Auth Page Security
+tags:
+  - typescript
+  - nextjs
+date: 11-10-23
+excerpt: Enhance the security of your web page by leveraging session management with Next-Auth.
+href: /shorts/next-auth
+id: 6
+---
+
+# Description
+
+NextAuth is a complete open-source authentication solution for Next.js applications.
+It is designed from the ground up to support Next.js and Serverless. It supports authentication providers like Auth0, Google, Facebook, Twitter, Apple, and more.
+
+# Overview
+
+This authentication library leverages the concept of sessions to ensure secure user access.
+Next-Auth operates by creating and managing sessions, which serve as the bridge between a user's identity and the resources they have access to on your site.
+A session, in this context, can be thought of as a temporary but reliable token that confirms a user's identity.
+First, we will be creating a protected layout component.
+
+<Copy />
+
+```tsx
+// src/component/protected-layout.tsx
+
+import * as React from "react";
+
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
+
+type Props = {
+  children: React.ReactElement;
+};
+
+/*
+  add the requireAuth property to the page component
+  to protect the page from unauthenticated users
+  e.g.:
+  OrderDetail.requireAuth = true;
+  export default OrderDetail;
+ */
+
+export const ProtectedLayout = ({ children }: Props): JSX.Element => {
+  const router = useRouter();
+  const { status: sessionStatus } = useSession();
+  const authorized = sessionStatus === "authenticated";
+  const unAuthorized = sessionStatus === "unauthenticated";
+  const loading = sessionStatus === "loading";
+
+  React.useEffect(() => {
+    // check if the session is loading or the router is not ready
+    if (loading || !router.isReady) return;
+
+    // if the user is not authorized, redirect to the login page
+    // with a return url to the current page
+    if (unAuthorized) {
+      console.log("not authorized");
+      router.push({
+        pathname: "/",
+        query: { returnUrl: router.asPath },
+      });
+    }
+  }, [loading, unAuthorized, sessionStatus, router]);
+
+  // if the user refreshed the page or somehow navigated to the protected page
+  if (loading) {
+    return (
+      <div className="h-screen flex justify-center items-center">
+        Loading app...
+      </div>
+    );
+  }
+
+  // if the user is authorized, render the page
+  // otherwise, render nothing while the router redirects him to the login page
+  return authorized ? <div>{children}</div> : <></>;
+};
+```
+
+We will modify the \_app.tsx file to use the protected layout component.
+
+<Copy />
+
+```tsx
+// src/pages/_app.tsx
+
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
+
+import { SessionProvider } from "next-auth/react";
+import { ProtectedLayout } from "@/component/protected-layout";
+
+type AppPropsWithAuth = AppProps & {
+  Component: {
+    requireAuth?: boolean;
+  };
+};
+
+export default function App({ Component, pageProps }: AppPropsWithAuth) {
+  const { session } = pageProps;
+  return (
+    <SessionProvider session={session}>
+      <main className="bg-zinc-800 text-white">
+        {Component.requireAuth ? (
+          <ProtectedLayout>
+            <Component {...pageProps} />
+          </ProtectedLayout>
+        ) : (
+          <Component {...pageProps} />
+        )}
+      </main>
+    </SessionProvider>
+  );
+}
+```
+
+Here is the implementation of the page that you want to protect.
+
+<Copy />
+
+```tsx
+// src/pages/dashboard/index.tsx
+
+import Layout from "@/component/layout";
+
+import { useSession } from "next-auth/react";
+
+export default function Dashboard() {
+  const { data: session } = useSession();
+
+  return (
+    <div>
+      <Layout className="flex justify-center items-center h-screen flex-col">
+        <h1>Dashboard page</h1>
+        <p>Welcome, {session?.user?.name}</p>
+      </Layout>
+    </div>
+  );
+}
+
+Dashboard.requireAuth = true;
+```
+
+Thank you for reading! I have created a [repository](https://github.com/nathanaelbudijono/next-auth) with the code used in this article & next-auth implementation with discord provider. This article also references Fernando González Tostado [blog](https://dev.to/esponges/protecting-routes-with-nextauth-in-nextjs-2kkd).
