@@ -68,13 +68,23 @@ export default function Seo(props: SeoProps) {
         <link key={linkProps.href} {...linkProps} />
       ))}
       <meta name="msapplication-TileColor" content="#ffffff" />
-      <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+      <meta
+        name="msapplication-config"
+        content="/favicon/ms-icon-144x144.png"
+      />
       <meta name="theme-color" content="#ffffff" />
     </Head>
   );
 }
 
-const favicons: Array<React.ComponentPropsWithoutRef<"link">> = [
+type Favicons = {
+  rel: string;
+  href: string;
+  sizes?: string;
+  type?: string;
+};
+
+const favicons: Array<Favicons> = [
   {
     rel: "apple-touch-icon",
     sizes: "57x57",
