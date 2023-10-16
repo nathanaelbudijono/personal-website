@@ -3,8 +3,8 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 const defaultMeta = {
-  title: "Nathanael",
-  siteName: "Portfolio Website",
+  title: "Nathanael Budijono",
+  siteName: "Nathanael Budijono",
   description:
     "Welcome to my digital notebook where I share what I'm learning about shipping great products, becoming a better developer and growing a career in tech.",
   url: "https://nathanaelbudijono.vercel.app",
