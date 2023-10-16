@@ -15,12 +15,7 @@ export default function Home({ posts }: { posts: ProjectPostMeta[] }) {
     usePopulatedProjectPosts(posts, "projects");
   return (
     <main>
-      <Seo
-        templateTitle="Home"
-        description="Welcome to my digital notebook where I share what I'm learning about shipping great products, becoming a better developer and growing a career in tech."
-        isBanner
-        banner="https://nathanaelbudijono.vercel.app/logo.png"
-      />
+      <Seo isBanner banner="https://nathanaelbudijono.vercel.app/logo.png" />
       <MainPage />
       <Layout className=" max-sm:h-full">
         <Typography variant="h1" color="gradient">
