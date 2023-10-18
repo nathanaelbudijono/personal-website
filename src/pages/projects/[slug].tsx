@@ -67,9 +67,7 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
         </div>
       </section>
       <section className="mt-5">
-        <Typography variant="h2" color="gradient">
-          {post.meta.title}
-        </Typography>
+        <Typography variant="h2">{post.meta.title}</Typography>
 
         <div className="flex justify-between items-center mt-5">
           <div className="w-fit flex gap-2">

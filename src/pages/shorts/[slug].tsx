@@ -36,9 +36,7 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
         siteName="Shorts"
       />
       <section>
-        <Typography variant="h2" color="gradient">
-          {post.meta.title}
-        </Typography>
+        <Typography variant="h2">{post.meta.title}</Typography>
         <div className="mt-5 flex justify-between items-start">
           <div>
             <Typography variant="small" className="text-xs">

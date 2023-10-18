@@ -14,7 +14,7 @@
 }
 
 .h1 {
-  @apply mt-5 border-l-2 pl-5 border-primary-100 dark:border-quaternary-400 scroll-m-20 text-[25px] font-semibold tracking-tight text-typography-100 dark:text-typography-800;
+  @apply mt-5 border-l-2 pl-5 border-primary-100 dark:border-quaternary-400 scroll-m-20 text-[25px] font-semibold tracking-tight;
 }
 
 .h2 {
@@ -22,15 +22,15 @@
 }
 
 .p {
-  @apply mt-5 text-sm font-[300]  max-sm:text-xs text-typography-200 dark:text-typography-800;
+  @apply mt-5 text-[15px] font-[300]  max-sm:text-xs text-typography-200 dark:text-typography-800;
 }
 
 .li {
-  @apply mt-5 text-sm font-[400] leading-3 max-sm:text-xs text-typography-100 dark:text-typography-800;
+  @apply mt-5 text-sm font-[400] leading-3 max-sm:text-xs text-typography-200 dark:text-typography-800;
 }
 
 .a {
-  @apply text-primary-300 dark:text-tertiary-400;
+  @apply text-typography-100 dark:text-typography-800;
 }
 
 @layer base {
