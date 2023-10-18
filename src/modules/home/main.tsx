@@ -6,7 +6,8 @@ import UnstyledLink from "@/components/links/unstyled-link";
 
 import cn from "@/type/clsxm";
 
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { AiFillLinkedin } from "react-icons/ai";
+import { RiMovie2Fill } from "react-icons/ri";
 
 export default function MainPage() {
   return (
@@ -58,9 +59,9 @@ export default function MainPage() {
 
 const Links = [
   {
-    link: "https://github.com/nathanaelbudijono/personal-website",
-    title: "Open source",
-    icon: AiFillGithub,
+    link: "https://nathanaelbudijono.vercel.app",
+    title: "Upcoming",
+    icon: RiMovie2Fill,
   },
   {
     link: "https://www.linkedin.com/in/nathanael-budijono/",
