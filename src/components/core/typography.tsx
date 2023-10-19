@@ -7,6 +7,7 @@ const TypographyVariant = [
   "h3",
   "h4",
   "p",
+  "small2",
   "blockquote",
   "code",
   "lead",
@@ -77,6 +78,9 @@ const Typography: TypographyComponent = React.forwardRef(
             variant === "lead" && ["text-xl"],
             variant === "small" && [
               "text-sm font-[400] leading-none max-sm:text-xs",
+            ],
+            variant === "small2" && [
+              "text-[16px] font-[400] leading-8 max-sm:text-xs text-typography-200 dark:text-typography-800",
             ],
             variant === "muted" && ["text-sm text-typography-500"],
           ],

@@ -51,7 +51,7 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
         <div className="mt-5">
           <ShortsViewsMetric slug={post.meta.slug} />
         </div>
-        <Typography variant="small" color="muted" className="mt-5">
+        <Typography variant="small2" color="muted" className="mt-5">
           {post.meta.excerpt}
         </Typography>
         <div className="h-[1px] w-full bg-primary-400 mt-5"></div>

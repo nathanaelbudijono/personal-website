@@ -98,7 +98,7 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
             Tech Stack used
           </Typography>
           <IconTags tags={post.meta.tags} />
-          <Typography variant="small" color="muted" className="mt-5">
+          <Typography variant="small2" color="muted" className="mt-5">
             {post.meta.excerpt}
           </Typography>
         </div>
