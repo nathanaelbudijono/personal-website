@@ -22,7 +22,7 @@
 }
 
 .p {
-  @apply mt-5 text-[15px] font-[300]  max-sm:text-xs text-typography-200 dark:text-typography-800;
+  @apply mt-5 text-[15px] font-[300] leading-6 max-sm:text-xs text-typography-200 dark:text-typography-800;
 }
 
 .li {
