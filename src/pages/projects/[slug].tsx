@@ -31,6 +31,7 @@ import ViewsMetric from "@/modules/metrics/project-view";
 import IconTags from "@/components/core/icon-tag";
 import Image from "next/image";
 import TableOfContents, { HeadingScrollSpy } from "@/components/content/toc";
+import { Toaster } from "react-hot-toast";
 
 // import GiscusComment from "@/components/core/giscus";
 
@@ -173,6 +174,7 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
             loading="lazy"
           />
         </section>
+        <Toaster />
       </main>
     </Layout>
   );

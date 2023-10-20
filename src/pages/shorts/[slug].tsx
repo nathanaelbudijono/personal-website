@@ -26,6 +26,7 @@ import IconTags from "@/components/core/icon-tag";
 import TableOfContents, { HeadingScrollSpy } from "@/components/content/toc";
 
 import useScrollSpy from "@/hooks/useScrollSpy";
+import { Toaster } from "react-hot-toast";
 
 interface MDXPost {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
@@ -110,6 +111,7 @@ export default function ShortsContent({ post }: { post: MDXPost }) {
             </div>
           </aside>
         </section>
+        <Toaster />
       </main>
     </Layout>
   );
