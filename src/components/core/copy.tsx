@@ -1,6 +1,9 @@
-import { BsClipboard, BsClipboardCheck } from "react-icons/bs";
 import * as React from "react";
+
 import useCopy from "@/hooks/useCopy";
+
+import { IoCopySharp } from "react-icons/io5";
+import { AiOutlineCheck } from "react-icons/ai";
 
 export default function Copy() {
   const ref = React.useRef() as React.MutableRefObject<HTMLDivElement>;
@@ -20,15 +23,15 @@ export default function Copy() {
       ref={ref}
     >
       <button
-        className={`relative top-14 p-2 text-typography-100 opacity-50 hover:opacity-100 transition-all duration-300 rounded-md hover:bg-primary-300 dark:hover:bg-tertiary-300  ${
+        className={`relative top-14 p-2 text-typography-100 opacity-50 transition-all duration-300 rounded-md ${
           copiedValue && "opacity-100"
         }`}
         onClick={() => copy(value)}
       >
         {copiedValue ? (
-          <BsClipboardCheck className="text-xl" />
+          <AiOutlineCheck className="text-lg" />
         ) : (
-          <BsClipboard className="text-xl" />
+          <IoCopySharp className="text-lg" />
         )}
       </button>
     </div>
