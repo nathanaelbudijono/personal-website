@@ -129,7 +129,7 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
               {post.meta.excerpt}
             </Typography>
           </div>
-          <div className="h-[1px] w-full bg-primary-400 mt-5"></div>
+          <div className="h-[1px] w-full bg-secondary-300 dark:bg-secondary-400 mt-5"></div>
         </section>
         <section className="mt-5 lg:grid lg:grid-cols-[auto,200px] lg:gap-5">
           <article>

@@ -19,7 +19,7 @@ const UnderlineLink = React.forwardRef<HTMLAnchorElement, UnstyledLinkProps>(
             "text-xs",
             "bg-no-repeat group-hover:bg-[length:100%_2px]",
             "transition-all duration-500 ease-out",
-            "text-primary-300 dark:text-tertiary-400"
+            "text-typography-100 dark:text-typography-800"
           )}
         >
           {children}

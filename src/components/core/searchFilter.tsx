@@ -62,9 +62,9 @@ export default function SearchFilter({
         className={clsx(
           "pl-3 py-1.5 rounded-md w-full shadown-sm text-sm",
           "transition-colors duration-200 bg-transparent",
-          "border border-primary-400 text-typography-100",
+          "border border-secondary-300 text-typography-800",
           "active:text-typography-100",
-          "dark:border-tertiary-300 dark:text-typography-800 dark:active:border-quaternary-500"
+          "dark:border-secondary-400 dark:text-typography-800 dark:active:border-secondary-500"
         )}
       />
     </div>

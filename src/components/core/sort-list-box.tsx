@@ -21,7 +21,7 @@ export default function SortListBox({
         <div className="relative mt-1">
           <Listbox.Button
             className={`relative w-full cursor-default 
-            border border-primary-400 dark:border-quaternary-500 py-2 pl-3 pr-10 text-left rounded-md shadow-sm focus:outline-none sm:text-sm`}
+            border border-secondary-300 dark:border-secondary-400 py-2 pl-3 pr-10 text-left rounded-md shadow-sm focus:outline-none sm:text-sm`}
           >
             <span className="flex items-center text-typography-100 dark:text-typography-800">
               {selected === "Sort by date" ? (

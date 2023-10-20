@@ -39,7 +39,7 @@ html {
 
 @layer base {
   code {
-    @apply mt-10 border border-primary-400 rounded-md dark:shadow-sm dark:border-tertiary-300 bg-secondary-200 text-xs;
+    @apply mt-10 border border-secondary-300 rounded-md dark:shadow-sm text-xs bg-opacity-50;
   }
 
   span {

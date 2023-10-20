@@ -7,8 +7,9 @@ import { AiFillMail, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 
 export default function Footer() {
   return (
-    <footer className="px-16 max-md:px-6 h-[20vh] text-center py-5 mt-5">
-      <section className="max-w-4xl mx-auto flex justify-center flex-col items-center gap-1">
+    <footer className="px-16 max-md:px-6 text-center py-5 mt-5">
+      <section className="h-[1px] w-full bg-secondary-300 dark:bg-secondary-400 mb-5"></section>
+      <section className="max-w-4xl mx-auto flex h-[20vh] justify-center flex-col items-center gap-1">
         <div>
           <Typography variant="small" className="text-xs">
             © {new Date().getFullYear()} by Nathanael

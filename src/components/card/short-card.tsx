@@ -61,9 +61,9 @@ export default function ShortCard({
       className={cn(
         "overflow-hidden border border-primary-700 rounded-md text-typography-100 h-[162px]",
         "transition-all duration-300 ease-in-out",
-        "border border-primary-400",
+        "border border-secondary-300",
         "hover:scale-[1.02]",
-        "dark:border-tertiary-300"
+        "dark:border-secondary-400"
       )}
       {...rest}
     >
