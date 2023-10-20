@@ -43,9 +43,9 @@ export default function Copy() {
         }}
       >
         {copiedValue ? (
-          <AiOutlineCheck className="text-lg" />
+          <AiOutlineCheck className="text-md" />
         ) : (
-          <IoCopySharp className="text-lg" />
+          <IoCopySharp className="text-md" />
         )}
       </button>
     </div>
