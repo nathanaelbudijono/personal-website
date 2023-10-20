@@ -80,6 +80,32 @@ module.exports = {
         "quaternary-400": "#FF00EB",
         "quaternary-500": "#D19F9C",
       },
+
+      animation: {
+        enter: "fadeInRight 300ms ease-out",
+        leave: "fadeOutLeft 300ms ease-in forwards",
+      },
+      keyframes: {
+        fadeInRight: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-2rem)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0rem)",
+          },
+        },
+        fadeOutLeft: {
+          "0%": {
+            opacity: "1",
+          },
+          "100%": {
+            opacity: "0",
+          },
+        },
+      },
+
       screens: {
         xs: "400px",
       },
