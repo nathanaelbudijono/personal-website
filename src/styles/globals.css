@@ -26,7 +26,7 @@ html {
 }
 
 .p {
-  @apply mt-5 text-[16px] font-[400] leading-8 max-sm:text-xs text-typography-200 dark:text-typography-800;
+  @apply mt-5 text-[16px] font-[400] leading-8 max-sm:text-[14px] max-sm:leading-[24px] text-typography-200 dark:text-typography-800;
 }
 
 .li {
