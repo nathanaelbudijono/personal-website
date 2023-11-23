@@ -10,6 +10,8 @@ import {
   SiPrisma,
   SiMongodb,
   SiMongoose,
+  SiTrpc,
+  SiFirebase,
 } from "react-icons/si";
 import { BiLogoNodejs, BiLogoPostgresql } from "react-icons/bi";
 
@@ -23,7 +25,8 @@ export const icons = {
   nodejs: <BiLogoNodejs />,
   mongodb: <SiMongodb />,
   mongoose: <SiMongoose />,
-  postgre: <BiLogoPostgresql />,
+  trpc: <SiTrpc />,
+  firebase: <SiFirebase />,
 };
 
 export type Icons = keyof typeof icons;
