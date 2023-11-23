@@ -79,12 +79,13 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
       />
       <main className="relative">
         <section className="overflow-hidden rounded-md shadow-sm">
-          <div className="w-full h-[46vh] relative">
+          <div className="w-full relative">
             {src && (
               <Image
                 src={src}
                 alt="card picture"
-                layout="fill"
+                width={1440}
+                height={792}
                 objectFit="cover"
                 className="text-xs"
                 style={{
@@ -99,10 +100,14 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
           <Typography variant="h2">{post.meta.title}</Typography>
           <div className="flex justify-between items-center mt-5">
             <div className="w-fit flex gap-2">
-              <UnderlineLink href={post.meta.github}>
-                <AiFillGithub className="text-typography-100 dark:text-typography-800" />
-                Repository
-              </UnderlineLink>
+              {post.meta.github ? (
+                <UnderlineLink href={post.meta.github}>
+                  <AiFillGithub className="text-typography-100 dark:text-typography-800" />
+                  Repository
+                </UnderlineLink>
+              ) : (
+                ""
+              )}
               {post.meta.link ? (
                 <UnderlineLink href={post.meta.link}>
                   <AiOutlineLink className="text-typography-100 dark:text-typography-800" />
@@ -138,6 +143,7 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
               {...post.source}
               components={{
                 h1: (props) => <h1 className="h1" {...props} />,
+                h2: (props) => <h2 className="h2" {...props} />,
                 p: (props) => <p className="p" {...props} />,
                 li: (props) => <li className="li" {...props} />,
                 a: (props) => <a className="a" {...props} />,
