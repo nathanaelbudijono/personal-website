@@ -13,7 +13,7 @@ export default function ProjectPage({ posts }: { posts: ProjectPostMeta[] }) {
     "projects"
   );
   return (
-    <Layout className="h-full">
+    <Layout className="max-sm:h-full">
       <Seo
         templateTitle="Projects"
         description="Showcase of my experiences throughout my learning process."
