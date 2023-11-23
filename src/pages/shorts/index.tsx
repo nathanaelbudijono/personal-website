@@ -65,7 +65,7 @@ export default function ShortsPage({ posts }: { posts: ShortsPostMeta[] }) {
         ) : (
           <div className="h-screen">
             <Typography variant="h4">
-              Sorry, we cant find what you're looking for.
+              Sorry, there are no such content.
             </Typography>
           </div>
         )}
