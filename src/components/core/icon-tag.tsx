@@ -27,6 +27,7 @@ export const icons = {
   mongoose: <SiMongoose />,
   trpc: <SiTrpc />,
   firebase: <SiFirebase />,
+  postgre: <BiLogoPostgresql />,
 };
 
 export type Icons = keyof typeof icons;

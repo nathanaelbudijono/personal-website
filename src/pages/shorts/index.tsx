@@ -49,18 +49,26 @@ export default function ShortsPage({ posts }: { posts: ShortsPostMeta[] }) {
         </section>
       </section>
       <section className="grid grid-cols-2 gap-5 mt-5 w-full max-sm:grid-cols-1">
-        {filtered?.map((item, index) => (
-          <Framer delay={index * 0.3} key={index}>
-            <ShortCard
-              title={item.title}
-              desc={item.excerpt}
-              date={item.date}
-              tags={item?.tags}
-              href={item.href}
-              views={item?.views}
-            />
-          </Framer>
-        ))}
+        {filtered?.length > 0 ? (
+          filtered?.map((item, index) => (
+            <Framer delay={index * 0.3} key={index}>
+              <ShortCard
+                title={item.title}
+                desc={item.excerpt}
+                date={item.date}
+                tags={item?.tags}
+                href={item.href}
+                views={item?.views}
+              />
+            </Framer>
+          ))
+        ) : (
+          <div className="h-screen">
+            <Typography variant="h4">
+              Sorry, we cant find what you're looking for.
+            </Typography>
+          </div>
+        )}
       </section>
     </Layout>
   );
