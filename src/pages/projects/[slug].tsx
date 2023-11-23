@@ -70,7 +70,7 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
   }, [post.meta.slug]);
   // ----------- End ScrollSpy Region ------------
   return (
-    <Layout className="h-full">
+    <Layout className="max-sm:h-full">
       <Seo
         templateTitle={post.meta.title}
         description={post.meta.excerpt}
