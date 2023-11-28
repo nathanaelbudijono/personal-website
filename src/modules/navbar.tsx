@@ -25,9 +25,9 @@ export default function Navbar() {
   return (
     <main
       className={clsx(
-        "px-16 max-md:px-6 sticky top-0 z-10",
+        "sticky top-0 z-10",
         "bg-dark-100 bg-opacity-40 backdrop-blur-[2px]",
-        "dark:bg-light-100 dark:bg-opacity-40"
+        "dark:bg-light-100 dark:bg-opacity-40 relative"
       )}
     >
       <section className="max-w-4xl mx-auto">

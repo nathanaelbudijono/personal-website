@@ -17,43 +17,46 @@ export default function Home({ posts }: { posts: ProjectPostMeta[] }) {
   const { populatedProjectPosts: projects, isLoading } =
     usePopulatedProjectPosts(posts, "projects");
   return (
-    <main>
-      <Seo isBanner banner="https://nathanaelbudijono.vercel.app/logo.png" />
+    <>
       <Navbar />
-      <MainPage />
-      <Layout className=" max-sm:h-full">
-        <Typography variant="h1" color="gradient">
-          Featured
-        </Typography>
-        <Typography variant="small" className="mt-3">
-          My latest past projects.
-        </Typography>
-        <section className="w-full mt-5 grid grid-cols-2 max-sm:grid-cols-1 gap-5">
-          {projects.map((item, index) => (
-            <Framer delay={index * 0.8} key={index}>
-              <ProjectCard
-                title={item.title}
-                desc={item.excerpt}
-                date={item.date}
-                img={item.img}
-                tags={item.tags}
-                href={item.href}
-                views={item?.views}
-              />
-            </Framer>
-          ))}
-        </section>
-        <div className="mt-5 w-fit">
-          <ArrowLink
-            href="/projects"
-            className="text-typography-100 dark:text-typography-800"
-          >
-            Read More
-          </ArrowLink>
-        </div>
-      </Layout>
+      <main>
+        <Seo isBanner banner="https://nathanaelbudijono.vercel.app/logo.png" />
+
+        <MainPage />
+        <Layout className=" max-sm:h-full">
+          <Typography variant="h1" color="gradient">
+            Featured
+          </Typography>
+          <Typography variant="small" className="mt-3">
+            My latest past projects.
+          </Typography>
+          <section className="w-full mt-5 grid grid-cols-2 max-sm:grid-cols-1 gap-5">
+            {projects.map((item, index) => (
+              <Framer delay={index * 0.8} key={index}>
+                <ProjectCard
+                  title={item.title}
+                  desc={item.excerpt}
+                  date={item.date}
+                  img={item.img}
+                  tags={item.tags}
+                  href={item.href}
+                  views={item?.views}
+                />
+              </Framer>
+            ))}
+          </section>
+          <div className="mt-5 w-fit">
+            <ArrowLink
+              href="/projects"
+              className="text-typography-100 dark:text-typography-800"
+            >
+              Read More
+            </ArrowLink>
+          </div>
+        </Layout>
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
 
