@@ -36,6 +36,11 @@ module.exports = {
         "danger-600": "#dc2626",
         "danger-700": "#b91c1c",
 
+        "dark-100": "#18191A",
+        "dark-200": "#242526",
+        "light-100": "#d9dedc",
+        "light-200": "#ffffff",
+
         "primary-100": "#ABE0FF",
         "primary-200": "#599FFF",
         "primary-300": "#1B80FF",
