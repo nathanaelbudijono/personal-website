@@ -73,7 +73,8 @@ export default function ProjectCard({
         "transition-all duration-300 ease-in-out",
         "border border-secondary-300",
         "hover:scale-[1.02]",
-        "dark:border-secondary-400"
+        "dark:border-secondary-400",
+        "bg-dark-100 bg-opacity-30 dark:bg-light-100 dark:bg-opacity-30"
       )}
       {...rest}
     >

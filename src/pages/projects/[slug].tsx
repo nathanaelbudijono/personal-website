@@ -33,6 +33,9 @@ import Image from "next/image";
 import TableOfContents, { HeadingScrollSpy } from "@/components/content/toc";
 import { Toaster } from "react-hot-toast";
 
+import Navbar from "@/modules/navbar";
+import Footer from "@/modules/footer";
+
 // import GiscusComment from "@/components/core/giscus";
 
 interface MDXPost {
@@ -70,119 +73,123 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
   }, [post.meta.slug]);
   // ----------- End ScrollSpy Region ------------
   return (
-    <Layout className="h-full">
-      <Seo
-        templateTitle={post.meta.title}
-        description={post.meta.excerpt}
-        siteName="Projects"
-        image={post.meta.banner}
-      />
-      <main className="relative">
-        <section className="overflow-hidden rounded-md shadow-sm">
-          <div className="w-full relative">
-            {src && (
-              <Image
-                src={src}
-                alt="card picture"
-                width={1440}
-                height={792}
-                objectFit="cover"
-                className="text-xs"
-                style={{
-                  filter: !ready ? "blur(4px)" : "none",
-                  transition: !ready ? "none" : "filter 0.3s ease-out",
+    <>
+      <Navbar />
+      <Layout className="h-full">
+        <Seo
+          templateTitle={post.meta.title}
+          description={post.meta.excerpt}
+          siteName="Projects"
+          image={post.meta.banner}
+        />
+        <main className="relative">
+          <section className="overflow-hidden rounded-md shadow-sm">
+            <div className="w-full relative">
+              {src && (
+                <Image
+                  src={src}
+                  alt="card picture"
+                  width={1440}
+                  height={792}
+                  objectFit="cover"
+                  className="text-xs"
+                  style={{
+                    filter: !ready ? "blur(4px)" : "none",
+                    transition: !ready ? "none" : "filter 0.3s ease-out",
+                  }}
+                />
+              )}
+            </div>
+          </section>
+          <section className="mt-5">
+            <Typography variant="h2">{post.meta.title}</Typography>
+            <div className="flex justify-between items-center mt-5">
+              <div className="w-fit flex gap-2">
+                {post.meta.github ? (
+                  <UnderlineLink href={post.meta.github}>
+                    <AiFillGithub className="text-typography-100 dark:text-typography-800" />
+                    Repository
+                  </UnderlineLink>
+                ) : (
+                  ""
+                )}
+                {post.meta.link ? (
+                  <UnderlineLink href={post.meta.link}>
+                    <AiOutlineLink className="text-typography-100 dark:text-typography-800" />
+                    Live link
+                  </UnderlineLink>
+                ) : (
+                  ""
+                )}
+              </div>
+              <Typography variant="small" className="text-xs">
+                {post.meta.date.slice(0, 15)}
+              </Typography>
+            </div>
+
+            <div className="mt-5">
+              <ViewsMetric slug={post.meta.slug} />
+            </div>
+
+            <div className="mt-5">
+              <Typography variant="small" className="text-xs">
+                Tech Stack used
+              </Typography>
+              <IconTags tags={post.meta.tags} />
+              <Typography variant="small2" color="muted" className="mt-5">
+                {post.meta.excerpt}
+              </Typography>
+            </div>
+            <div className="h-[1px] w-full bg-secondary-300 dark:bg-secondary-400 mt-5"></div>
+          </section>
+          <section className="mt-5 lg:grid lg:grid-cols-[auto,200px] lg:gap-5">
+            <article>
+              <MDXRemote
+                {...post.source}
+                components={{
+                  h1: (props) => <h1 className="h1" {...props} />,
+                  h2: (props) => <h2 className="h2" {...props} />,
+                  p: (props) => <p className="p" {...props} />,
+                  li: (props) => <li className="li" {...props} />,
+                  a: (props) => <a className="a" {...props} />,
+                  Copy,
+                  YouTube,
+                  ImageMdx,
                 }}
               />
-            )}
-          </div>
-        </section>
-        <section className="mt-5">
-          <Typography variant="h2">{post.meta.title}</Typography>
-          <div className="flex justify-between items-center mt-5">
-            <div className="w-fit flex gap-2">
-              {post.meta.github ? (
-                <UnderlineLink href={post.meta.github}>
-                  <AiFillGithub className="text-typography-100 dark:text-typography-800" />
-                  Repository
-                </UnderlineLink>
-              ) : (
-                ""
-              )}
-              {post.meta.link ? (
-                <UnderlineLink href={post.meta.link}>
-                  <AiOutlineLink className="text-typography-100 dark:text-typography-800" />
-                  Live link
-                </UnderlineLink>
-              ) : (
-                ""
-              )}
-            </div>
-            <Typography variant="small" className="text-xs">
-              {post.meta.date.slice(0, 15)}
-            </Typography>
-          </div>
-
-          <div className="mt-5">
-            <ViewsMetric slug={post.meta.slug} />
-          </div>
-
-          <div className="mt-5">
-            <Typography variant="small" className="text-xs">
-              Tech Stack used
-            </Typography>
-            <IconTags tags={post.meta.tags} />
-            <Typography variant="small2" color="muted" className="mt-5">
-              {post.meta.excerpt}
-            </Typography>
-          </div>
-          <div className="h-[1px] w-full bg-secondary-300 dark:bg-secondary-400 mt-5"></div>
-        </section>
-        <section className="mt-5 lg:grid lg:grid-cols-[auto,200px] lg:gap-5">
-          <article>
-            <MDXRemote
-              {...post.source}
-              components={{
-                h1: (props) => <h1 className="h1" {...props} />,
-                h2: (props) => <h2 className="h2" {...props} />,
-                p: (props) => <p className="p" {...props} />,
-                li: (props) => <li className="li" {...props} />,
-                a: (props) => <a className="a" {...props} />,
-                Copy,
-                YouTube,
-                ImageMdx,
-              }}
+            </article>
+            <aside className="py-4">
+              <div className="sticky top-36">
+                <TableOfContents
+                  toc={toc}
+                  minLevel={minLevel}
+                  activeSection={activeSection}
+                />
+              </div>
+            </aside>
+          </section>
+          <section className="mt-10">
+            <Giscus
+              id="comment"
+              repo={(process.env.NEXT_PUBLIC_GISCUS_REPO as Repo) || ""}
+              repoId={process.env.NEXT_PUBLIC_GISCUS_REPO_ID || ""}
+              category="Announcements"
+              categoryId="DIC_kwDOKG44yc4CY2TI"
+              mapping="pathname"
+              term="Welcome to @giscus/react component!"
+              reactionsEnabled="0"
+              emitMetadata="0"
+              inputPosition="bottom"
+              theme="dark_dimmed"
+              lang="en"
+              loading="lazy"
             />
-          </article>
-          <aside className="py-4">
-            <div className="sticky top-36">
-              <TableOfContents
-                toc={toc}
-                minLevel={minLevel}
-                activeSection={activeSection}
-              />
-            </div>
-          </aside>
-        </section>
-        <section className="mt-10">
-          <Giscus
-            id="comment"
-            repo={(process.env.NEXT_PUBLIC_GISCUS_REPO as Repo) || ""}
-            repoId={process.env.NEXT_PUBLIC_GISCUS_REPO_ID || ""}
-            category="Announcements"
-            categoryId="DIC_kwDOKG44yc4CY2TI"
-            mapping="pathname"
-            term="Welcome to @giscus/react component!"
-            reactionsEnabled="0"
-            emitMetadata="0"
-            inputPosition="bottom"
-            theme="dark_dimmed"
-            lang="en"
-            loading="lazy"
-          />
-        </section>
-        <Toaster />
-      </main>
-    </Layout>
+          </section>
+          <Toaster />
+        </main>
+      </Layout>
+      <Footer />
+    </>
   );
 }
 

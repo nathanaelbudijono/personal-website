@@ -10,12 +10,16 @@ import MainPage from "@/modules/home/main";
 import { ProjectPostMeta, getAllProject } from "@/lib/api-project";
 import { usePopulatedProjectPosts } from "@/hooks/metrics/useProjectPopulated";
 
+import Navbar from "@/modules/navbar";
+import Footer from "@/modules/footer";
+
 export default function Home({ posts }: { posts: ProjectPostMeta[] }) {
   const { populatedProjectPosts: projects, isLoading } =
     usePopulatedProjectPosts(posts, "projects");
   return (
     <main>
       <Seo isBanner banner="https://nathanaelbudijono.vercel.app/logo.png" />
+      <Navbar />
       <MainPage />
       <Layout className=" max-sm:h-full">
         <Typography variant="h1" color="gradient">
@@ -48,6 +52,7 @@ export default function Home({ posts }: { posts: ProjectPostMeta[] }) {
           </ArrowLink>
         </div>
       </Layout>
+      <Footer />
     </main>
   );
 }
