@@ -11,7 +11,7 @@ export default function Footer() {
       <footer className="max-md:px-6 text-center py-5 mt-5 max-w-4xl mx-auto">
         <section className="h-[1px] w-full bg-secondary-300 dark:bg-secondary-400"></section>
         <section className="max-w-4xl mx-auto flex h-[20vh] justify-center flex-col items-center gap-1">
-          <div>
+          <div className="z-30">
             <Typography variant="small" className="text-xs">
               © {new Date().getFullYear()} by Nathanael
             </Typography>
@@ -39,7 +39,7 @@ export default function Footer() {
               <UnderlineLink href="https://mongodb.com">MongoDB</UnderlineLink>
             </div>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 z-30">
             <UnstyledLink href="mailto:nathanaelbudijono@gmail.com">
               <IconButton variant="ghost" icon={AiFillMail} />
             </UnstyledLink>

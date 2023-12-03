@@ -45,7 +45,7 @@ export default function Home({ posts }: { posts: ProjectPostMeta[] }) {
               </Framer>
             ))}
           </section>
-          <div className="mt-5 w-fit">
+          <div className="mt-5 w-fit z-10">
             <ArrowLink
               href="/projects"
               className="text-typography-100 dark:text-typography-800"
