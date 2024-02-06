@@ -1,0 +1,49 @@
+---
+title: Sitemaps
+tags:
+  - javascript
+date: 06-02-24
+excerpt: Powerful tool tailored for Next.js, simplifying the generation of sitemaps and robots.txt files.
+href: /shorts/next-sitemap
+id: 6
+---
+
+# Description
+Sitemaps are the easiest way to communicate with Google. 
+They indicate the URLs that belong to your website and when they update so that Google can easily detect new content and crawl your website more efficiently.
+A sitemap is a file where you provide information about the pages, videos, and other files on your site, and the relationships between them. Search engines like Google read this file to more intelligently crawl your site.
+
+# Overview
+To make a sitemap for a Next.js website, we will use the open source package next-sitemap. To get started, install the package with the following command.
+
+<Copy/>
+```ts
+npm i next-sitemap
+```
+
+To proceed, you'll need to create a configuration file. Simply create a file named `next-sitemap.config.js` in your root directory (i.e., alongside `package.json`) and insert the provided content.
+
+```ts
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
+module.exports = {
+  siteUrl,
+  generateRobotsTxt: true,
+  robotsTxtOptions: {
+    policies: [{ userAgent: "*", allow: "/" }],
+  },
+};
+```
+Now that our configuration is set, we'll include a script in the `package.json` to generate the sitemap during the build process. 
+These scripts ensure that the sitemap is generated post-build of the Next.js application, allowing the package to analyze the final output and comprehend your website's layout.
+
+```ts
+  "scripts": {
+    "postbuild": "npm run sitemap",
+  },
+```
+Upon running the build process, the sitemap will be generated and placed in the `public` directory of your project.
+Don't forget to add sitemap file in your `.gitignore` file. It is recommended to prevent it from being tracked by version control systems like Git. 
+This is important because sitemap files may contain sensitive or dynamically generated information that you don't want to expose publicly.
+
+Dont't forget to submit your Sitemap through the Google Search Console so that Google knows of your website right away.

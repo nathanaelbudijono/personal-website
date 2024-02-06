@@ -16,13 +16,13 @@ export default function App({ Component, pageProps }: AppProps) {
             showOnShallow={true}
           />
           <div>
-            <Image
+            {/* <Image
               src="/images/pattern.png"
               layout="fill"
               alt="pattern"
               objectFit="cover"
               className="z-0 opacity-10 dark:opacity-[0.02]"
-            />
+            /> */}
             <Component {...pageProps} />
           </div>
         </section>
