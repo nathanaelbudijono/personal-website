@@ -22,19 +22,8 @@ export default function MainPage() {
           </div>
           <Typography variant="p">
             A Math enthusiast who dreams to build Computer Science with
-            Mathematics. Currently a full-stack engineer at{" "}
-            <UnstyledLink
-              href="https://bendega.id"
-              className={cn(
-                "bg-gradient-to-r from-primary-400 to-primary-100",
-                "bg-clip-text text-transparent",
-                "dark:from-tertiary-400 dark:to-tertiary-300"
-              )}
-            >
-              Bendega
-            </UnstyledLink>
-            . I also enjoy writing short notes and documentation regarding
-            certain past projects.
+            Mathematics. I also enjoy writing short notes and documentation
+            regarding certain past projects.
           </Typography>
           <Framer delay={0.5}>
             <div className="mt-5 flex gap-3">

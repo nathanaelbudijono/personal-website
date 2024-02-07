@@ -23,6 +23,7 @@ npm i next-sitemap
 
 To proceed, you'll need to create a configuration file. Simply create a file named `next-sitemap.config.js` in your root directory (i.e., alongside `package.json`) and insert the provided content.
 
+<Copy/>
 ```ts
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
@@ -37,6 +38,7 @@ module.exports = {
 Now that our configuration is set, we'll include a script in the `package.json` to generate the sitemap during the build process. 
 These scripts ensure that the sitemap is generated post-build of the Next.js application, allowing the package to analyze the final output and comprehend your website's layout.
 
+<Copy/>
 ```ts
   "scripts": {
     "postbuild": "npm run sitemap",
