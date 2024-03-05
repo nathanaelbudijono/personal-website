@@ -23,7 +23,7 @@ export default function ProjectPage({ posts }: { posts: ProjectPostMeta[] }) {
           templateTitle="Projects"
           description="Showcase of my experiences throughout my learning process."
         />
-        <Typography variant="h1" color="gradient">
+        <Typography variant="h1" color="gradient" data-testid="projects">
           Projects
         </Typography>
         <Typography variant="small" className="mt-3">

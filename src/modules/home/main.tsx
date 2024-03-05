@@ -16,7 +16,7 @@ export default function MainPage() {
         <section className="w-2/3 max-xs:w-full">
           <div className="flex gap-2 mb-5 max-sm:flex-col">
             <Typography variant="h1">Hi, you can call me</Typography>{" "}
-            <Typography variant="h1" color="gradient">
+            <Typography variant="h1" color="gradient" data-testid="name">
               Nathan!
             </Typography>
           </div>

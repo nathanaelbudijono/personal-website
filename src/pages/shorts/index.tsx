@@ -31,7 +31,7 @@ export default function ShortsPage({ posts }: { posts: ShortsPostMeta[] }) {
           templateTitle="Shorts"
           description="Shorts are a small documentations about a specific topic."
         />
-        <Typography variant="h1" color="gradient">
+        <Typography variant="h1" color="gradient" data-testid="shorts">
           Shorts
         </Typography>
         <Typography variant="small" className="mt-3">
