@@ -63,6 +63,23 @@ describe("E2E Testing Personal Site", () => {
   // });
 });
 ```
+
+Dont forget to add the `data-testid` on the component that you want to test.
+
+<Copy/>
+
+```ts
+// src/pages/index
+
+export default function Home(){
+  return(
+    <main>
+      <h1>Hi, you can call me</h1>
+      <h1 data-testid="name">Nathan</h1>
+    </main>
+  )
+}
+```
 This test will visit my personal site at and check if the name Nathan is displayed correctly at `/`. If the test is successful, it will display the following message at cypress application.
 
 <ImageMdx id="/images/shorts/cypress/cyresult.png" />
