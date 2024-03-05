@@ -15,6 +15,7 @@ import {
 } from "react-icons/si";
 import { BiLogoNodejs, BiLogoPostgresql } from "react-icons/bi";
 import { DiJavascript1 } from "react-icons/di";
+import { TbBrandCypress } from "react-icons/tb";
 
 export const icons = {
   nextjs: <SiNextdotjs />,
@@ -30,6 +31,7 @@ export const icons = {
   firebase: <SiFirebase />,
   postgre: <BiLogoPostgresql />,
   javascript: <DiJavascript1 />,
+  cypress: <TbBrandCypress />,
 };
 
 export type Icons = keyof typeof icons;

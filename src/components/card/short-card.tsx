@@ -18,6 +18,7 @@ import { BiLogoNodejs, BiLogoPostgresql } from "react-icons/bi";
 import { RxOpenInNewWindow } from "react-icons/rx";
 import { AiFillEye } from "react-icons/ai";
 import { DiJavascript1 } from "react-icons/di";
+import { TbBrandCypress } from "react-icons/tb";
 
 export const icons = {
   nextjs: <SiNextdotjs />,
@@ -31,6 +32,7 @@ export const icons = {
   mongoose: <SiMongoose />,
   postgre: <BiLogoPostgresql />,
   javascript: <DiJavascript1 />,
+  cypress: <TbBrandCypress />,
 };
 
 export type Icons = keyof typeof icons;

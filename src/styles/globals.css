@@ -90,3 +90,7 @@ html {
 .tag-icon-firebase {
   @apply bg-typography-100 text-orange-400 p-1;
 }
+
+.tag-icon-cypress {
+  @apply bg-typography-100 text-typography-800 p-1;
+}

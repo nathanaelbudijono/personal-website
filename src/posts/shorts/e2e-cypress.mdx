@@ -1,0 +1,73 @@
+---
+title: Cypress
+tags:
+  - typescript
+  - cypress
+date: 05-03-24
+excerpt: Create end-to-end testing for your modern web applications.
+href: /shorts/e2e-cypress
+id: 8
+---
+
+# Description
+End-to-end testing is a methodology in software testing where the complete flow of an application is tested from start to finish to ensure that all components of the system work together as expected.
+Cypress, on the other hand, provides developers with a comprehensive set of tools to write, automate, and debug tests effortlessly.
+
+# Overview
+To get started, install the package with the following command.
+
+<Copy/>
+
+```ts
+npm i cypress
+```
+
+You can open Cypress from your project using the following command. 
+
+<Copy/>
+
+```ts
+npx cypress open
+```
+
+If this is your first time running Cypress, it will take some time to install the cypress to your device.
+It will also open the following application. We are going to choose E2E Testing.
+
+<ImageMdx id="/images/shorts/cypress/homepagecypress.png"/>
+
+It will ask you to configure some stuff and choose a browser to run the test. 
+Choose Create a new spec. It will create a `cypress` directory in your project and scaffold out the necessary files and folders for you.
+
+<ImageMdx id="/images/shorts/cypress/newspec.png"/>
+
+In you `cypress` directory, open `e2e` folder and choose the test file. `test.cy.ts`. Here i provide a simple test for my personal site.
+
+<Copy/>
+
+```ts
+describe("E2E Testing Personal Site", () => {
+  it("Display index", () => {
+    cy.visit("http://localhost:3000");
+
+    cy.get('[data-testid="name"]')
+      .should("exist")
+      .should("have.text", "Nathan!");
+  });
+
+  // it("Display stuff", () => {
+  //   cy.visit("your-url");
+
+  //   cy.get('[data-testid="your-id"]')
+  //     .should("exist")
+  //     .should("have.text", "your-text");
+  // });
+});
+```
+This test will visit my personal site at and check if the name Nathan is displayed correctly at `/`. If the test is successful, it will display the following message at cypress application.
+
+<ImageMdx id="/images/shorts/cypress/cyresult.png" />
+
+As simple as that! we have created an end-to-end test for our application.
+Of course there are more test feature that you can discover like buttons, input, and many more.
+You can check the documentation at their [official website](https://www.cypress.io).
+
