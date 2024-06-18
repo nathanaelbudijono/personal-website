@@ -91,7 +91,7 @@ export default function ShortsContent({ post }: { post: MDXPost }) {
             <div className="h-[1px] w-full bg-secondary-300 dark:bg-secondary-400 mt-5"></div>
           </section>
           <section className="mt-5 lg:grid lg:grid-cols-[auto,200px] lg:gap-5">
-            <article>
+            <article className="z-10">
               <MDXRemote
                 {...post.source}
                 components={{

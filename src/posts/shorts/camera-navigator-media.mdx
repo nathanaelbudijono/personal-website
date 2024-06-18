@@ -1,0 +1,135 @@
+---
+title: Navigator User Media
+tags:
+  - typescript
+  - nextjs
+date: 18-06-24
+excerpt: Control the camera of a user's device using the Navigator API.
+href: /shorts/camera-navigator-media
+id: 9
+---
+
+# Description
+The Navigator User Media API enables web applications to access the user's camera and microphone.
+ This powerful API is widely utilized in various applications, such as video conferencing platforms.
+By granting web applications the ability to interact with hardware components like the camera and microphone, you can seamlessly integrate audiovisual capabilities into their web experience.
+
+# Overview
+Using the Navigator User Media API can sometimes be a challenging experience, especially when it comes to managing the camera.
+One common frustration users encounter is dealing with the camera's behavior, such as ensuring it is turned off properly.
+A particularly perplexing issue arises with the camera's light indicator, which can occasionally fail to turn off even after the camera has been deactivated.
+This issue not only creates confusion but also raises concerns about privacy and security. Here is how you can ensure the camera is turned off correctly.
+
+Create a state of localVideo initialized to null. It will eventually hold a reference to a video element that will play the local media stream.
+localMediaStream is a ref that holds the MediaStream object, which represents the media captured from the user's camera and microphone.
+
+<Copy/>
+
+```tsx
+// src/components/pages/index.tsx
+
+const [localVideo, setLocalVideo] = React.useState<HTMLVideoElement | null>(null);
+const localMediaStream = React.useRef<MediaStream | null>(null);
+```
+
+We then would want to setup our local media stream using useEffect. `setupLocalMedia` is an asynchronous function that requests access to the user's media.
+If access is granted, it creates a video element, sets it to autoplay and muted, so it doesn't echo, and assigns the media stream to the video element's srcObject.
+The video element is then saved to the state variable localVideo.
+
+<Copy/>
+
+```tsx
+// src/components/pages/index.tsx
+
+React.useEffect(() => {
+  const setupLocalMedia = async () => {
+    if (localMediaStream.current) return;
+    try {
+      localMediaStream.current = await navigator.mediaDevices.getUserMedia({
+        audio: true,
+        video: true,
+      });
+      const localMedia = document.createElement("video");
+      localMedia.autoplay = true;
+      localMedia.muted = true;
+      localMedia.srcObject = localMediaStream.current;
+      setLocalVideo(localMedia);
+    } catch (error) {
+      alert(
+        "You chose not to provide access to the camera/microphone, demo will not work."
+      );
+    }
+  };
+  setupLocalMedia();
+}, []);
+```
+
+Appending the Video Element to the DOM. This useEffect hook runs whenever localVideo changes.
+If localVideo is not null, it appends the video element to the DOM element with the ID local-video-container.
+
+<Copy/>
+
+```tsx
+// src/components/pages/index.tsx
+
+React.useEffect(() => {
+  if (localVideo) {
+    const container = document.getElementById("local-video-container");
+    if (container && !container.hasChildNodes()) {
+      container.appendChild(localVideo);
+    }
+  }
+}, [localVideo]);
+```
+A `toggleCamera function checks if the media stream is active. If it is, it toggles the video track on and off.
+If the video track is enabled, it stops the track and sets track.enabled to false.
+If the video track is disabled, it requests a new media stream and replaces the old video track with the new one.
+
+<Copy/>
+
+```tsx
+// src/components/pages/index.tsx
+
+const toggleCamera = () => {
+  if (localMediaStream.current) {
+    localMediaStream.current.getVideoTracks().forEach((track) => {
+      if (track.enabled) {
+        track.stop();
+        track.enabled = false;
+      } else {
+        navigator.mediaDevices
+          .getUserMedia({ audio: true, video: true })
+          .then(function (stream) {
+            if (localMediaStream.current) {
+              localMediaStream.current.getVideoTracks()[0].stop();
+              localMediaStream.current.removeTrack(
+                localMediaStream.current.getVideoTracks()[0]
+              );
+              localMediaStream.current.addTrack(stream.getVideoTracks()[0]);
+            }
+          })
+          .catch(function (err) {
+            console.log(err);
+          });
+      }
+    });
+  }
+};
+```
+
+Now you can create the JSX structure for the video element and a button to toggle the camera.
+To style the video element, it is recommended to style it globally.
+
+<Copy/>
+
+```tsx
+return (
+  <main>
+    <div id="local-video-container" />
+    <button onClick={toggleCamera}>Toggle camera</button>
+  </main>
+);
+```
+
+Dont forget to configure reactStrictMode to false at `next-config.js` or else it might not work accordingly.
+That's it you can now control your or user camera with proper security and privacy.
