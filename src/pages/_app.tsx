@@ -1,7 +1,6 @@
 import "@/styles/globals.css";
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
-import Image from "next/image";
 import NextNProgress from "nextjs-progressbar";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -16,13 +15,6 @@ export default function App({ Component, pageProps }: AppProps) {
             showOnShallow={true}
           />
           <div>
-            <Image
-              src="/images/pattern.png"
-              loading="lazy"
-              alt="pattern"
-              className="object-cover opacity-10 dark:opacity-[0.02]"
-              fill
-            />
             <Component {...pageProps} />
           </div>
         </section>
