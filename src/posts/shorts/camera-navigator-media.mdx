@@ -92,12 +92,12 @@ If the video track is disabled, it requests a new media stream and replaces the 
 
 const toggleCamera = () => {
   if (localMediaStream.current) {
-    localMediaStream.current.getVideoTracks().forEach((track) => {
+    localMediaStream.current.getVideoTracks().forEach(async (track) => {
       if (track.enabled) {
         track.stop();
         track.enabled = false;
       } else {
-        navigator.mediaDevices
+        await navigator.mediaDevices
           .getUserMedia({ audio: true, video: true })
           .then(function (stream) {
             if (localMediaStream.current) {
