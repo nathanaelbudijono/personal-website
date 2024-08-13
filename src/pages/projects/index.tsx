@@ -16,9 +16,9 @@ export default function ProjectPage({ posts }: { posts: ProjectPostMeta[] }) {
     "projects"
   );
   return (
-    <>
+    <main>
       <Navbar />
-      <Layout className="max-sm:h-full">
+      <Layout className="h-full">
         <Seo
           templateTitle="Projects"
           description="Showcase of my experiences throughout my learning process."
@@ -31,7 +31,7 @@ export default function ProjectPage({ posts }: { posts: ProjectPostMeta[] }) {
         </Typography>
         <section className="w-full mt-5 grid grid-cols-2 max-sm:grid-cols-1 gap-5">
           {projects.map((item, index) => (
-            <Framer delay={index * 0.8} key={index}>
+            <Framer delay={index * 0.5} key={index}>
               <ProjectCard
                 title={item.title}
                 desc={item.excerpt}
@@ -46,11 +46,13 @@ export default function ProjectPage({ posts }: { posts: ProjectPostMeta[] }) {
         </section>
       </Layout>
       <Footer />
-    </>
+    </main>
   );
 }
 
 export async function getStaticProps() {
-  const posts = getAllProject().map((post) => post.meta);
+  const posts = getAllProject()
+    .map((post) => post.meta)
+    .reverse();
   return { props: { posts } };
 }

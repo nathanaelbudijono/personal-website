@@ -19,8 +19,8 @@ export const getAllProject = () => {
   const projectPost = getSlugsProject()
     .map((slug) => getPostProjectFromSlug(slug))
     .sort((a, b) => {
-      if (a.meta.date > b.meta.date) return 1;
-      if (a.meta.date < b.meta.date) return -1;
+      if (a.meta.id > b.meta.id) return -1;
+      if (a.meta.id < b.meta.id) return 1;
       return 0;
     })
     .reverse();
@@ -43,6 +43,7 @@ export interface ProjectPostMeta {
   github: string;
   href: string;
   banner: string;
+  id: number;
 }
 
 export const getPostProjectFromSlug = (slug: string): ProjectPost => {
@@ -63,6 +64,7 @@ export const getPostProjectFromSlug = (slug: string): ProjectPost => {
       github: data.github,
       href: data.href ?? "",
       banner: data.banner,
+      id: data.id ?? 0,
     },
   };
 };

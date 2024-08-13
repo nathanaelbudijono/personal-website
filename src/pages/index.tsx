@@ -62,6 +62,7 @@ export default function Home({ posts }: { posts: ProjectPostMeta[] }) {
 
 export async function getStaticProps() {
   const posts = getAllProject()
+    .reverse()
     .slice(0, 2)
     .map((post) => post.meta);
   return { props: { posts } };

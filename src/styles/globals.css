@@ -94,3 +94,11 @@ html {
 .tag-icon-cypress {
   @apply bg-typography-100 text-typography-800 p-1;
 }
+
+.tag-icon-webSockets {
+  @apply bg-typography-100 text-typography-800 p-1;
+}
+
+.tag-icon-webRTC {
+  @apply bg-typography-600 text-typography-100 p-1;
+}

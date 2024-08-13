@@ -24,7 +24,7 @@ export default function ShortsPage({ posts }: { posts: ShortsPostMeta[] }) {
   const [filtered, setFiltered] = useState(() => shorts);
   const [selected, setSelected] = useState(() => "Sort by date");
   return (
-    <>
+    <main>
       <Navbar />
       <Layout className="h-full">
         <Seo
@@ -76,7 +76,7 @@ export default function ShortsPage({ posts }: { posts: ShortsPostMeta[] }) {
         </section>
       </Layout>
       <Footer />
-    </>
+    </main>
   );
 }
 

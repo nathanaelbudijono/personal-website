@@ -20,6 +20,8 @@ import {
   SiMongoose,
   SiTrpc,
   SiFirebase,
+  SiSocketdotio,
+  SiWebrtc,
 } from "react-icons/si";
 import { BiLogoNodejs, BiLogoPostgresql } from "react-icons/bi";
 
@@ -36,6 +38,8 @@ export const icons = {
   postgre: <BiLogoPostgresql />,
   trpc: <SiTrpc />,
   firebase: <SiFirebase />,
+  webSockets: <SiSocketdotio />,
+  webRTC: <SiWebrtc />,
 };
 
 export type Icons = keyof typeof icons;
