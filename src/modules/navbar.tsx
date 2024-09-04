@@ -30,7 +30,7 @@ export default function Navbar() {
         "dark:bg-light-100 dark:bg-opacity-40 relative"
       )}
     >
-      <section className="max-w-4xl mx-auto">
+      <section className="max-w-5xl mx-auto xl:max-w-6xl 2xl:max-w-7xl">
         <div className="flex justify-between items-center py-4">
           <div className="flex gap-3 items-center ">
             {Links.map((item, index) => (
