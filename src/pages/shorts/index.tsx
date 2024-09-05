@@ -38,7 +38,7 @@ export default function ShortsPage({ posts }: { posts: ShortsPostMeta[] }) {
           Shorts are a collection of small documentations about a specific topic
           that I have learned.
         </Typography>
-        <section className="mt-5">
+        <section className="mt-10">
           <section className="relative flex items-ceter">
             <div className="flex flex-col z-[100] w-full">
               <SearchFilter

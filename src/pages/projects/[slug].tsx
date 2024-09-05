@@ -94,7 +94,7 @@ export default function ProjectContent({ post }: { post: MDXPost }) {
                   objectFit="cover"
                   className="text-xs"
                   style={{
-                    filter: !ready ? "blur(4px)" : "none",
+                    filter: !ready ? "blur(5px)" : "none",
                     transition: !ready ? "none" : "filter 0.3s ease-out",
                   }}
                 />

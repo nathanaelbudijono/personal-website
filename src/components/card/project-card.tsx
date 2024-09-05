@@ -73,7 +73,7 @@ export default function ProjectCard({
   return (
     <div
       className={cn(
-        "overflow-hidden border border-primary-700 rounded-md text-typography-100 h-[425px]",
+        "overflow-hidden border border-primary-700 rounded-md text-typography-100 h-[415px]",
         "transition-all duration-300 ease-in-out",
         "border border-secondary-300",
         "hover:scale-[1.02]",
@@ -95,7 +95,7 @@ export default function ProjectCard({
             {date}
           </Typography>
         </div>
-        <div className="h-60 max-sm:h-56 relative">
+        <div className="h-56 max-sm:h-52 relative">
           {src && (
             <Image
               src={src}
@@ -104,7 +104,7 @@ export default function ProjectCard({
               objectFit="cover"
               className="text-xs"
               style={{
-                filter: !ready ? "blur(4px)" : "none",
+                filter: !ready ? "blur(5px)" : "none",
                 transition: !ready ? "none" : "filter 0.3s ease-out",
               }}
             />

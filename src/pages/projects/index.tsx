@@ -29,7 +29,7 @@ export default function ProjectPage({ posts }: { posts: ProjectPostMeta[] }) {
         <Typography variant="small" className="mt-3">
           Showcase of my experiences throughout my learning process.
         </Typography>
-        <section className="w-full mt-5 grid grid-cols-2 max-sm:grid-cols-1 gap-5">
+        <section className="w-full grid grid-cols-2 max-sm:grid-cols-1 gap-5 mt-10">
           {projects.map((item, index) => (
             <Framer delay={index * 0.5} key={index}>
               <ProjectCard
