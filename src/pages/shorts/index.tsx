@@ -45,22 +45,21 @@ export default function ShortsPage({ posts }: { posts: ShortsPostMeta[] }) {
         </MaskText>
 
         <section className="mt-10">
-          <MaskText delay={0.9}>
-            <section className="relative flex items-center">
-              <div className="flex flex-col z-[100] w-full">
-                <SearchFilter
-                  setFiltered={setFiltered}
-                  populatedPosts={shorts}
-                  selected={selected}
-                />
+          <section className="relative flex items-center">
+            <div className="flex flex-col z-[100] w-full">
+              <SearchFilter
+                setFiltered={setFiltered}
+                populatedPosts={shorts}
+                selected={selected}
+              />
 
-                <SortListBox selected={selected} setSelected={setSelected} />
-              </div>
+              <SortListBox selected={selected} setSelected={setSelected} />
+            </div>
 
-              <AiOutlineSearch className="absolute right-2 top-2 focus:outline-none text-typography-400 opacity-80" />
-            </section>
-          </MaskText>
+            <AiOutlineSearch className="absolute right-2 top-2 focus:outline-none text-typography-400 opacity-80" />
+          </section>
         </section>
+
         <section className="grid grid-cols-2 gap-5 mt-10 w-full max-sm:grid-cols-1">
           {filtered?.length > 0 ? (
             filtered?.map((item, index) => (
