@@ -73,8 +73,8 @@ export default function ProjectCard({
   return (
     <div
       className={cn(
-        "overflow-hidden border border-primary-700 rounded-md text-typography-100 h-[415px]",
-        "transition-all duration-300 ease-in-out",
+        "overflow-hidden border border-primary-700 rounded-xl text-typography-100 h-[420px]",
+        "transition-all duration-300 ease-in-out relative",
         "border border-secondary-300",
         "hover:scale-[1.02]",
         "dark:border-secondary-400",
@@ -83,7 +83,7 @@ export default function ProjectCard({
       {...rest}
     >
       <UnstyledLink href={href}>
-        <div className="px-6 py-4 flex justify-between items-center">
+        <div className="w-full px-6 py-4 flex justify-between items-center">
           <ul className="flex gap-1 text-xs">
             {tags?.map((tag: string) => (
               <li key={tag} className={`tag-icon-${tag}  rounded-md`}>
@@ -91,18 +91,14 @@ export default function ProjectCard({
               </li>
             ))}
           </ul>
-          <Typography variant="small" color="muted" className="text-xs">
-            {date}
-          </Typography>
         </div>
-        <div className="h-56 max-sm:h-52 relative">
+        <div className="h-52 max-sm:h-52 relative shadow-sm">
           {src && (
             <Image
               src={src}
               alt="card picture"
-              layout="fill"
-              objectFit="cover"
-              className="text-xs"
+              fill
+              className="text-xs shadow-sm object-cover"
               style={{
                 filter: !ready ? "blur(5px)" : "none",
                 transition: !ready ? "none" : "filter 0.3s ease-out",
@@ -110,15 +106,15 @@ export default function ProjectCard({
             />
           )}
         </div>
+
         <div className="px-6 pt-4 pb-6">
-          <div className="flex justify-between">
-            <Typography variant="h4">{title}</Typography>
-            <RxOpenInNewWindow
-              size={15}
-              className="dark:text-typography-800 translate-y-1"
-            />
+          <div className="flex justify-between items-center">
+            <Typography variant="h3">{title}</Typography>
+            <Typography variant="small2" color="muted" className="text-xs">
+              {date}
+            </Typography>
           </div>
-          <div className="flex items-center gap-2 mb-2">
+          <div className="flex items-center gap-2 mb-2 mt-3">
             <AiFillEye
               size={15}
               className="dark:text-typography-800 text-typography-100"
@@ -126,12 +122,12 @@ export default function ProjectCard({
             {views === 0 ? (
               <Skeleton className="w-[48px] h-[15px]" />
             ) : (
-              <Typography variant="small" color="muted">
+              <Typography variant="small2" color="muted">
                 {views} views
               </Typography>
             )}
           </div>
-          <Typography variant="small" color="muted">
+          <Typography variant="small" color="muted" className="mt-3">
             {desc}
           </Typography>
         </div>

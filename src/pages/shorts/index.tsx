@@ -60,7 +60,7 @@ export default function ShortsPage({ posts }: { posts: ShortsPostMeta[] }) {
           </section>
         </section>
 
-        <section className="grid grid-cols-2 gap-5 mt-10 w-full max-sm:grid-cols-1">
+        <section className="grid grid-cols-3 gap-5 mt-10 w-full max-sm:grid-cols-1">
           {filtered?.length > 0 ? (
             filtered?.map((item, index) => (
               <div key={index}>

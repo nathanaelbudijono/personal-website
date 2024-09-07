@@ -85,7 +85,7 @@ export default function ShortsContent({ post }: { post: MDXPost }) {
             <div className="mt-5">
               <ShortsViewsMetric slug={post.meta.slug} />
             </div>
-            <Typography variant="small2" color="muted" className="mt-5">
+            <Typography variant="p" className="mt-5">
               {post.meta.excerpt}
             </Typography>
             <div className="h-[1px] w-full bg-secondary-300 dark:bg-secondary-400 mt-5"></div>

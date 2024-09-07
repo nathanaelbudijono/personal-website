@@ -61,7 +61,7 @@ export default function ShortCard({
   return (
     <div
       className={cn(
-        "overflow-hidden border border-primary-700 rounded-md text-typography-100 h-[162px]",
+        "overflow-hidden border border-primary-700 rounded-xl text-typography-100 h-[180px]",
         "transition-all duration-300 ease-in-out",
         "border border-secondary-300",
         "hover:scale-[1.02]",
@@ -79,19 +79,14 @@ export default function ShortCard({
               </li>
             ))}
           </ul>
-          <Typography variant="small" color="muted" className="text-xs">
+          <Typography variant="small2" color="muted" className="text-xs">
             {date}
           </Typography>
         </div>
         <div className="px-6 pt-4 pb-6">
-          <div className="flex justify-between">
-            <Typography variant="h4">{title}</Typography>
-            <RxOpenInNewWindow
-              size={15}
-              className="dark:text-typography-800 translate-y-1"
-            />
-          </div>
-          <div className="flex items-center gap-2 mb-2">
+          <Typography variant="h3">{title}</Typography>
+
+          <div className="flex items-center gap-2 mb-2 mt-3">
             <AiFillEye
               size={15}
               className="dark:text-typography-800 text-typography-100"
@@ -99,12 +94,12 @@ export default function ShortCard({
             {views === 0 ? (
               <Skeleton className="w-[48px] h-[15px]" />
             ) : (
-              <Typography variant="small" color="muted">
+              <Typography variant="small2" color="muted">
                 {views} views
               </Typography>
             )}
           </div>
-          <Typography variant="small" color="muted">
+          <Typography variant="small" color="muted" className="mt-3">
             {desc}
           </Typography>
         </div>

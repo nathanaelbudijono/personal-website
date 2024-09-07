@@ -23,7 +23,7 @@ export default function SortListBox({
             className={`relative w-full cursor-default 
             border border-secondary-300 dark:border-secondary-400 py-2 pl-3 pr-10 text-left rounded-md shadow-sm focus:outline-none sm:text-sm`}
           >
-            <span className="flex items-center text-typography-100 dark:text-typography-800">
+            <span className="flex items-center text-typography-400 dark:text-typography-700">
               {selected === "Sort by date" ? (
                 <MdDateRange className="mr-2 text-xs" />
               ) : selected === "Sort by popularity" ? (
@@ -31,11 +31,13 @@ export default function SortListBox({
               ) : (
                 <TbSortAscendingLetters className="mr-2 text-xs" />
               )}
-              <Typography variant="small">{selected}</Typography>
+              <Typography variant="small" color="muted">
+                {selected}
+              </Typography>
             </span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <HiSelector
-                className="h-5 w-5 text-typography-100 dark:text-typography-800 text-xs"
+                className="h-5 w-5 text-typography-400 dark:text-typography-700 text-xs"
                 aria-hidden="true"
               />
             </span>
@@ -48,7 +50,7 @@ export default function SortListBox({
           >
             <Listbox.Options
               className="rounded-md whitespace-nowrap absolute mt-2 max-h-60 w-full overflow-auto py-1 text-sm sm:text-base shadow-sm
-              z-[100] bg-gradient-to-b from-primary-400 to-primary-300 dark:from-tertiary-400 dark:to-tertiary-300"
+              z-[100] border border-secondary-300 dark:border-secondary-400 bg-dark-100 dark:bg-light-100"
             >
               {["Sort by date", "Sort by name", "Sort by popularity"].map(
                 (option, optionIdx) => (

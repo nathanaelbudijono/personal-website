@@ -35,7 +35,7 @@ export default function ProjectPage({ posts }: { posts: ProjectPostMeta[] }) {
           </Typography>
         </MaskText>
 
-        <section className="w-full grid grid-cols-2 max-sm:grid-cols-1 gap-5 mt-10">
+        <section className="w-full grid grid-cols-3 max-sm:grid-cols-1 gap-5 mt-10">
           {projects.map((item, index) => (
             <div key={index}>
               <ProjectCard

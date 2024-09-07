@@ -80,7 +80,7 @@ const Typography: TypographyComponent = React.forwardRef(
               "text-sm font-[400] leading-none max-sm:text-xs",
             ],
             variant === "small2" && [
-              "text-[16px] font-[400] leading-8 max-sm:text-xs text-typography-200 dark:text-typography-800",
+              "text-[12px] font-[400] leading-8 max-sm:text-xs text-typography-200 dark:text-typography-800",
             ],
             variant === "muted" && ["text-sm text-typography-500"],
           ],
@@ -92,7 +92,7 @@ const Typography: TypographyComponent = React.forwardRef(
               "bg-gradient-to-r from-primary-400 to-primary-100 bg-clip-text text-transparent dark:from-tertiary-400 dark:to-tertiary-300",
             ],
             color === "muted" && [
-              "text-typography-300 dark:text-typography-600 leading-[16px]",
+              "text-typography-400 dark:text-typography-700 leading-[16px]",
             ],
             color === "danger" && ["text-d-200"],
             color === "ready" && ["text-ready-500"],

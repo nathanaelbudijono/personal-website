@@ -1,5 +1,4 @@
 import ProjectCard from "@/components/card/project-card";
-import { Framer } from "@/components/core/framer";
 import Layout from "@/components/core/layout";
 import Seo from "@/components/core/seo";
 import Typography from "@/components/core/typography";
@@ -7,12 +6,15 @@ import ArrowLink from "@/components/links/arrow-link";
 
 import MainPage from "@/modules/home/main";
 
-import { ProjectPostMeta, getAllProject } from "@/lib/api-project";
 import { usePopulatedProjectPosts } from "@/hooks/metrics/useProjectPopulated";
+import { ProjectPostMeta, getAllProject } from "@/lib/api-project";
 
-import Navbar from "@/modules/navbar";
-import Footer from "@/modules/footer";
+import Image from "next/image";
+
 import MaskText from "@/components/core/mask-text";
+import Footer from "@/modules/footer";
+import Navbar from "@/modules/navbar";
+import cn from "@/type/clsxm";
 
 export default function Home({ posts }: { posts: ProjectPostMeta[] }) {
   const { populatedProjectPosts: projects, isLoading } =
