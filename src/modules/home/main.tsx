@@ -1,5 +1,6 @@
 import { Framer } from "@/components/core/framer";
 import Layout from "@/components/core/layout";
+import MaskText from "@/components/core/mask-text";
 import Typography from "@/components/core/typography";
 import ButtonLink from "@/components/links/button-links";
 import UnstyledLink from "@/components/links/unstyled-link";
@@ -12,37 +13,38 @@ import { RiMovie2Fill } from "react-icons/ri";
 export default function MainPage() {
   return (
     <Layout className="overflow-hidden relative justify-center">
-      <Framer>
-        <section className="w-2/3 max-xs:w-full">
+      <section className="w-2/3 max-xs:w-full">
+        <MaskText delay={0.5}>
           <div className="flex gap-2 mb-5 max-sm:flex-col">
             <Typography variant="h1">Hi, you can call me</Typography>{" "}
             <Typography variant="h1" color="gradient" data-testid="name">
               Nathan!
             </Typography>
           </div>
+        </MaskText>
+        <MaskText delay={0.7}>
           <Typography variant="p">
             A Math enthusiast who dreams to build Computer Science with
             Mathematics. Currently, a front end developer at Looyal working with
             WebRTC and WebSockets. I also enjoy writing short notes and
             documentation regarding certain past projects.
           </Typography>
-          <Framer delay={0.5}>
-            <div className="mt-5 flex gap-3">
-              {Links.map((item, index) => (
-                <Framer key={index} delay={index * 0.65}>
-                  <ButtonLink
-                    variant="outline"
-                    href={item.link}
-                    leftIcon={item.icon}
-                  >
-                    {item.title}
-                  </ButtonLink>
-                </Framer>
-              ))}
-            </div>
-          </Framer>
-        </section>
-      </Framer>
+        </MaskText>
+        <MaskText delay={0.9}>
+          <div className="mt-5 flex gap-3">
+            {Links.map((item, index) => (
+              <ButtonLink
+                variant="outline"
+                href={item.link}
+                leftIcon={item.icon}
+                key={index}
+              >
+                {item.title}
+              </ButtonLink>
+            ))}
+          </div>
+        </MaskText>
+      </section>
     </Layout>
   );
 }

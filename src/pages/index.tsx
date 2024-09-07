@@ -12,6 +12,7 @@ import { usePopulatedProjectPosts } from "@/hooks/metrics/useProjectPopulated";
 
 import Navbar from "@/modules/navbar";
 import Footer from "@/modules/footer";
+import MaskText from "@/components/core/mask-text";
 
 export default function Home({ posts }: { posts: ProjectPostMeta[] }) {
   const { populatedProjectPosts: projects, isLoading } =
@@ -24,15 +25,20 @@ export default function Home({ posts }: { posts: ProjectPostMeta[] }) {
 
         <MainPage />
         <Layout className=" max-sm:h-full">
-          <Typography variant="h1" color="gradient">
-            Featured
-          </Typography>
-          <Typography variant="small" className="mt-3">
-            My latest past projects.
-          </Typography>
+          <MaskText delay={0.5}>
+            <Typography variant="h1" color="gradient">
+              Featured
+            </Typography>
+          </MaskText>
+          <MaskText delay={0.7}>
+            <Typography variant="small" className="mt-3">
+              My latest past projects.
+            </Typography>
+          </MaskText>
+
           <section className="w-full mt-5 grid grid-cols-2 max-sm:grid-cols-1 gap-5">
             {projects.map((item, index) => (
-              <Framer delay={index * 0.8} key={index}>
+              <div key={index}>
                 <ProjectCard
                   title={item.title}
                   desc={item.excerpt}
@@ -42,7 +48,7 @@ export default function Home({ posts }: { posts: ProjectPostMeta[] }) {
                   href={item.href}
                   views={item?.views}
                 />
-              </Framer>
+              </div>
             ))}
           </section>
           <div className="mt-5 w-fit z-10">

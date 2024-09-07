@@ -1,6 +1,7 @@
 import ProjectCard from "@/components/card/project-card";
 import { Framer } from "@/components/core/framer";
 import Layout from "@/components/core/layout";
+import MaskText from "@/components/core/mask-text";
 import Seo from "@/components/core/seo";
 import Typography from "@/components/core/typography";
 import { usePopulatedProjectPosts } from "@/hooks/metrics/useProjectPopulated";
@@ -23,15 +24,20 @@ export default function ProjectPage({ posts }: { posts: ProjectPostMeta[] }) {
           templateTitle="Projects"
           description="Showcase of my experiences throughout my learning process."
         />
-        <Typography variant="h1" color="gradient" data-testid="projects">
-          Projects
-        </Typography>
-        <Typography variant="small" className="mt-3">
-          Showcase of my experiences throughout my learning process.
-        </Typography>
+        <MaskText delay={0.5}>
+          <Typography variant="h1" color="gradient" data-testid="projects">
+            Projects
+          </Typography>
+        </MaskText>
+        <MaskText delay={0.7}>
+          <Typography variant="small" className="mt-3">
+            Showcase of my experiences throughout my learning process.
+          </Typography>
+        </MaskText>
+
         <section className="w-full grid grid-cols-2 max-sm:grid-cols-1 gap-5 mt-10">
           {projects.map((item, index) => (
-            <Framer delay={index * 0.5} key={index}>
+            <div key={index}>
               <ProjectCard
                 title={item.title}
                 desc={item.excerpt}
@@ -41,7 +47,7 @@ export default function ProjectPage({ posts }: { posts: ProjectPostMeta[] }) {
                 href={item.href}
                 views={item?.views}
               />
-            </Framer>
+            </div>
           ))}
         </section>
       </Layout>
