@@ -91,6 +91,9 @@ export default function ProjectCard({
               </li>
             ))}
           </ul>
+          <Typography variant="small2" color="muted" className="text-xs">
+            {date}
+          </Typography>
         </div>
         <div className="h-52 max-sm:h-52 relative shadow-sm">
           {src && (
@@ -108,12 +111,8 @@ export default function ProjectCard({
         </div>
 
         <div className="px-6 pt-4 pb-6">
-          <div className="flex justify-between items-center">
-            <Typography variant="h3">{title}</Typography>
-            <Typography variant="small2" color="muted" className="text-xs">
-              {date}
-            </Typography>
-          </div>
+          <Typography variant="h3">{title}</Typography>
+
           <div className="flex items-center gap-2 mb-2 mt-3">
             <AiFillEye
               size={15}
