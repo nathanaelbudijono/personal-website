@@ -19,7 +19,7 @@ export default function ProjectPage({ posts }: { posts: ProjectPostMeta[] }) {
   return (
     <main>
       <Navbar />
-      <Layout className="h-full">
+      <Layout className="h-full min-h-[85vh] flex-grow">
         <Seo
           templateTitle="Projects"
           description="Showcase of my experiences throughout my learning process."
